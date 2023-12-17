@@ -1,0 +1,55 @@
+<header class="header" role="banner">
+    <a href="#" class="mobileMenu-toggle" data-mobile-menu-toggle="menu">
+        <span class="mobileMenu-toggleIcon">Toggle Menu</span>
+    </a>
+
+    {{#if theme_settings.show_promo_bar}}
+        <div class="promo-bar">
+            <div class="container center"><span>{{theme_settings.promo_bar_text}}</span></div>
+        </div>
+    {{/if}}
+
+    <div class="header-logo--wrap">
+        <div class="header-logo {{#if theme_settings.logo_size '===' 'original'}}logo-full-size{{/if}}">
+            <div class="quickSearchWrap" id="quickSearch" aria-hidden="true" tabindex="-1" data-prevent-quick-search-close>
+                {{#if theme_settings.show_search}}
+                    {{> components/common/quick-search}}
+                {{/if}}
+            </div>
+            
+            <div class="logo-and-toggle center">
+                {{#if page_type '===' 'default'}}
+                    <h1 class="logo-wrap">{{> components/common/store-logo}}</h1>
+                {{else}}
+                    <div class="logo-wrap">{{> components/common/store-logo}}</div>
+                {{/if}}
+            </div>
+
+            <div class="navUser-wrap">
+                {{> components/common/navigation}}
+            </div>
+        </div>
+    </div>
+
+    <div class="navPages-container{{#if theme_settings.theme_version '===' 'Sporting'}} navPages-container--limited{{/if}}" id="menu" data-menu>
+        {{> components/common/navigation-menu}}
+    </div>
+</header>
+{{#unless page_type '===' 'default'}}
+    {{#if banners.top}}
+    <div class="banners" data-banner-location="top">
+        {{#each (limit banners.top_metadata 1)}}
+        <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-banner-id="{{this.banner-name}}">
+            <div data-event-type="promotion-click">
+                {{{this.content}}}
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+{{/unless}}
+
+<div class="container">
+    {{{region name="header_bottom--global"}}}
+    {{{region name="header_bottom"}}}
+</div>

@@ -1,0 +1,101 @@
+{{#if children}}
+<a class="navPages-action has-subMenu{{#if is_active}} activePage{{/if}}"
+   href="{{url}}"
+   data-collapsible="navPages-{{id}}"
+   aria-label="{{name}}"
+>
+    {{name}}
+    <i class="icon navPages-action-moreIcon navPages-action-closed" aria-hidden="true"><svg><use xlink:href="#icon-plus" /></svg></i>
+    <i class="icon navPages-action-moreIcon navPages-action-open" aria-hidden="true"><svg><use xlink:href="#icon-minus" /></svg></i>
+</a>
+<div class="column-menu navPage-subMenu" id="navPages-{{id}}" aria-hidden="true" tabindex="-1">
+    <ul class="navPage-subMenu-list">
+        <li class="navPage-subMenu-item mobile-shopAll">
+            <i class="icon navPages-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-right" /></svg></i>
+            <a class="navPage-subMenu-action navPages-action"
+               href="{{url}}"
+               aria-label="{{lang 'category.view_all.name' category=name}}"
+            >
+                {{#if link_type '===' "content"}}
+                    {{name}}
+                {{else}}
+                    {{lang 'category.view_all.name' category=name}}
+                {{/if}}
+            </a>
+        </li>        
+        {{#if children }} 
+            {{#if name '===' "Face"}}
+                <li class="navPage-subMenu-item column-header">
+                <i class="icon navPages-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-right" /></svg></i>
+                <span class="navPage-subMenu-action navPages-action column-header" aria-label="Category">
+                    <b>Category</b>
+                </span>
+                </li>
+            {{/if}}
+          {{#each children}}
+            {{#if name '===' "Glycolic Acid"}}
+                <li class="navPage-subMenu-item column-header">
+                <i class="icon navPages-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-right" /></svg></i>
+                <span class="navPage-subMenu-action navPages-action column-header" aria-label="Category">
+                    <b>Ingredients</b>
+                </span>
+                </li>
+            {{/if}}
+            {{#if name '===' "Anti-aging"}}
+            <li class="navPage-subMenu-item column-header">
+            <i class="icon navPages-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-right" /></svg></i>
+            <span class="navPage-subMenu-action navPages-action column-header" aria-label="Category">
+                <b>Skin Concerns</b>
+            </span>
+            </li>
+        {{/if}}
+            <li class="navPage-subMenu-item {{#if children}} has-children{{/if}}">
+                <i class="icon navPages-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-right" /></svg></i>
+                <a class="navPage-subMenu-action navPages-action{{#if is_active}} activePage{{/if}}"
+                    href="{{url}}"
+                    aria-label="{{name}}"
+                >
+                    {{name}}
+                </a>
+                {{#if children}}
+                    <i class="icon navPages-action-moreIcon navPages-action-closed" aria-hidden="true"><svg><use xlink:href="#icon-plus" /></svg></i>
+                    <i class="icon navPages-action-moreIcon navPages-action-open" aria-hidden="true"><svg><use xlink:href="#icon-minus" /></svg></i>
+                {{/if}}
+                
+            </li>
+            {{#if children}}
+                <li class="navPage-childList-item mobile-shopAll">
+                    <a class="navPage-childList-action navPages-action"
+                       href="{{url}}"
+                       aria-label="{{lang 'category.view_all.name' category=name}}"
+                    >
+                        {{#if link_type '===' "content"}}
+                            {{lang 'category.view_all.name' category=name}}
+                        {{else}}
+                            {{name}}
+                        {{/if}}
+                    </a>
+                </li>
+                {{#each children}}
+                    <li class="navPage-childList-item">
+                        <a class="navPage-childList-action navPages-action{{#if is_active}} activePage{{/if}}"
+                            href="{{url}}"
+                            aria-label="{{name}}"
+                        >
+                            {{name}}
+                        </a>
+                    </li>
+                {{/each}}
+            {{/if}}
+          {{/each}}
+        {{/if}}
+    </ul>
+</div>
+{{else}}
+<a class="navPages-action{{#if is_active}} activePage{{/if}}"
+   href="{{url}}"
+   aria-label="{{name}}"
+>
+    {{name}}
+</a>
+{{/if}}

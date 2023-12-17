@@ -1,0 +1,201 @@
+<div class="container d6ce8c34f717647ffb908ce639001f19">
+    {{#or product.description product.videos.list.length}}
+        <div class="accordion-block">
+            <div
+                class="accordion-navigation toggleLink is-open"
+                role="button"
+                data-collapsible="#accordion--description">
+                <h5 class="accordion-title">
+                    {{lang 'products.description'}}
+                </h5>
+        
+                <div class="accordion-navigation-actions">
+                    <svg class="icon accordion-indicator toggleLink-text toggleLink-text--off">
+                        <use xlink:href="#icon-plus" />
+                    </svg>
+                    <svg class="icon accordion-indicator toggleLink-text toggleLink-text--on">
+                        <use xlink:href="#icon-minus" />
+                    </svg>
+                </div>
+            </div>
+            <div id="accordion--description" class="accordion-content is-open">
+                <div>
+                    {{{product.description}}}
+                    {{{snippet 'product_description'}}}
+                </div>
+                
+                {{#if product.videos.list.length}}
+                    {{> components/products/videos product.videos}}
+                {{/if}}
+            </div>
+        </div>
+    {{/or}}
+    
+    {{#unless theme_settings.show_short_desc}}
+        {{#if product.warranty}}
+            <div class="accordion-block">
+                <div
+                    class="accordion-navigation toggleLink"
+                    role="button"
+                    data-collapsible="#accordion--warranty">
+                    <h5 class="accordion-title">
+                        Warranty
+                    </h5>
+    
+                    <div class="accordion-navigation-actions">
+                        <svg class="icon accordion-indicator toggleLink-text toggleLink-text--off">
+                            <use xlink:href="#icon-plus" />
+                        </svg>
+                        <svg class="icon accordion-indicator toggleLink-text toggleLink-text--on">
+                            <use xlink:href="#icon-minus" />
+                        </svg>
+                    </div>
+                </div>
+    
+                <div id="accordion--warranty" class="accordion-content">
+                    {{{product.warranty}}}
+                </div>
+            </div>
+        {{/if}}
+    {{/unless}}
+    
+    {{#or product.custom_fields product.width product.height product.depth}}
+    {{#or product.custom_fields theme_settings.show_product_dimensions}}
+    <div class="accordion-block">
+        <div
+            class="accordion-navigation toggleLink"
+            role="button"
+            data-collapsible="#accordion--custom-fields">
+            <h5 class="accordion-title">
+                Additional Information
+            </h5>
+    
+            <div class="accordion-navigation-actions">
+                <svg class="icon accordion-indicator toggleLink-text toggleLink-text--off">
+                    <use xlink:href="#icon-plus" />
+                </svg>
+                <svg class="icon accordion-indicator toggleLink-text toggleLink-text--on">
+                    <use xlink:href="#icon-minus" />
+                </svg>
+            </div>
+        </div>
+    
+        <div id="accordion--custom-fields" class="accordion-content">
+            {{#if theme_settings.show_product_dimensions}}
+                {{#if product.width}}
+                    <div>
+                        <dt class="productView-info-name">{{lang 'products.width'}}</dt>
+                        <dd class="productView-info-value" data-product-width>
+                            {{product.width}}
+                            {{#if settings.measurements.length '==' 'Centimeters'}}
+                            ({{lang 'products.measurement.metric'}})
+                            {{else}}
+                            ({{lang 'products.measurement.imperial'}})
+                            {{/if}}
+                        </dd>
+                    </div>
+                {{/if}}
+                {{#if product.height}}
+                    <div>
+                        <dt class="productView-info-name">{{lang 'products.height'}}</dt>
+                        <dd class="productView-info-value" data-product-height>
+                            {{product.height}}
+                            {{#if settings.measurements.length '==' 'Centimeters'}}
+                            ({{lang 'products.measurement.metric'}})
+                            {{else}}
+                            ({{lang 'products.measurement.imperial'}})
+                            {{/if}}
+                        </dd>
+                    </div>
+                {{/if}}
+                {{#if product.depth}}
+                    <div>
+                        <dt class="productView-info-name">{{lang 'products.depth'}}</dt>
+                        <dd class="productView-info-value" data-product-depth>
+                            {{product.depth}}
+                            {{#if settings.measurements.length '==' 'Centimeters'}}
+                            ({{lang 'products.measurement.metric'}})
+                            {{else}}
+                            ({{lang 'products.measurement.imperial'}})
+                            {{/if}}
+                        </dd>
+                    </div>
+                {{/if}}
+            {{/if}}
+            <dl class="productView-info">
+                {{#each product.custom_fields}}
+                    <div>
+                        <dt class="productView-info-name">{{name}}:</dt>
+                        <dd class="productView-info-value">{{{value}}}</dd>
+                    </div>
+                {{/each}}
+            </dl>
+        </div>
+    </div>
+    {{/or}}
+    {{/or}}
+</div>
+
+{{#and product.related_products theme_settings.related_products_tab}}
+    <div class="accordion-block">
+        <div class="container">
+            <div
+                class="accordion-navigation toggleLink"
+                role="button"
+                data-collapsible="#accordion--related">
+                <h5 class="accordion-title">
+                    {{lang 'products.related_products'}}
+                </h5>
+        
+                <div class="accordion-navigation-actions">
+                    <svg class="icon accordion-indicator toggleLink-text toggleLink-text--off">
+                        <use xlink:href="#icon-plus" />
+                    </svg>
+                    <svg class="icon accordion-indicator toggleLink-text toggleLink-text--on">
+                        <use xlink:href="#icon-minus" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    
+        <div id="accordion--related" class="accordion-content">
+            <div class="grid-bg">
+                <div class="container">
+                    {{> components/products/related products=product.related_products columns=6}}
+                </div>
+            </div>
+        </div>
+    </div>
+{{/and}}
+
+{{#and product.similar_by_views theme_settings.customer_viewed_products_tab}}
+    <div class="accordion-block">
+        <div class="container">
+            <div
+                class="accordion-navigation toggleLink"
+                role="button"
+                data-collapsible="#accordion--similar">
+                <h5 class="accordion-title">
+                    {{lang 'products.similar_by_views'}}
+                </h5>
+        
+                <div class="accordion-navigation-actions">
+                    <svg class="icon accordion-indicator toggleLink-text toggleLink-text--off">
+                        <use xlink:href="#icon-plus" />
+                    </svg>
+                    <svg class="icon accordion-indicator toggleLink-text toggleLink-text--on">
+                        <use xlink:href="#icon-minus" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    
+        <div id="accordion--similar" class="accordion-content">
+            <div class="grid-bg">
+                <div class="container">
+                    {{> components/products/similar-by-views products=product.similar_by_views columns=6}}
+                </div>
+            </div>
+        </div>
+    </div>
+{{/and}}

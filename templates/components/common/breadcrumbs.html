@@ -1,0 +1,13 @@
+<ul class="breadcrumbs">
+    {{#unless theme_settings.hide_breadcrumbs }}
+        {{#each breadcrumbs}}
+            <li class="breadcrumb {{#if @last}}is-active{{/if}}">
+                {{#or @last (if url "==" null)}}
+                    <span class="breadcrumb-label">{{name}}</span>
+                {{else}}
+                    <a href="{{url}}" class="breadcrumb-label"><span>{{name}}</span></a>
+                {{/or}}
+            </li>
+        {{/each}}
+    {{/unless}}
+</ul>
