@@ -13,6 +13,19 @@ blog:
         {{#unless theme_settings.hide_blog_page_heading }}
             <h1 class="page-heading">{{ blog.name }}</h1>
         {{/unless}}
+        <div class="blog-header">
+            <h1>Our Blog</h1>
+            <h2>Optaderm Blog</h2>
+            <p>Discover new ways to think about your skin, address its needs and leave it feeling healthier than ever by reading our blog. It’s packed with educated insights that align with our products and our mission – healthy skin for all.</p>
+          </div>  
+          <nav class="blog-tag-menu">
+            <ul>
+              <li class="blog-tag-menu-item {{#if settings.request.absolute_path '===' '/blog/'}} activeBlogCategory{{/if}}"><a href="/blog">View All</a></li>
+              <li class="blog-tag-menu-item {{#if settings.request.absolute_path '===' '/blog/tag/news'}} activeBlogCategory{{/if}}"><a href="/blog/tag/news">Optaderm News</a></li>
+              <li class="blog-tag-menu-item {{#if settings.request.absolute_path '===' '/blog/tag/face'}} activeBlogCategory{{/if}}"><a href="/blog/tag/face">Face Care Tips</a></li>
+              <li class="blog-tag-menu-item {{#if settings.request.absolute_path '===' '/blog/tag/body'}} activeBlogCategory{{/if}}"><a href="/blog/tag/body">Body Care Tips</a></li>
+            </ul>
+          </nav>        
         <div class="blog-posts">
             {{#each blog.posts}}
                 {{> components/blog/post post=this}}

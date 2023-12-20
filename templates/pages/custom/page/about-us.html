@@ -1,0 +1,68 @@
+{{#partial "page"}}
+<div class="video-container" >
+    <video autoplay muted loop id="video-background">
+        <source src="https://store-itukv01ojg.mybigcommerce.com/content/AboutVideo_1.webm" type="video/webm">
+    </video>
+  </div>
+<div class="container">
+    <div class="page-content">
+    <main class="page">
+        {{{region name="page_builder_content"}}}
+            <section class="top-section">
+                <h2>expert skin care since 1987</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac ligula vel orci ultrices tincidunt....</p>
+            </section>
+            <section class="founder-section">
+                <div class="founder-image">
+                  <img src="https://store-itukv01ojg.mybigcommerce.com/content/Dean.jpg" alt="Founder Image">
+                </div>
+                <div class="founder-content">
+                  <h2>Our Founder</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac ligula vel orci ultrices tincidunt....</p>
+                </div>
+            </section>
+            <section class="about-us-section">
+                <div class="text-content">
+                    <h2>lorem ipsum</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac ligula vel orci ultrices tincidunt....</p>
+                </div>
+                <div class="image-content">
+                    <img src="https://store-itukv01ojg.mybigcommerce.com/content/example_product_feature.png" alt="Skin care product">
+                </div>
+            </section>
+            <section class="about-us-section">
+                <div class="image-content">
+                    <img src="https://store-itukv01ojg.mybigcommerce.com/content/example_product_collection.png" alt="Product collection">
+                </div>
+                <div class="text-content-right">
+                    <h2>personalized for your skin</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac ligula vel orci ultrices tincidunt....</p>
+                </div>
+            </section>
+            <section class="about-us-section">
+                <div class="text-content">
+                    <h2>human connection</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac ligula vel orci ultrices tincidunt....</p>
+                </div>
+                <div class="image-content">
+                    <img src="https://store-itukv01ojg.mybigcommerce.com/content/example_product_feature.png" alt="Skin care product">
+                </div>
+            </section>
+        </div>
+    
+        {{#if page.feed}}
+            <ul>
+                {{#each page.feed}}
+                    <li>
+                        <h6><a href="{{url}}" target="_blank">{{title}}</a></h6>
+                        <p>{{content}}</p>
+                    </li>
+                {{/each}}
+            </ul>
+        {{/if}}
+    </main>
+</div>
+
+{{/partial}}
+
+{{> layout/base}}

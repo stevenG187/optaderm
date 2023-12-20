@@ -75,6 +75,23 @@
         {{~inject 'validationDictionaryJSON' (langJson 'validation_messages')}}
         {{~inject 'validationFallbackDictionaryJSON' (langJson 'validation_fallback_messages')}}
         {{~inject 'validationDefaultDictionaryJSON' (langJson 'default_messages')}} 
+        <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+        <style type="text/css" media="screen, print">
+            @font-face {
+    font-family: 'Avenir-Next-Bold';
+    src: url("{{cdn 'webdav:avenirnext-bold-01-webfont.woff2'}}") format('woff2'),
+         url("{{cdn 'webdav:avenirnext-bold-01-webfont.woff'}}") format('woff');
+    font-weight: normal;
+    font-style: normal;
+         }
+         @font-face {
+            font-family: 'Avenir-Next-Regular';
+    src: url("{{cdn 'webdav:avenirnext-regular-08-webfont.woff2'}}") format('woff2'),
+         url("{{cdn 'webdav:avenirnext-regular-08-webfont.woff'}}") format('woff');
+    font-weight: normal;
+    font-style: normal;
+         }
+</style>
     </head>
     <body>
         <svg data-src="{{cdn 'img/icon-sprite.svg'}}" class="icons-svg-sprite"></svg>

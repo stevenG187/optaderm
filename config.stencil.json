@@ -2,7 +2,9 @@
   "customLayouts": {
     "brand": {},
     "category": {},
-    "page": {},
+    "page": {
+      "about-us.html": "/about-us/"
+    },
     "product": {}
   },
   "normalStoreUrl": "https://optaderm.mybigcommerce.com",

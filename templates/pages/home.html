@@ -32,21 +32,15 @@ blog:
         {{/if}}
     {{/if}}
 
-    <div class="container">
-        {{{region name="home_below_carousel"}}}
-
-        {{#and banners.top (if theme_settings.top-banner-pos '===' 'below-carousel')}}
-            <div class="banners" data-banner-location="top">
-                {{#each (limit banners.top_metadata 1)}}
-                <div class="banner home-banner--jewelry" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-banner-id="{{this.banner-name}}">
-                    <div data-event-type="promotion-click">
-                        {{{this.content}}}
-                    </div>
-                </div>
-                {{/each}}
-            </div>
-        {{/and}}
+<div class="video-container" >
+    <video autoplay muted loop id="video-background">
+        <source src="https://store-itukv01ojg.mybigcommerce.com/content/optaderm_splash_video.webm" type="video/webm">
+    </video>
+    <div class ="splash-text-container">
+        <h1>Lorem Ipsum</h1>
+        <p>Add some paragraph text here</p>
     </div>
+  </div>
     
     {{#and banners.bottom (if theme_settings.bottom-banner-pos '===' 'below-carousel')}}
         {{#if settings.data_tag_enabled}}
