@@ -1,6 +1,6 @@
 {{#if children}}
-<a class="navPages-action has-subMenu{{#if is_active}} activePage{{/if}}"
-   href="{{url}}"
+<a class="navPages-action has-subMenu{{#if is_active}} activePage{{/if}} main-Nav"
+   href="{{#if name '===' 'About'}} /about-us/ {{else}} {{url}} {{/if}}"
    data-collapsible="navPages-{{id}}"
    aria-label="{{name}}"
 >
@@ -52,7 +52,7 @@
             <li class="navPage-subMenu-item {{#if children}} has-children{{/if}}">
                 <i class="icon navPages-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-right" /></svg></i>
                 <a class="navPage-subMenu-action navPages-action{{#if is_active}} activePage{{/if}}"
-                    href="{{url}}"
+                    href="{{#if name '===' 'Learn'}} /blog/ {{else}} {{url}} {{/if}}"
                     aria-label="{{name}}"
                 >
                     {{name}}
@@ -92,7 +92,7 @@
     </ul>
 </div>
 {{else}}
-<a class="navPages-action{{#if is_active}} activePage{{/if}}"
+<a class="navPages-action{{#if is_active}} activePage{{/if}} main-Nav"
    href="{{url}}"
    aria-label="{{name}}"
 >

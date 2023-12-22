@@ -2056,6 +2056,74 @@ li.pagination-item--previous a{
 // CART PAGE
 .cart-additionalCheckoutButtons > *{margin-bottom: 10px;}
 
+ // FAQ
+ .faq-title-container {
+    text-align: center;
+    margin-top: 20px; /* Adjust the top margin as needed */
+    margin-bottom: 20px; /* Adds space below the title before the FAQ section starts */
+  }
+
+ .faq-container {
+    display: flex;
+    margin: auto;
+    padding: 0 50px 0 50px;
+    margin-bottom: 100px;
+  }
+
+.faq-sidebar {
+    width: 20%;
+    margin-top: 50px;
+  }
+  
+  .faq-content {
+    width: 80%;
+    padding-left: 50px;
+  }
+  
+  .faq-menu-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-weight: 500;
+  }
+  
+  .faq-menu-title span {
+    /* Style for the text */
+  }
+  
+  .faq-toggle-icon {
+    /* Style for the icon, e.g., a plus sign */
+  }
+  
+  .faq-content-header {
+    margin-top: 0; 
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .faq-submenu {
+    display: none;
+  }
+  
+  .faq-submenu-item {
+    list-style: none;
+    cursor: pointer;
+  }
+  
+  .faq-content-section {
+    display: none;
+  }
+  
 // MEDIA QUERIES
 @media only screen and (min-width: 961px){
     .header-logo{
@@ -2364,6 +2432,10 @@ li.pagination-item--previous a{
         width: 200px;
     }
     
+    .main-Nav{
+        font-size:1.25rem;
+    }
+
     // MEGA MENU
     .navPages-mega .navPage-subMenu{
         border: 1px solid $subtleGrey;
@@ -2929,6 +3001,10 @@ li.pagination-item--previous a{
         height: 100%;
     }
     
+   .mainNav{
+        font-size: 1.25rem;
+    }
+
     .navPages .navPage-subMenu-list,
     .navPage-childList{border: 0; margin: 0;}
     
@@ -3334,4 +3410,5 @@ li.pagination-item--previous a{
         flex: 1 1 100%;
         max-width: 100%;
     }
+
 }

@@ -363,4 +363,19 @@ function bindMiscEvents() {
     $('.footer-info-dropdown .footer-info-heading').on('click', function toggleFooterBlocks() {
         $(this).parent().toggleClass('is-open');
     });
+
+    // FAQ Accordion functionality
+    $('.faq-menu-title').on('click', function() {
+       $(this).next('.faq-submenu').slideToggle();
+       $(this).find('.faq-toggle-icon').text(function(i, text) {
+         return text === "+" ? "-" : "+";
+        });
+     });
+      
+    $('.faq-submenu-item').on('click', function() {
+        var contentId = $(this).data('target');
+        $('.faq-content-section').hide();
+        $('#' + contentId).show();
+    });
+      
 }
