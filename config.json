@@ -687,7 +687,7 @@
         "spinner-borderColor-light": "#ffffff",
         "show_promo_bar": true,
         "promo_bar_text": "FREE SHIPPING FOR ALL ORDERS",
-        "show_search": false,
+        "show_search": true,
         "show_content_navigation": true,
         "optimizedCheckout-header-backgroundColor": "#ffffff",
         "optimizedCheckout-show-backgroundImage": false,

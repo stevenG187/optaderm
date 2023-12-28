@@ -1,4 +1,5 @@
 {{#if children}}
+{{#unless name '===' 'Our Services'}} 
 <a class="navPages-action has-subMenu{{#if is_active}} activePage{{/if}} main-Nav"
    href="{{#if name '===' 'About'}} /about-us/ {{else}} {{url}} {{/if}}"
    data-collapsible="navPages-{{id}}"
@@ -36,7 +37,7 @@
             {{#if name '===' "Glycolic Acid"}}
                 <li class="navPage-subMenu-item column-header">
                 <i class="icon navPages-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-right" /></svg></i>
-                <span class="navPage-subMenu-action navPages-action column-header" aria-label="Category">
+                <span class="navPage-subMenu-action navPages-action column-header" aria-label="Ingredients">
                     <b>Ingredients</b>
                 </span>
                 </li>
@@ -44,10 +45,20 @@
             {{#if name '===' "Anti-aging"}}
             <li class="navPage-subMenu-item column-header">
             <i class="icon navPages-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-right" /></svg></i>
-            <span class="navPage-subMenu-action navPages-action column-header" aria-label="Category">
+            <span class="navPage-subMenu-action navPages-action column-header" aria-label="Skin Concerns">
                 <b>Skin Concerns</b>
             </span>
             </li>
+        {{/if}}
+        {{#if name '===' "Book Now"}}
+        <li class="navPage-subMenu-item {{#if children}} has-children{{/if}}">
+            <i class="icon navPages-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-right" /></svg></i>
+            <a class="navPage-subMenu-action navPages-action{{#if is_active}} activePage{{/if}}"
+                href="/shop/services/"
+                aria-label="Our Services"
+            >
+               Our Services
+            </a>
         {{/if}}
             <li class="navPage-subMenu-item {{#if children}} has-children{{/if}}">
                 <i class="icon navPages-action-moreIcon" aria-hidden="true"><svg><use xlink:href="#icon-chevron-right" /></svg></i>
@@ -98,4 +109,5 @@
 >
     {{name}}
 </a>
+{{/unless}}
 {{/if}}

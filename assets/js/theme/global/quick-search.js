@@ -90,4 +90,33 @@ export default function () {
         urlUtils.goToUrl(`${searchUrl}?search_query=${searchQuery}`);
         window.location.reload();
     });
+
+    $('.form-button').on("click", function() {
+        var $input = $('.form-input.search');
+        var $label = $('is-srOnly.search');
+        var $results = $('.quickSearchResults');
+        var $close =$('.icon.close-icon')
+        if ($input.hasClass('hidden')) {
+          // If the input is hidden, show it
+          $input.removeClass('hidden');
+          $label.removeClass('hidden');
+          $results.removeClass('hidden');
+          $close.removeClass('hidden')
+          $(this).removeClass('searchHidden')
+        }
+    } )
+
+    $('.icon.close-icon').on("click", function (){
+        var $input = $('.form-input.search');
+        var $label = $('is-srOnly.search');
+        var $results = $('.quickSearchResults');
+        var $search = $('.form-button')
+
+        $input.addClass('hidden');
+        $label.addClass('hidden');
+        $results.addClass('hidden');
+        $(this).addClass('hidden')
+        $search.addClass('searchHidden')
+    }
+    )
 }

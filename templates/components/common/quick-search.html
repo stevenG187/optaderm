@@ -3,8 +3,8 @@
     <form class="form" onsubmit="return false" data-url="{{urls.search}}" data-quick-search-form>
         <fieldset class="form-fieldset">
             <div class="form-field">
-                <label class="is-srOnly" for="{{name}}">{{lang "search.quick_search.input_label"}}</label>
-                <input class="form-input"
+                <label class="is-srOnly search hidden" for="{{name}}">{{lang "search.quick_search.input_label"}}</label>
+                <input class="form-input search hidden"
                        data-search-quick
                        name="{{name}}"
                        id="{{name}}"
@@ -12,15 +12,18 @@
                        placeholder="{{lang 'search.quick_search.input_placeholder'}}"
                        autocomplete="off"
                 >
-                <button type="submit" class="form-button" aria-label="{{lang 'search.quick_search.input_label'}}">
+                <button type="submit" class="form-button searchHidden" aria-label="{{lang 'search.quick_search.input_label'}}">
                     <i class="icon" aria-hidden="true">
                         <svg><use xlink:href="#icon-search" /></svg>
                     </i>
                 </button>
+                <i class="icon close-icon hidden" aria-label="Close">
+                    <svg><use xlink:href="#icon-close" /></svg>
+                </i>
             </div>
         </fieldset>
     </form>
-    <section class="quickSearchResults" data-bind="html: results"></section>
+    <section class="quickSearchResults hidden" data-bind="html: results"></section>
     <p role="status"
        aria-live="polite"
        class="aria-description--hidden"

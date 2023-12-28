@@ -138,6 +138,10 @@ h3, h4, h5, h6{
     font-weight: $headings-font-weight;
 }
 
+.hidden{
+    display: none;
+}
+
 .account-page h1.page-heading{text-align: center;}
 
 h1.page-heading,
@@ -946,6 +950,17 @@ header.header{z-index: 110;}
     position: absolute;
     left: 0;
     top: 0;
+}
+.form-button.searchHidden{
+    top: -22px;
+}
+.close-icon{
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 .quickSearchWrap .form-button .icon,
 .navPages-quickSearch .form-button .icon{
