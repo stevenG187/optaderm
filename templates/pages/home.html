@@ -84,6 +84,33 @@ blog:
             {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}
         {{/if}}
 
+        <ul class="home-banner-menu-container">
+            <li class="home-banner-menu-item">
+              <a href="/about-us/" class="home-banner-menu-link">
+                <i class="icon home-banner-menu-icon"aria-hidden="true"><svg><use xlink:href="#icon-user" /></svg></i>
+                <div class="home-banner-menu-title">OUR STORY</div>
+              </a>
+            </li>
+            <li class="home-banner-menu-item">
+              <a href="/shop/services/" class="home-banner-menu-link">
+                <i class="icon home-banner-menu-icon"aria-hidden="true"><svg><use xlink:href="#icon-star" /></svg></i>
+                <div class="home-banner-menu-title">PROFESSIONAL SKIN SERVICES</div>
+              </a>
+            </li>
+            <li class="home-banner-menu-item">
+              <a href="link-to-diagnostic-tool" class="home-banner-menu-link">
+                <i class="icon home-banner-menu-icon"aria-hidden="true"><svg><use xlink:href="#icon-phone" /></svg></i>
+                <div class="home-banner-menu-title">DIAGNOSTIC TOOL</div>
+              </a>
+            </li>
+            <li class="home-banner-menu-item">
+              <a href="/contact-us/" class="home-banner-menu-link">
+                <i class="icon home-banner-menu-icon"aria-hidden="true"><svg><use xlink:href="#icon-envelope" /></svg></i>
+                <div class="home-banner-menu-title">CHAT WITH A SPECIALIST</div>
+              </a>
+            </li>
+          </ul>
+
         <div class="container">
             {{{region name="home_below_top_products"}}}
         </div>
@@ -102,7 +129,7 @@ blog:
     {{#if blog.recent_posts}}
         <div class="banners blog-posts-wrap">
             <div class="container">
-                <h2 class="page-heading">Recent Posts</h2> 
+                <h2 class="page-heading">Recent Blogs</h2> 
                 <div class="blog-posts">
                     {{#each blog.recent_posts}}
                         {{> components/blog/post post=this}}

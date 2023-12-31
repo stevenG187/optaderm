@@ -247,7 +247,7 @@ var pageClasses = {
   blog: noop,
   blog_post: noop,
   brand: function brand() {
-    return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(2), __webpack_require__.e(12)]).then(__webpack_require__.bind(null, /*! ./theme/brand */ "./assets/js/theme/brand.js"));
+    return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(2), __webpack_require__.e(13)]).then(__webpack_require__.bind(null, /*! ./theme/brand */ "./assets/js/theme/brand.js"));
   },
   brands: function brands() {
     return __webpack_require__.e(/*! import() */ 11).then(__webpack_require__.bind(null, /*! ./theme/brands */ "./assets/js/theme/brands.js"));
@@ -256,7 +256,7 @@ var pageClasses = {
     return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(6), __webpack_require__.e(4), __webpack_require__.e(10)]).then(__webpack_require__.bind(null, /*! ./theme/cart */ "./assets/js/theme/cart.js"));
   },
   category: function category() {
-    return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(2), __webpack_require__.e(13)]).then(__webpack_require__.bind(null, /*! ./theme/category */ "./assets/js/theme/category.js"));
+    return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(2), __webpack_require__.e(12)]).then(__webpack_require__.bind(null, /*! ./theme/category */ "./assets/js/theme/category.js"));
   },
   compare: function compare() {
     return __webpack_require__.e(/*! import() */ 15).then(__webpack_require__.bind(null, /*! ./theme/compare */ "./assets/js/theme/compare.js"));

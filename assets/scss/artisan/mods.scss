@@ -1099,6 +1099,47 @@ header.header{z-index: 110;}
     text-transform: none;
 }
 
+.home-banner-menu-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #f2efee;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px 5%;
+    list-style-type: none;
+    margin-left: 0;
+    margin-top: 100px;
+    margin-bottom: 100px;
+
+  }
+  
+  .home-banner-menu-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .home-banner-menu-item {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .home-banner-menu-icon {
+    font-size: 100px;
+    height: 50px;
+    width: 50px;
+    margin-bottom: 20px;
+  }
+  
+  .home-banner-menu-title {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #382e2c;
+    font-family: 'Bai Jamjuree', sans-serif;
+  }
+
 // FOOTER
 .footer-newsletter{
     text-align: center;
