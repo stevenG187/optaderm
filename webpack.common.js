@@ -56,10 +56,10 @@ module.exports = {
         maxEntrypointSize: 1024 * 300,
     },
     plugins: [
-        new CleanPlugin(['assets/dist'], {
-            verbose: false,
-            watch: false,
-        }),
+        // new CleanPlugin(['assets/dist'], {
+        //     verbose: false,
+        //     watch: false,
+        // }),
         new LodashPlugin(), // Complements babel-plugin-lodash by shrinking its cherry-picked builds further.
         new webpack.ProvidePlugin({ // Provide jquery automatically without explicit import
             $: 'jquery',
