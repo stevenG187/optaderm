@@ -64,7 +64,7 @@ function stickyNav(stickyNavEnabled) {
         // reset styles from mobile
         $('.navUser').css('height', 'auto');
         $('body').css('padding-top', '0');
-        $('body').css('margin-top', '');
+        $('body').css('margin-top', '0');
 
         stickyNavDesktop();
     }

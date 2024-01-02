@@ -56,7 +56,7 @@
                 <ul class="footer-info-list">
                     {{#each pages}}
                         <li>
-                            <a href="{{url}}">{{name}}</a>
+                            <a  href="{{#if name '===' 'About'}} /about-us/ {{else}} {{url}} {{/if}}">{{name}}</a>
                         </li>
                     {{/each}}
                     <li>

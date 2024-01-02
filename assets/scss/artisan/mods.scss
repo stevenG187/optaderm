@@ -2115,8 +2115,8 @@ li.pagination-item--previous a{
  // FAQ
  .faq-title-container {
     text-align: center;
-    margin-top: 20px; /* Adjust the top margin as needed */
-    margin-bottom: 20px; /* Adds space below the title before the FAQ section starts */
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
  .faq-container {
@@ -2149,14 +2149,6 @@ li.pagination-item--previous a{
     padding: 10px;
     font-family: 'Bai Jamjuree', sans-serif;
     font-weight: 500;
-  }
-  
-  .faq-menu-title span {
-    /* Style for the text */
-  }
-  
-  .faq-toggle-icon {
-    /* Style for the icon, e.g., a plus sign */
   }
   
   .faq-content-header {
