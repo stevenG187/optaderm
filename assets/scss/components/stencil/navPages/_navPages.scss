@@ -376,7 +376,7 @@
             width: 100%;
         }
 
-        > .navPage-subMenu-action {
+        > .navPage-subMenu-action :not(.column-header) {
             border-bottom: 1px solid stencilColor("navPages-subMenu-separatorColor");
             margin-bottom: spacing("half") + spacing("quarter");
         }

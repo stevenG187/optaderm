@@ -262,6 +262,12 @@ a{text-decoration: none;}
 .navList:after,
 .navList:before{display: none;}
 
+.column-header{
+    border: none;
+    font-weight: 800;
+    margin-bottom: 0;
+}
+
 // slick slider
 .slick-prev,
 .slick-next{
@@ -436,17 +442,14 @@ h1, p {
 .founder-content h2 {
     margin-bottom: 20px;
     font-size: 24px;
-    /* Add additional styling */
   }
   
 .founder-content p {
     margin-bottom: 20px;
-    /* Add additional styling */
   }
   
 .founder-content button {
     padding: 10px 20px;
-    /* Add additional styling */
   }
 // SOCIAL LINKS
 footer .socialLinks{
@@ -2391,10 +2394,10 @@ li.pagination-item--previous a{
     }
     
     .navPages-secondLevel{display: none;}
-    
+
     .navPages-item{position: relative;}
     
-    .navPages-list .navPage-subMenu-item>.navPage-subMenu-action{
+    .navPages-list .navPage-subMenu-item>.navPage-subMenu-action:not(.column-header){
         border: 0;
         font-weight: 500;
         margin-bottom: 0;
