@@ -1,0 +1,18 @@
+<footer class="footer" role="contentinfo">
+    <h2 class="footer-title-sr-only">{{lang 'footer.title'}}</h2>
+    <div class="container">
+		<a href="{{urls.home}}">
+			<img src="{{cdn 'img/logo-optaderm-white.svg'}}" width="300" height="46" alt="{{settings.store_name}} Logo"/>
+		</a>
+
+		<article class="footer-social-links" data-section-type="footer-webPages">
+				{{> components/common/social-links}}
+		</article>
+
+        {{#if theme_settings.show_copyright_footer}}
+            <div class="footer-copyright">
+                <p class="powered-by">&copy; {{moment format="YYYY"}} {{settings.store_name}} Products. All rights reserved.</p>
+            </div>
+        {{/if}}
+    </div>
+</footer>
