@@ -1,0 +1,712 @@
+/* VARS */
+:root {
+	--opt-color-primary: #860146;
+	--opt-color-secondary: #878188;
+	--opt-color-bg: #E6E7E8;
+	--opt-color-text: #878288;
+	--opt-color-text-light: #ffffff;
+	--opt-color-text-medium: #B4AEAB;
+	--opt-color-text-dark: #322E2D;
+}
+
+@font-face {
+    font-family: 'Avenir Next Ultra';
+    src: url('../fonts/AvenirNext-UltraLight.eot');
+    src: local('AvenirNext-UltraLight'),
+        url('../fonts/AvenirNext-UltraLight.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/AvenirNext-UltraLight.woff2') format('woff2'),
+        url('../fonts/AvenirNext-UltraLight.woff') format('woff'),
+        url('../fonts/AvenirNext-UltraLight.svg#AvenirNext-UltraLight') format('svg');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Avenir Next';
+    src: url('../fonts/AvenirNext-Regular.eot');
+    src: local('Avenir Next Regular'), local('AvenirNext-Regular'),
+        url('../fonts/AvenirNext-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/AvenirNext-Regular.woff2') format('woff2'),
+        url('../fonts/AvenirNext-Regular.woff') format('woff'),
+        url('../fonts/AvenirNext-Regular.svg#AvenirNext-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Avenir Next';
+    src: url('../fonts/AvenirNext-Italic.eot');
+    src: local('Avenir Next Italic'), local('AvenirNext-Italic'),
+        url('../fonts/AvenirNext-Italic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/AvenirNext-Italic.woff2') format('woff2'),
+        url('../fonts/AvenirNext-Italic.woff') format('woff'),
+        url('../fonts/AvenirNext-Italic.svg#AvenirNext-Italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Avenir Next';
+    src: url('../fonts/AvenirNext-Medium.eot');
+    src: local('Avenir Next Medium'), local('AvenirNext-Medium'),
+        url('../fonts/AvenirNext-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/AvenirNext-Medium.woff2') format('woff2'),
+        url('../fonts/AvenirNext-Medium.woff') format('woff'),
+        url('../fonts/AvenirNext-Medium.svg#AvenirNext-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Avenir Next';
+    src: url('../fonts/AvenirNext-Bold.eot');
+    src: local('Avenir Next Bold'), local('AvenirNext-Bold'),
+        url('../fonts/AvenirNext-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/AvenirNext-Bold.woff2') format('woff2'),
+        url('../fonts/AvenirNext-Bold.woff') format('woff'),
+        url('../fonts/AvenirNext-Bold.svg#AvenirNext-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Avenir Next Demi';
+    src: url('../fonts/AvenirNext-DemiBold.eot');
+    src: local('Avenir Next Demi Bold'), local('AvenirNext-DemiBold'),
+        url('../fonts/AvenirNext-DemiBold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/AvenirNext-DemiBold.woff2') format('woff2'),
+        url('../fonts/AvenirNext-DemiBold.woff') format('woff'),
+        url('../fonts/AvenirNext-DemiBold.svg#AvenirNext-DemiBold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* TYPOGRAPHY - HEADING */
+
+/* For browsers that support clamp and container queries */
+@supports (font-size: clamp(1rem, 1cqi, 1rem)) {
+  :root {
+		--h-6: clamp(0.72rem, 0.11cqi + 0.7rem, 0.77rem);
+		--h-5: clamp(0.9rem, 0.26cqi + 0.85rem, 1.03rem);
+		--h-4: clamp(1.13rem, 0.5cqi + 1.02rem, 1.38rem);
+		--h-3: clamp(1.41rem, 0.86cqi + 1.23rem, 1.83rem);
+		--h-2: clamp(1.76rem, 1.38cqi + 1.48rem, 2.44rem);
+		--h-1: clamp(2.2rem, 2.13cqi + 1.77rem, 3.26rem);
+		--h-title: clamp(2.75rem, 3.21cqi + 2.11rem, 4.34rem);
+  }
+}
+/* For browsers that don't support clamp or container queries */
+@supports not (font-size: clamp(1rem, 1cqi, 1rem)) {
+  :root {
+		--h-6: 0.72rem;
+		--h-5: 0.9rem;
+		--h-4: 1.13rem;
+		--h-3: 1.41rem;
+		--h-2: 1.76rem;
+		--h-1: 2.2rem;
+		--h-title: 2.75rem;
+  }
+  @media screen and (min-width: 1116px) {
+    :root {
+			--h-6: 0.77rem;
+			--h-5: 1.03rem;
+			--h-4: 1.38rem;
+			--h-3: 1.83rem;
+			--h-2: 2.44rem;
+			--h-1: 3.26rem;
+			--h-title: 4.34rem;
+    }
+  }
+}
+
+/* TYPOGRAPHY - BODY */
+
+/* For browsers that support clamp and container queries */
+@supports (font-size: clamp(1rem, 1cqi, 1rem)) {
+  :root {
+		--text-xs: clamp(0.79rem, -0.02cqi + 0.79rem, 0.78rem);
+		--text-s: clamp(0.89rem, 0.1cqi + 0.87rem, 0.94rem);
+		--text-m: clamp(1rem, 0.25cqi + 0.95rem, 1.13rem);
+		--text-l: clamp(1.13rem, 0.45cqi + 1.03rem, 1.35rem);
+		--text-xl: clamp(1.27rem, 0.71cqi + 1.12rem, 1.62rem);
+  }
+}
+/* For browsers that don't support clamp or container queries */
+@supports not (font-size: clamp(1rem, 1cqi, 1rem)) {
+  :root {
+		--text-xs: 0.79rem;
+		--text-s: 0.89rem;
+		--text-m: 1rem;
+		--text-l: 1.13rem;
+		--text-xl: 1.27rem;
+  }
+  @media screen and (min-width: 1116px) {
+    :root {
+			--text-xs: 0.78rem;
+			--text-s: 0.94rem;
+			--text-m: 1.13rem;
+			--text-l: 1.35rem;
+			--text-xl: 1.62rem;
+    }
+  }
+}
+
+
+/* DEFAULTS */
+
+body {
+	font-family: 'Avenir Next', Arial, Helvetica, sans-serif;
+	font-size: var(--text-m);
+	line-height: 1.2;
+}
+
+a {
+	color: var(--opt-color-text);
+	text-decoration: none;
+
+	&:hover,
+	&:active,
+	&:focus {
+		color: var(--opt-color-primary);
+		outline: none !important;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Avenir Next', Arial, Helvetica, sans-serif;
+	font-weight: 500;
+}
+
+.big-title {
+	font-size: var(--h-title);
+}
+
+.h1, h1 {
+	font-size: var(--h-1);
+}
+
+.h2, h2 {
+	font-size: var(--h-2);
+}
+
+.h3, h3 {
+	font-size: var(--h-3);
+}
+
+.h4, h4 {
+	font-size: var(--h-4);
+}
+
+.h5 ,h5 {
+	font-size: var(--h-5);
+}
+
+.h6, h6 {
+	font-size: var(--h-6);
+}
+
+.txt-xl {
+	font-size: var(--text-xl);
+}
+
+.txt-l {
+	font-size: var(--text-l);
+}
+
+.txt-m {
+	font-size: var(--text-m);
+}
+
+.txt-s {
+	font-size: var(--text-s);
+}
+
+.txt-xs {
+	font-size: var(--text-xs);
+}
+
+.fw-thin {
+	font-family: 'Avenir Next Ultra', 'Avenir Next', Arial, Helvetica, sans-serif;
+	font-weight: 200;
+}
+
+.fw-light {
+	font-family: 'Avenir Next', Arial, Helvetica, sans-serif;
+	font-weight: 300;
+}
+
+.fw-normal {
+	font-family: 'Avenir Next', Arial, Helvetica, sans-serif;
+	font-weight: 400;
+}
+
+.fw-semibold {
+	font-family: 'Avenir Next Demi', 'Avenir Next', Arial, Helvetica, sans-serif;
+	font-weight: 600;
+}
+
+.fw-bold {
+	font-family: 'Avenir Next', Arial, Helvetica, sans-serif;
+	font-weight: 700;
+}
+
+.txt-color-primary {
+	color: var(--opt-color-primary);
+}
+
+.btn,
+button,
+[type="button"],
+[type="submit"] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background-color: var(--opt-color-text-light);
+	border: 2px solid var(--opt-color-text-medium);
+	color: var(--opt-color-text-medium);
+	display: inline-block;
+	font-weight: 700;
+	font-size: var(--text-s);
+	padding: 1.25em 2em;
+	border-radius: 1.25em;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+.btn:hover,
+button:hover,
+[type="button"]:hover,
+[type="submit"]:hover,
+.btn:active,
+button:active,
+[type="button"]:active,
+[type="submit"]:active,
+.btn:focus,
+button:focus,
+[type="button"]:focus,
+[type="submit"]:focus {
+	outline: none !important;
+	background-color: var(--opt-color-primary);
+	border-color: var(--opt-color-primary);
+	color: var(--opt-color-text-light);
+}
+
+.btn-outline {
+	background-color: transparent;
+	border-color: var(--opt-color-text-light);
+	color: var(--opt-color-text-light);
+}
+
+@media (max-width: 800px) {
+	.desktop-only {
+		display: none;
+	}
+}
+
+/* HEADER */
+
+#book_appointment {
+	text-decoration: none;
+	color: var(--opt-color-text);
+	display: inline-block;
+	margin-top: 1.5rem;
+	margin-bottom: 1rem;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.header {
+	height: auto;
+	text-align: center;
+}
+
+.header-logo {
+	margin: 0;
+}
+
+.header-logo__link {
+	width: auto;
+}
+
+.header-logo-image {
+	max-height: none;
+	width: 300px;
+}
+
+@media (min-width: 801px) {
+	#book_appointment {
+		position: absolute;
+		top: 55%;
+		right: 1rem;
+		-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
+		margin: 0;
+	}
+
+	.header-logo-image-container {
+		min-height: 0;
+	}
+
+	.header-logo {
+		height: auto;
+		margin: 1.5rem auto 2rem;
+		padding: 0;
+	}
+}
+
+/* FOOTER */
+
+.footer {
+	background-color: var(--opt-color-primary);
+	border: 0;
+	color: var(--opt-color-text-medium);
+	text-align: center;
+	margin: 0 !important;
+}
+
+.footer-social-links {
+	margin-top: 1rem;
+
+	.icon {
+		svg {
+			fill: var(--opt-color-text-medium);
+		}
+
+		&:hover svg {
+			fill: var(--opt-color-text-light);
+		}
+	}
+}
+
+.footer-copyright {
+	text-align: center;
+	margin-top: 6rem;
+
+	>.powered-by {
+		color: var(--opt-color-text-medium);
+		font-size: 14px;
+	}
+}
+
+/* BODY */
+
+#main-content {
+	margin: 0 !important;
+}
+
+.page {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.section-background {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	color: var(--opt-color-text-light);
+	font-size: var(--text-l);
+	text-align: center;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: end;
+	-ms-flex-align: end;
+	align-items: flex-end;
+	padding-bottom: 4rem;
+	position: relative;
+
+	article {
+		-webkit-box-flex: 1;
+		-ms-flex: 1 1 100%;
+		flex: 1 1 100%;
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+}
+
+/* HERO */
+
+#hero {
+	background-image: url(../img/custom/page/interim/interim-page-hero.jpg);
+	min-height: calc(100vh - 111px);
+	min-height: calc(100dvh - 111px);
+
+	h1 {
+		color: var(--opt-color-text-light);
+	}
+}
+
+/* BUSINESS HOURS */
+
+#business_hours {
+	>.container {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+	}
+
+	.blurb {
+		-webkit-box-flex: 1;
+		-ms-flex: 1 1 100%;
+		flex: 1 1 100%;
+		color: var(--opt-color-text-medium);
+		padding: 0 1rem;
+		margin-bottom: 2rem;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		gap: 1.5rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.blurb-icon {
+		margin-top: 5px;
+		-webkit-box-flex: 0;
+		-ms-flex: 0 1 50px;
+		flex: 0 1 50px;
+	}
+
+	.blurb-content {
+		-webkit-box-flex: 1;
+		-ms-flex: 1 1 calc(100% - 50px);
+		flex: 1 1 calc(100% - 50px);
+
+		p {
+			color: var(--opt-color-text);
+			margin-bottom: 0.25em;
+		}
+
+		button {
+			margin-top: 1.5rem;
+		}
+	}
+}
+
+@media (min-width: 801px) {
+	#business_hours {
+		>.container {
+			-ms-flex-wrap: nowrap;
+			flex-wrap: nowrap;
+			padding-top: 4rem;
+			padding-bottom: 4rem;
+		}
+
+		.blurb {
+			-webkit-box-flex: 0;
+			-ms-flex: 0 1 50%;
+			flex: 0 1 50%;
+			padding: 0 4rem;
+			margin-bottom: 0;
+
+			&:first-child {
+				border-right: 1px solid var(--opt-color-text-medium);
+			}
+		}
+	}
+}
+
+/* SCHEDULE TREATMENT */
+
+#schedule_treatment {
+	background-image: url(../img/custom/page/interim/interim-page-schedule.jpg);
+	min-height: 100vh;
+	min-height: 100dvh;
+
+	&:after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		width: 100%;
+		height: 50vh;
+		background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(59, 35, 20, 0.8)));
+		background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(59, 35, 20, 0.8) 100%);
+		background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(59, 35, 20, 0.8) 100%);
+	}
+
+	article {
+		position: relative;
+		z-index: 1;
+	}
+
+	h2 {
+		color: var(--opt-color-text-light);
+	}
+}
+
+/* OPTADERM MESSAGE */
+
+#optaderm_message {
+	background-size: cover;
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-image: url(../img/custom/page/interim/interim-page-johansson.jpg);
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+	position: relative;
+	min-height: 70vh;
+	min-height: 70dvh;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+
+	blockquote {
+		color: var(--opt-color-text-dark);
+
+		p {
+			font-size: var(--h-3);
+			font-style: italic;
+			line-height: 1.35;
+
+			&:first-child {
+				text-indent: -0.5rem;
+			}
+		}
+	}
+}
+
+@media (max-width: 1200px) {
+	#optaderm_message:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(255, 255, 255, 0.75);
+	}
+}
+
+/* DIALOG */
+
+.popup {
+	border: 1px solid var(--opt-color-text-medium);
+	-webkit-box-shadow: 3px 3px 30px 0px rgba(0, 0, 0, 0.5);
+	box-shadow: 3px 3px 30px 0px rgba(0, 0, 0, 0.5);
+	padding: 0;
+	color: var(--opt-color-text);
+	max-width: 1050px;
+	width: 100%;
+
+	&::-webkit-backdrop,
+	&::backdrop {
+		background-color: rgba(255, 255, 255, 0.75);
+	}
+
+	.close-popup {
+		outline: none;
+		position: absolute;
+		top: 1.5rem;
+		right: 1.5rem;
+		padding: 0.25em 0.5em;
+		line-height: 1;
+		background: none;
+		border: 0;
+		border-radius: 0;
+		color: var(--opt-color-secondary);
+		font-size: var(--h-2);
+		font-weight: normal;
+	}
+
+	.popup-container {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+	}
+
+	.popup-col {
+		-webkit-box-flex: 1;
+		-ms-flex: 1 1 100%;
+		flex: 1 1 100%;
+
+		&:last-child {
+			background-color: var(--opt-color-bg);
+		}
+	}
+
+	.popup-content {
+		padding: 5rem 2.5rem 2rem;
+	}
+
+	img {
+		width: 100%;
+	}
+
+	.popup-heading {
+		margin-top: 0;
+		margin-bottom: 0;
+		color: var(--opt-color-secondary);
+		height: 100px;
+		font-size: var(--h-3);
+		font-family: 'Avenir Next Demi', 'Avenir Next', Arial, Helvetica, sans-serif;
+		font-weight: 600;
+	}
+
+	.popup-footer {
+		padding-left: 35px;
+		position: relative;
+
+		&:before {
+			content: '';
+			background-size: contain;
+			background-position: left center;
+			background-repeat: no-repeat;
+			background-image: url(../img/icon-o.svg);
+			width: 35px;
+			height: 42px;
+			position: absolute;
+			top: -10px;
+			left: 0;
+		}
+	}
+}
+
+@media (min-width: 801px) {
+	.popup {
+		.popup-container {
+			-ms-flex-wrap: nowrap;
+			flex-wrap: nowrap;
+		}
+
+		.popup-col {
+			-webkit-box-flex: 1;
+			-ms-flex: 1 1 50%;
+			flex: 1 1 50%;
+		}
+
+		.popup-heading {
+			line-height: 0.9;
+		}
+	}
+}
