@@ -167,6 +167,10 @@ body {
 	line-height: 1.2;
 }
 
+body.no-scroll {
+	overflow: hidden;
+}
+
 a {
 	color: var(--opt-color-text);
 	text-decoration: none;
@@ -308,6 +312,16 @@ button:focus,
 	background-color: transparent;
 	border-color: var(--opt-color-text-light);
 	color: var(--opt-color-text-light);
+}
+
+.btn-outline:disabled,
+.btn:disabled,
+button:disabled,
+[type="button"]:disabled,
+[type="submit"]:disabled {
+    background-color: #ddd;
+    border-color: #ddd;
+	color: var(--opt-color-text-medium);
 }
 
 @media (max-width: 800px) {
@@ -614,7 +628,7 @@ button:focus,
 	box-shadow: 3px 3px 30px 0px rgba(0, 0, 0, 0.5);
 	padding: 0;
 	color: var(--opt-color-text);
-	max-width: 1050px;
+	max-width: 1120px;
 	width: 100%;
 
 	&::-webkit-backdrop,
@@ -650,13 +664,26 @@ button:focus,
 		-ms-flex: 1 1 100%;
 		flex: 1 1 100%;
 
+		&:first-child {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			    -ms-flex-direction: column;
+			        flex-direction: column;
+			-webkit-box-pack: justify;
+			    -ms-flex-pack: justify;
+			        justify-content: space-between;
+		}
+
 		&:last-child {
 			background-color: var(--opt-color-bg);
 		}
 	}
 
 	.popup-content {
-		padding: 5rem 2.5rem 2rem;
+		padding: 5rem 3rem 0.5rem;
 	}
 
 	img {
