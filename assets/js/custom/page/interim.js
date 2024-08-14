@@ -135,11 +135,17 @@ if ( form_place_order && form_place_order_message ) {
 			},
 			body: jsonData
 		})
-		.then(response => response.json())
+		.then(response => {
+			if (response.status === 200) {
+			  return response.json();
+			} else {
+			  throw new Error(`Unexpected HTTP status: ${response.status}`);
+			}
+		})
 		.then(data => {
 			console.log('Success:', data);
 			form_place_order_message.classList.add('success');
-			form_place_order_message.innerHTML( 'Your order has been sent. We will get in touch with you soon!' );
+			form_place_order_message.innerHTML = 'Your order has been sent. We will get in touch with you soon!';
 			form_place_order.reset();
 		})
 		.catch(error => {
@@ -149,7 +155,7 @@ if ( form_place_order && form_place_order_message ) {
 		})
 		.finally(() => {
 			form_place_order.classList.remove('loading');
-			submitButton.innerText = 'Place Order';
+			submitButton.innerText = 'Submit';
 			submitButton.disabled = false;
 
 			form_place_order_message.scrollIntoView({ 
