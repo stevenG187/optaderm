@@ -1,0 +1,88 @@
+form[class^="form-"] {
+	position: relative;
+	margin-bottom: 1rem;
+}
+
+form[class^="form-"] ::-webkit-input-placeholder,
+form[class^="form-"] ::-moz-placeholder,
+form[class^="form-"] :-ms-input-placeholder, 
+form[class^="form-"] ::-ms-input-placeholder, 
+form[class^="form-"] ::placeholder {
+	color: var(--opt-color-text);
+}
+
+form[class^="form-"] .form-field {
+	margin-bottom: 0.5rem;
+}
+
+form[class^="form-"] label {
+	display: inline-block;
+	margin-bottom: 0.5rem;
+}
+
+form[class^="form-"] .form-input-field {
+	background-color: var(--opt-color-bg);
+	border: 1px solid var(--opt-color-text-medium);
+	padding: 0.75em 1em;
+	width: 100%;
+}
+
+form[class^="form-"] .form-radio-field-group {
+	position: relative;
+}
+
+form[class^="form-"] .form-radio-field + span {
+	position: relative;
+}
+
+form[class^="form-"] .form-radio-field:has(+ span) {
+	position: absolute;
+	opacity: 0;
+}
+
+form[class^="form-"] .form-radio-field:has(+ span):focus + span {
+    outline: 2px solid #0f7fff;
+    outline-offset: 1px;
+}
+
+form[class^="form-"] .form-radio-field:has(+ span) + span {
+	padding-left: 28px;
+}
+
+form[class^="form-"] .form-radio-field:has(+ span) + span:before {
+	content: '';
+	position: absolute;
+	top: 3px;
+	left: 0;
+	width: 16px;
+	height: 16px;
+	background-color: var(--opt-color-bg);
+	border: 1px solid var(--opt-color-text-medium);
+}
+
+form[class^="form-"] .form-radio-field:has(+ span):checked + span:before {
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-image: url(../img/icon-check.svg);
+}
+
+form[class^="form-"] [type="submit"] {
+	width: 100%;
+}
+
+.form-message:not(:empty) {
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+}
+.form-message.success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+.form-message.error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}

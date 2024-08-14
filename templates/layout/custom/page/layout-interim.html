@@ -83,35 +83,6 @@
 
         {{{footer.scripts}}}
 
-		<script>
-			const popup_triggers = document.querySelectorAll('.popup-trigger');
-			popup_triggers.forEach( (el) => {
-
-				el.addEventListener( 'click', (event) => {
-					event.preventDefault();
-					const popup_id = event.target.dataset.popup_id;
-					const popup_target = document.querySelector( popup_id );
-					if ( popup_target ) {
-						popup_target.showModal(); 
-					}
-				} );
-
-			});
-			
-			const popup_close_buttons = document.querySelectorAll('.popup .close-popup');
-			popup_close_buttons.forEach( (el) => {
-
-				el.addEventListener( 'click', (event) => {
-					event.preventDefault();
-					const popup_id = event.target.dataset.popup_id;
-					const popup_target = document.querySelector( popup_id );
-					if ( popup_target ) {
-						popup_target.close(); 
-					}
-				} );
-
-			});
-
-		</script>
+		<script src="{{cdn 'assets/js/custom/page/interim.js'}}"></script>
     </body>
 </html>
