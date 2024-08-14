@@ -1,13 +1,9 @@
 <a href="#main-content" class="skip-to-main-link">{{lang 'header.skip_to_main'}}</a>
 <header class="header container" role="banner">
-    {{#if page_type '===' 'default'}}
-        <h1 class="header-logo header-logo--{{theme_settings.logo-position}}">
-            {{> components/common/store-logo}}
-        </h1>
-    {{else}}
-        <div class="header-logo header-logo--{{theme_settings.logo-position}}">
-            {{> components/common/store-logo}}
-        </div>
-    {{/if}}
+    <div class="header-logo header-logo--{{theme_settings.logo-position}}">
+		<a href="{{urls.home}}">
+			<img src="{{cdn 'img/OPTADERM_Logo_Black.webp'}}" width="300" height="46" alt="{{settings.store_name}} Logo"/>
+		</a>
+	</div>
     <a href="https://optadermclinic.janeapp.com/#/optaderm-skin-aesthetics" target="_blank" rel="noopener" id="book_appointment">BOOK AN APPOINTMENT</a>
 </header>
