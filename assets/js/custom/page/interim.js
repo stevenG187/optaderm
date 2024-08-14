@@ -52,7 +52,7 @@ if ( form_place_order && form_place_order_message ) {
 
 	form_place_order.addEventListener('submit', function(event) {
 
-		event.preventDefault(); // Prevent the default form submission behavior
+		event.preventDefault();
 	
 		const firstName = document.getElementById('contact_fname')?.value;
 		const lastName = document.getElementById('contact_lname')?.value;
