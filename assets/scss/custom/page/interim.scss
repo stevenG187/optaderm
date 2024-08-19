@@ -274,17 +274,17 @@ h6 {
 button,
 [type="button"],
 [type="submit"] {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	background-color: var(--opt-color-primary);
-	border: 2px solid var(--opt-color-primary);
-	color: var(--opt-color-text-light);
-	display: inline-block;
-	font-weight: 700;
-	font-size: var(--text-s);
-	padding: 0.65em 1em;
-	border-radius: 1em;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--opt-color-text-light);
+    border: 1px solid var(--opt-color-primary);
+    color: var(--opt-color-primary);
+    display: inline-block;
+    font-weight: 400;
+    font-size: var(--text-m);
+    padding: 0.65em 1em;
+    border-radius: 1em;
 	-webkit-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
 	transition: all 0.3s ease;
@@ -306,19 +306,12 @@ button:active,
 button:focus,
 [type="button"]:focus,
 [type="submit"]:focus {
-	outline: none !important;
-	background-color: var(--opt-color-text-light);
-	border-color: var(--opt-color-text-medium);
-	color: var(--opt-color-text-medium);
+    outline: none !important;
+    background-color: var(--opt-color-primary);
+    border-color: var(--opt-color-primary);
+    color: var(--opt-color-text-light);
 }
 
-.btn-outline {
-	background-color: transparent;
-	border-color: var(--opt-color-text-light);
-	color: var(--opt-color-text-light);
-}
-
-.btn-outline:disabled,
 .btn:disabled,
 button:disabled,
 [type="button"]:disabled,
