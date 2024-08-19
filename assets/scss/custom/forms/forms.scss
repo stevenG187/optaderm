@@ -68,6 +68,7 @@ form[class^="form-"] .form-radio-field:has(+ span):checked + span:before {
 
 form[class^="form-"] [type="submit"] {
 	width: 100%;
+	text-transform: uppercase;
 }
 
 .form-message:not(:empty) {
