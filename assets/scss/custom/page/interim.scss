@@ -294,6 +294,12 @@ button,
 	}
 }
 
+.transparent-btn {
+    border: 1px solid #ffffff;
+    background-color: rgba(0,0,0,0);
+    color: #ffffff;
+}
+
 .btn:hover,
 button:hover,
 [type="button"]:hover,
