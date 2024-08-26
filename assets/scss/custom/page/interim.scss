@@ -466,9 +466,8 @@ button:disabled,
 /* HERO */
 
 #hero {
-	background-image: url('https://optaderm.mybigcommerce.com/content/OD_Interim_Hero.webp');
+	background-image: url('https://store-itukv01ojg.mybigcommerce.com/content/OD_Interim_Hero.webp');
 	min-height: calc(100vh - 111px);
-	min-height: calc(100dvh - 111px);
 
 	h1 {
 		color: var(--opt-color-text-light);
@@ -567,9 +566,8 @@ button:disabled,
 
 #schedule_treatment {
 	background-position: bottom center;
-	background-image: url('https://optaderm.mybigcommerce.com/content/OD_Interim_Clinic.webp');
+	background-image: url('https://store-itukv01ojg.mybigcommerce.com/content/OD_Interim_Clinic.webp');
 	min-height: 100vh;
-	min-height: 100dvh;
 
 	&:after {
 		content: '';
@@ -600,12 +598,11 @@ button:disabled,
 	background-size: cover;
 	background-position: right bottom;
 	background-repeat: no-repeat;
-	background-image: url('https://optaderm.mybigcommerce.com/content/OD_Interim_Dean.webp');
+	background-image: url('https://store-itukv01ojg.mybigcommerce.com/content/OD_Interim_Dean.webp');
 	padding-top: 4rem;
 	padding-bottom: 4rem;
 	position: relative;
 	min-height: 70vh;
-	min-height: 70dvh;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -641,6 +638,7 @@ button:disabled,
 @media (max-width: 800px) {
 	#optaderm_message {
 		align-items: flex-start;
+		min-height: 90vh;
 	}
 }
 
