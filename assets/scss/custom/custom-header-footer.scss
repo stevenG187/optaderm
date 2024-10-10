@@ -1,0 +1,94 @@
+.flex-col {
+    display: flex;
+
+    .wrap {
+        flex-wrap: wrap;
+    }
+    
+}
+
+.footer {
+    .footer-item {
+        width: 40%;
+        color: var(--opt-color-text-light);
+        text-align: left;
+
+        &.about-menu,
+        &.support-menu,
+        &.social-media {
+            width: 20%;
+        }
+
+        .footer-info-heading {
+            color: var(--opt-color-text-light);
+            font-size: var(--h-4);
+            margin: 0 0 1rem 0;
+        }  
+
+        .footer-info-list {
+            li {
+                margin-bottom: 0.5rem;
+                a {
+                    color: var(--opt-color-text-light);
+                    font-size: var(--text-s);
+                }
+            }
+        }
+
+        .socialLinks {
+            svg {
+                fill: var(--opt-color-text-light);
+
+                &:hover {
+                    fill: var(--opt-color-text-medium);
+                }
+            }
+        }
+
+        .logo {
+            p {
+                font-size: var(--text-m);
+            }
+        }
+
+        .links {
+            list-style-type: none;
+            margin: 0;
+
+            li:first-child {
+                a {
+                    padding-right: 10px;
+                    margin-right: 10px;
+                    position: relative;
+
+                    &:after {
+                        content: '';
+                        width: 1px;
+                        height: 60%;
+                        margin: auto;
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        right: 0;
+                        background-color: var(--opt-color-text-light);
+                    }
+                }
+            }
+
+            a {
+                color: var(--opt-color-text-light);
+                font-size: var(--text-xs);
+
+                
+            }
+        }
+
+        .powered-by {
+            font-size: var(--text-xs);
+        } 
+
+        a:hover {
+            color: var(--opt-color-text-medium) !important;
+        }
+    }
+}
