@@ -1,33 +1,107 @@
-.flex-col {
-    display: flex;
+.header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,0);
+    padding: 1.3em 0 1.8em;
+    border: none;
 
-    .wrap {
-        flex-wrap: wrap;
+    hr {
+        margin: 2em 0 1em;
     }
+
+    .header-bottom {
+        a {
+            color: var(--opt-color-text-light);
+            font-weight: 500;
+            font-size: var(--text-s);
+
+            svg {
+                fill: var(--opt-color-text-light);
+                stroke: var(--opt-color-text-light);
+            }
+        }
+    }
+}
+
+.footer-cta {
+    padding: 2.3em 1em;
+
+    .flex-row {
+        border: 1px solid var(--opt-color-text);
+
+        .w-30 {
+            background-color: var(--opt-color-text-medium);
+            padding: 4em 2em;
+            border-right: 1px solid var(--opt-color-text);
     
+            h2 {
+                color: var(--opt-color-text-light);
+                margin: 0;
+            }
+        }
+    
+        .w-70 {
+            padding: 0 2.3em;
+            border-left: 0;
+
+            h3 {
+                margin: 0 0 0.5em 0;
+                font-size: var(--text-m);
+            }
+        }
+    }
+
+    form {
+        margin: 0;
+
+        .form-field {
+            margin: 0;
+
+            &:last-child {
+                margin-top: 0.5em;
+            }
+
+            .form-prefixPostfix {
+                width: 55%;
+            }
+
+            #nl_email {
+                border-radius: 0;
+            }
+            
+            .button {
+                border-radius: 0;
+                text-transform: uppercase;
+                background-color: var(--opt-color-primary);
+                color: var(--opt-color-text-light);
+                font-size: var(--text-s);
+                padding: 0.5em 2em;
+                margin: 0;
+
+                &:hover {
+                    color: var(--opt-color-primary);
+                    background-color: var(--opt-color-text-light);
+                }
+            }
+        }
+    }
 }
 
 .footer {
     .footer-item {
-        width: 40%;
         color: var(--opt-color-text-light);
         text-align: left;
-
-        &.about-menu,
-        &.support-menu,
-        &.social-media {
-            width: 20%;
-        }
 
         .footer-info-heading {
             color: var(--opt-color-text-light);
             font-size: var(--h-4);
-            margin: 0 0 1rem 0;
+            margin: 0 0 0.8em 0;
         }  
 
         .footer-info-list {
             li {
-                margin-bottom: 0.5rem;
+                margin-bottom: 0.4em;
                 a {
                     color: var(--opt-color-text-light);
                     font-size: var(--text-s);
@@ -48,12 +122,14 @@
         .logo {
             p {
                 font-size: var(--text-m);
+                font-family: 'Bai Jamjuree';
             }
         }
 
         .links {
             list-style-type: none;
             margin: 0;
+            justify-content: unset;
 
             li:first-child {
                 a {
