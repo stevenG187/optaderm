@@ -136,13 +136,44 @@
         flex-wrap: wrap;
         justify-content: space-between;
 
-        .left-45,
-        .right-45 {
+        .w-10 {
+            width: 10%;
+        } 
+
+        .w-20 {
+            width: 20%;
+        }
+
+        .w-30 {
+            width: 30%;
+        }
+
+        .w-40 {
+            width: 40%;
+        }
+
+        .w-45 {
             width: 45%;
         }
 
         .w-50 {
             width: 50%;
+        }
+
+        .w-60 {
+            width: 60%;
+        }
+
+        .w-70 {
+            width: 70%;
+        }
+
+        .w-80 {
+            width: 80%;
+        }
+
+        .w-90 {
+            width: 90%;
         }
 
         &.align-center {
@@ -170,11 +201,19 @@
         background-size: cover;
     }
 
+    .bg-bottom {
+        background-position: bottom center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
     .button-outline {
         font-size: var(--text-s);
         text-transform: uppercase;
         font-weight: 500;
         border-bottom: 1px solid var(--opt-color-text);
         padding: 0.5rem 0;
+        color: var(--opt-color-text-dark);
+        display: inline-block;
     }
 }

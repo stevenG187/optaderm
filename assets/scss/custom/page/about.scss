@@ -1,3 +1,24 @@
+.page {
+    .top-content-header {
+        p {
+            margin: 0;
+            letter-spacing: 0.2em;
+            padding: 2.5em 0;
+            font-weight: 500;
+        }
+
+        &.light hr {
+            border-top: 1px solid #ffffff;
+            margin: 0;
+        }
+
+        &.dark hr {
+            border-top: 1px solid #000000;
+            margin: 0;
+        }
+    }
+}
+
 .about-section1 {
     background-image: url(https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/about-bg1.jpg?t=1728639030);
     padding: 27em 0 3.5em;
@@ -19,20 +40,6 @@
     background-image: url(https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/about-bg2.jpg?t=1728644176);
     color: var(--opt-color-text-light);
 
-    .top-content {
-        p {
-            margin: 0;
-            letter-spacing: 0.2em;
-            padding: 2.8em 0;
-            font-weight: 500;
-        }
-
-        hr {
-            border-top: 2px solid #ffffff;
-            margin: 0;
-        }
-    }
-
     .content {
         padding: 22em 0 3.5em;
         width: 57%;
@@ -50,21 +57,6 @@
 }
 
 .about-section3 {
-    color: var(--opt-color-text-black);
-
-    .top-content {
-        p {
-            margin: 0;
-            letter-spacing: 0.2em;
-            padding: 2.8em 0;
-            font-weight: 500;
-        }
-
-        hr {
-            border-top: 1px solid #000000;
-            margin: 0;
-        }
-    }
 
     .container {
         padding-top: 2rem;
@@ -73,7 +65,6 @@
         h2 {
             margin: 0;
             font-size: 4.6rem;
-            color: var(--opt-color-text-black);
         }
         
         hr {
@@ -136,7 +127,7 @@
                 opacity: 0;
                 visibility: hidden;
                 max-height: 0;
-                transition: max-height ease .3s, opacity ease .3s, visibility ease .3s;
+                // transition: max-height ease .3s, opacity ease .3s, visibility ease .3s;
             }
         }
 
@@ -151,6 +142,147 @@
             &:before {
                 opacity: 0.8;
             }
+        }
+    }
+}
+
+.about-section5 {
+    padding-bottom: 2em;
+
+    .bg-content {
+        background-image: url(https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/about-bg7.jpg?t=1728910323);
+        background-repeat: no-repeat;
+        background-position: top left;
+        background-size: cover;
+        padding: 22.5em 0 2em;
+
+        h2 {
+            font-size: 4.5rem;
+        }
+    }    
+
+    .content-wrap {
+        margin-top: 3em;
+
+        hr {
+            margin: 0 0 2.1em;
+            border-color: #444444;
+        }
+
+        .main-factors {
+            margin-bottom: 2em;
+
+            .pink-bg {
+                background-color: #c483a5;
+            }
+
+            .gray-bg {
+                background-color: #c4c1c5;
+            }
+
+            .w-50 {
+                padding: 1em;
+                color: var(--opt-color-text-light);
+
+                h4 {
+                    font-size: 4rem;
+                    font-weight: 700 !important;
+                    line-height: 1em;
+                    margin: 0;
+                    color: var(--opt-color-text-light);
+                }
+
+                p {
+                    margin: 0;
+
+                    span {
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .active-ingredients {
+        .aesthetic {
+            background-image: url(https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/about-bg8.jpg?t=1728913913);
+            padding-top: 4em !important;
+        }
+
+        .therapies {
+            background-image: url(https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/about-bg9.jpg?t=1728913916);
+            padding-top: 4em !important;
+        }
+
+        .w-50 {
+            padding: 1em;
+
+            h5 {
+                color: var(--opt-color-text-light);
+                font-weight: 500;
+                text-transform: capitalize;
+                margin: 0;
+                font-size: 1.5rem;
+            }
+
+            p {
+                margin: 0;
+            }
+        }
+
+        .flex-row {
+            margin: 1em 0;
+        }
+    }
+}
+
+.about-section6 {
+
+    .bg-content {
+        padding: 15em 0 0;
+
+        .flex-row {
+            max-width: 89rem;
+            margin: 0 auto;
+        }
+
+        h3 {
+            color: var(--opt-color-text-light);
+            font-size: var(--h-1);
+            font-weight: 700 !important;
+            margin: 0;
+        }
+
+        h2 {
+            color: var(--opt-color-text-light);
+            font-size: 12rem;
+            font-weight: 700 !important;
+            margin: 0 0 -0.19em 0;
+            line-height: 0.75em;
+
+            span {
+                font-size: 6rem;
+            }
+        }
+    }
+
+    .container {
+        max-width: 51rem;
+        padding: 2em 0;
+        position: relative;
+
+        &:before {
+            content: '';
+            width: 1px;
+            height: 11.6rem;
+            position: absolute;
+            left: 2px;
+            top: 0;
+            background-color: #333333;
+        }
+
+        li {
+            margin: 1em 0;
         }
     }
 }
