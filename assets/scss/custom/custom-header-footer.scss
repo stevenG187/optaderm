@@ -3,11 +3,55 @@
     top: 0;
     width: 100%;
     background-color: rgba(0,0,0,0);
-    padding: 1.3em 0 1.8em;
+    padding: 1.8em 0 0.1em;
     border: none;
+    transition: all 0.3s ease;
+
+    &.sticky-active {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        background-color: var(--opt-color-text-light);
+
+        *, input::placeholder {
+            color: var(--opt-color-secondary) !important;
+        }
+
+        svg {
+            path, circle {
+                stroke: var(--opt-color-secondary) !important;
+            }
+        }
+
+        .search-bar, .button-text a {
+            border-bottom-color: var(--opt-color-secondary) !important;
+        }
+
+        .flag, .logo, .cart-bag {
+            path {
+                stroke: rgba(0,0,0,0) !important;
+                fill: var(--opt-color-secondary) !important;
+            }
+        }
+
+        .navPages-action-moreIcon svg {
+            stroke: var(--opt-color-secondary) !important;
+            fill: var(--opt-color-secondary) !important;
+        }
+
+        .navPage-subMenu-list a, .has-subMenu.is-open{
+            color: var(--opt-color-text-light) !important;
+        }
+    }
 
     hr {
-        margin: 2em 0 1em;
+        margin: 1.6em 0 0.5em;
+    }
+
+    .header-top {
+        padding: 0 1em;
     }
 
     .header-bottom {
@@ -20,6 +64,221 @@
                 fill: var(--opt-color-text-light);
                 stroke: var(--opt-color-text-light);
             }
+        }
+
+        .navPages-container.is-open {
+            padding-top: 0;
+        }
+    }
+
+    .navPage-subMenu,
+    .navPages-action.is-open {
+        background-color: var(--opt-color-text);
+    }
+
+    .logo {
+        margin-top: -1em;
+    }
+
+    .w-30 {
+        .flex-row {
+            list-style-type: none;
+            margin: 0;
+            justify-content: flex-start;
+        }
+
+        ul {
+            svg {
+                width: 45px;
+                height: 35px;
+                transition: all ease .3s;
+            }
+
+            a:hover svg {
+                transform: scale(1.15);
+            }
+        }
+    }
+
+    .left {
+        li {
+            margin-right: 0.5em;
+            margin-bottom: 0;
+        }
+    }
+
+    .right {
+        li {
+            margin-left: 1em;
+            margin-bottom: 0;
+        }
+
+        .button-text a {
+            border-bottom: 2px solid var(--opt-color-text-light);
+            color: var(--opt-color-text-light);
+            text-transform: uppercase;
+            font-size: var(--text-s);
+            font-weight: 500;
+            padding: .5em 0;
+
+            &:hover {
+                border-bottom-color: var(--opt-color-primary);
+                color: var(--opt-color-primary);
+            }
+        }
+    }
+
+    .search {
+        position: relative;
+        display: inline-block; 
+
+        .search-bar {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 0;
+            overflow: hidden;
+            transition: width 0.3s ease;
+            z-index: 1;
+            border-bottom: 1px solid var(--opt-color-text-light);
+
+            &.active {
+                width: 15em; 
+            }
+            
+            .form {
+                margin: 0;
+
+                .form-field {
+                    margin: 0;
+                }
+
+                .form-input {
+                    background-color: rgba(0,0,0,0);
+                    border: none;
+                    color: var(--opt-color-text-light);
+                    padding: 0.5em 3em;
+
+                    &::placeholder {
+                        color: var(--opt-color-text-light);
+                        text-transform: uppercase;
+                    }
+                }
+            }
+
+            .close-search-btn {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                margin: auto;
+                height: 1em;
+                width: 1em;
+
+                svg {
+                    width: 1em;
+                    height: 1em;
+                }
+            }
+        }
+    }
+
+    .cart-bag {
+
+        a {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .cart-quantity {
+            display: block;
+            background-color: rgba(0,0,0,0);
+            font-weight: 400;
+            position: absolute;
+            top: 0.5em;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+    }
+}
+
+.hamburger-content {
+    position: fixed;
+    top: 0;
+    left: -100%; 
+    width: 100%; 
+    height: 100vh;
+    background-color: var(--opt-color-text-light);
+    transition: left 0.5s ease; 
+    z-index: 1000; 
+    padding: 3.5em;
+
+
+    &.active {
+        left: 0; 
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 1.5em;
+        left: 1.5em;
+        
+        svg {
+            width: 2em;
+            height: 2em;
+            transition: all ease .3s;
+
+            a:hover svg {
+                transform: scale(1.15);
+            }
+        }
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin-left: 0;
+
+        li {
+            margin: 0.7em 0;
+
+            a {
+                color: var(--opt-color-secondary);
+
+                &:hover {
+                    color: var(--opt-color-primary);
+                }
+            }
+        }
+    }
+
+    .w-40 {
+        li {
+            margin: 0.7em 0 2em;
+
+            a {
+                font-size: var(--h-1);
+                text-transform: uppercase;
+                font-weight: 600;
+                color: var(--opt-color-text-dark);
+
+                &:hover {
+                    color: var(--opt-color-primary);
+                }
+            }
+        }  
+    }
+
+    .icon {
+        width: 100%;
+        text-align: center;
+
+        svg {
+            width: 3em;
+            height: 3em;
         }
     }
 }

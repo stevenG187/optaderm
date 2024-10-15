@@ -1,7 +1,3 @@
-:root {
-	--opt-color-text-black: #000000;
-}
-
 @font-face {
     font-family: 'Bai Jamjuree';
     src: url('../fonts/BaiJamjuree-Regular.eot');
@@ -120,21 +116,31 @@
 }
 
 .page {
+    :focus {
+        outline: none !important;
+    }
+
     h1, h2, h3, h4, h5, h6 {
         font-family: 'Bai Jamjuree', Arial, Helvetica, sans-serif;
         font-weight: 400;
+        color: var(--opt-color-text-dark);
     }
 
     body {
         font-family: 'Avenir Next', Arial, Helvetica, sans-serif;
         font-size: var(--text-m);
         line-height: 1.2;
+        color: var(--opt-color-secondary);
     }
 
     .flex-row {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+
+        .w-10 {
+            width: 10%;
+        } 
 
         .w-20 {
             width: 20%;
@@ -146,6 +152,10 @@
 
         .w-40 {
             width: 40%;
+        }
+
+        .w-45 {
+            width: 45%;
         }
 
         .w-50 {
@@ -160,12 +170,13 @@
             width: 70%;
         }
 
-        .left-45,
-        .right-45 {
-            width: 45%;
+        .w-80 {
+            width: 80%;
         }
 
-        
+        .w-90 {
+            width: 90%;
+        }
 
         &.align-center {
             align-items: center;
