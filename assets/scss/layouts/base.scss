@@ -1,7 +1,3 @@
-:root {
-	--opt-color-text-black: #000000;
-}
-
 @font-face {
     font-family: 'Bai Jamjuree';
     src: url('../fonts/BaiJamjuree-Regular.eot');
@@ -120,15 +116,21 @@
 }
 
 .page {
+    :focus {
+        outline: none !important;
+    }
+
     h1, h2, h3, h4, h5, h6 {
         font-family: 'Bai Jamjuree', Arial, Helvetica, sans-serif;
         font-weight: 400;
+        color: var(--opt-color-text-dark);
     }
 
     body {
         font-family: 'Avenir Next', Arial, Helvetica, sans-serif;
         font-size: var(--text-m);
         line-height: 1.2;
+        color: var(--opt-color-secondary);
     }
 
     .flex-row {
@@ -215,5 +217,11 @@
         padding: 0.5rem 0;
         color: var(--opt-color-text-dark);
         display: inline-block;
+        letter-spacing: 0.1em;
+
+        &:hover {
+            color: var(--opt-color-primary) !important;
+            border-bottom-color: var(--opt-color-primary) !important;
+        }
     }
 }
