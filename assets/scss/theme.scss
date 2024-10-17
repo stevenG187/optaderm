@@ -78,5 +78,9 @@
 
 @import "layouts/layouts"; // 1
 
+@import "custom/slick";
+@import "custom/slick-theme";
+@import "layouts/base";
 @import "custom/forms/forms";
 @import "custom/page/interim";
+@import "custom/page/clinic";

@@ -1,0 +1,209 @@
+.clinic-sec1 {
+    padding: 30em 0 3em;
+    color: var(--opt-color-text-light);
+
+    .content {
+        width: 30%;
+
+        h1 {
+            color: var(--opt-color-text-light);
+            margin: 0 0 0.1em;
+            font-size: 4.2rem;
+        }
+    }
+}
+
+.clinic-sec2 {
+    .content {
+        background-color: var(--opt-color-secondary);
+        color: var(--opt-color-text-light);
+        text-align: center;
+        padding: 1.8em 0;
+
+        p {
+            width: 58%;
+            margin: auto;
+        }
+    }
+}
+
+.clinic-sec3 {
+    padding: 3em 0 0;
+
+    h2 {
+        font-family: 'Avenir Next' !important;
+        margin: 0 0 1em;
+    }
+
+    hr {
+        border-color: var(--opt-color-text-dark);
+        margin: 3em 0;
+    }
+
+    .button-outline {
+        margin-top: 1em;
+    }
+
+    .w-25 {
+        padding-right: 2.5em;
+    }
+}
+
+.clinic-sec4 {
+    padding: 2em 0 5em;
+
+    .testimonial-slider {
+        .slick-arrow {
+            position: absolute;
+            top: 40%;
+            width: 1.5em;
+            height: 1.5em;
+            z-index: 1;
+            cursor: pointer;
+        }
+
+        .arrow-next.slick-arrow {
+            right: 0;
+        }
+
+        .content {
+            width: 70%;
+            margin: auto;
+            text-align: center;
+
+            p {
+                font-size: var(--text-l);
+            }
+
+            .name {
+                font-size: var(--text-m);
+                text-transform: uppercase;
+                margin: 2em 0 0;
+            }
+
+            .rating {
+                width: 8em !important;
+                margin: auto;
+            }
+        }
+    }
+}
+
+.clinic-sec5 {
+    position: relative;
+
+    &:after {
+        content: '';
+        background: rgb(64,63,65);
+        background: linear-gradient(0deg, rgba(64,63,65,1) 0%, rgba(0,0,0,0) 100%);
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        right: 0;
+    }
+
+    .content {
+        padding: 26em 0 3.5em;
+        width: 57%;
+        z-index: 1;
+        position: relative;
+
+        h2 {
+            color: var(--opt-color-text-light);
+            margin: 0;
+            font-size: 4.2rem;
+        }
+    
+        p {
+            margin: 0;
+            color: var(--opt-color-text-light);
+        }
+    }
+}
+
+.clinic-sec6 {
+    padding: 1em 0 0;
+
+    .see-more-our-team {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out;
+
+        hr:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    hr {
+        border-color: var(--opt-color-text-dark);
+        margin: 3em 0;
+    }
+
+    h2 {
+        margin-bottom: 1em;
+    }
+
+    .w-25 {
+        padding-right: 2em;
+    }
+    
+    .name {
+        margin: 0;
+        font-size: var(--text-l);
+    }
+    
+    .description {
+        margin: 1em 0;
+    }
+
+    .see-all {
+        text-align: center;
+        margin: 4em 0 -2em;
+        cursor: pointer;
+
+        p {
+            text-transform: uppercase;
+            font-size: var(--text-s);
+            margin: 0;
+        }
+
+        img {
+            width: 1.5em;
+            transform: rotate(90deg);
+        }
+    }
+}
+
+@media screen and (max-width: 767px){
+    .clinic-sec1 .content, .clinic-sec2 .content p, .clinic-sec5 .content {
+        width: 100%;
+    }
+    
+    .clinic-sec3 .w-25, .clinic-sec6 .w-25 {
+        padding-right: 0;
+    }
+    
+    .clinic-sec3 .w-25 img, .clinic-sec6 .w-25 img{
+        width: 100%;
+        margin-bottom: 1.5em;
+    }
+    
+    .clinic-sec3 .button-outline {
+        margin: 0;
+    }
+    
+    .clinic-sec3 .w-45 p {
+        margin: 1em 0;
+    }
+    
+    .clinic-sec5 .content h2 {
+        line-height: 1em;
+        margin-bottom: 0.2em;
+    }
+
+    .clinic-sec6 .see-all {
+        margin-top: 3em;
+    }
+}
