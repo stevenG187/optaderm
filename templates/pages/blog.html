@@ -1,7 +1,7 @@
 ---
 blog:
     posts:
-        limit: 5
+        limit: 6
         pages: 3
         summary: 200
 ---
@@ -16,18 +16,40 @@ blog:
 
 {{#partial "page"}}
 
-{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-
 <main class="page">
-    {{#unless theme_settings.hide_blog_page_heading }}
-        <h1 class="page-heading">{{ blog.name }}</h1>
-    {{/unless}}
+    <div class="blog-sec1 text-center">
+        <div class="container">
+            <p class="subheadline">Our Blog</p>
+            <h1>Skin Deep</h1>
+            <p>Discover our blog for professional skincare advice, in-depth ingredient analysis, and personalized routines designed to cater to every skin type. Stay informed with science-backed tips for healthier, radiant skin.</p>
+        </div>
+    </div>
 
-    {{#each blog.posts}}
-        {{> components/blog/post post=this theme_settings=../theme_settings}}
-    {{/each}}
+    <div class="blog-sec2">
+        <div class="container text-center">
+            <a href="/blog" class="blog-view-all">View All Blogs</a>
+            <ul class="blog-tag-list flex-row">
+                <li><a href="/blog/tag/Acne">Acne</a></li>
+                <li><a href="/blog/tag/adult-acne">Adult Acne</a></li>
+                <li><a href="/blog/tag/aging-skin">Aging Skin</a></li>
+                <li><a href="#">More...</a></li>
+            </ul>
+        </div>
+    </div>
 
-    {{> components/common/paginator pagination.blog}}
+    <div class="blog-sec3 hp-section6">
+        <div class="content">
+            <div class="flex-row col-3">
+                {{#each blog.posts}}
+                    {{> components/blog/post post=this theme_settings=../theme_settings}}
+                {{/each}}
+            </div>
+        </div>
+        <div class="container">
+            {{> components/common/paginator pagination.blog}}
+        </div>
+        <hr>
+    </div>
 </main>
 
 {{/partial}}
