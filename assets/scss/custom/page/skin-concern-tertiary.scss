@@ -1,0 +1,110 @@
+.sc-tertiary-sec1 {
+    position: relative;
+    padding: 46em 0 0;
+
+    h1 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        margin: 0;
+        padding: 1em;
+        background-color: #878188b8;
+        color: var(--opt-color-text-light);
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: var(--h-2);
+        font-family: 'Avenir Next';
+    }
+
+    img {
+        width: 20em;
+        position: absolute;
+        bottom: 30%;
+        right: 8%;
+    }
+}
+
+.sc-tertiary-sec2 {
+    padding: 3em 0;
+
+    h2 {
+        margin: 0;
+        font-size: 3rem;
+        font-weight: 500;
+    }
+    
+    hr {
+        margin: 0.5rem 0 2rem;
+        border-top: 1px solid #000000;
+    }
+}
+
+.sc-tertiary-sec3 {
+    padding: 0 1em;
+}
+
+.sc-tertiary-sec4 {
+    padding: 2em 1em;
+
+    .col-2 {
+        background-color: #e6e4e6;
+
+        img {
+            height: 10em;
+            width: 100%;
+            -o-object-fit: cover;
+               object-fit: cover;
+        }
+
+        .w-67 {
+            padding-left: 2em;
+
+            h2 {
+                margin: 0 0 0.5em;
+                font-size: var(--h-4);
+                font-weight: 500 !important;
+                font-family: 'Avenir Next Demi' !important;
+                letter-spacing: 0;
+            }
+
+            p {
+                margin: 0;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .sc-tertiary-sec1 {
+        padding: 33em 0 0;
+    }
+    
+    .sc-tertiary-sec1 img {
+        width: 15em;
+    }
+    
+    .sc-tertiary-sec2 h2 {
+        font-size: 2rem;
+    }
+    
+    .sc-tertiary-sec1 img {
+        width: 7em;
+        right: 3%;
+    }
+    
+    .sc-tertiary-sec1 {
+        padding: 22em 0 0;
+    }
+    
+    .sc-tertiary-sec1 h1 {
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .sc-tertiary-sec4 .col-2 .w-67 {
+        padding: 1em;
+    }
+}
