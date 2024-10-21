@@ -95,25 +95,12 @@
 
     <section class="productView-details product-data">
         <div class="productView-product">
-            <h1 class="productView-title">{{product.title}}</h1>
             {{#if product.brand}}
                 <h2 class="productView-brand">
                     <a href="{{product.brand.url}}"><span>{{product.brand.name}}</span></a>
                 </h2>
             {{/if}}
-            {{#if product.call_for_price}}
-                <p class="productView-price">
-                    <span>{{product.call_for_price}}</span>
-                </p>
-            {{/if}}
-            <div class="productView-price">
-                {{#or customer (unless settings.hide_price_from_guests)}}
-                    {{> components/products/price price=product.price}}
-                {{else}}
-                    {{> components/common/login-for-pricing}}
-                {{/or}}
-            </div>
-            {{{region name="product_below_price"}}}
+            <h1 class="productView-title">{{product.title}}</h1>
             <div class="productView-rating">
                 {{#if settings.show_product_rating}}
                     {{> components/products/ratings rating=product.rating}}
@@ -138,6 +125,19 @@
                     {{/unless}}
                 {{/if}}
             </div>
+            {{#if product.call_for_price}}
+                <p class="productView-price">
+                    <span>{{product.call_for_price}}</span>
+                </p>
+            {{/if}}
+            <div class="productView-price">
+                {{#or customer (unless settings.hide_price_from_guests)}}
+                    {{> components/products/price price=product.price}}
+                {{else}}
+                    {{> components/common/login-for-pricing}}
+                {{/or}}
+            </div>
+            {{{region name="product_below_price"}}}
             {{product.detail_messages}}
             <dl class="productView-info">
                 <dt class="productView-info-name sku-label"{{#unless product.sku}} style="display: none;"{{/unless}}>{{lang 'products.sku'}}</dt>
