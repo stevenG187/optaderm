@@ -1,0 +1,177 @@
+.category-header {
+    position: relative;
+
+    &:before {
+        content: '';
+        background: rgb(105,89,77);
+        background: -webkit-gradient(linear, left bottom, left top, from(rgba(105,89,77,1)), to(rgba(0,0,0,0)));
+        background: -webkit-linear-gradient(bottom, rgba(105,89,77,1) 0%, rgba(0,0,0,0) 100%);
+        background: -moz-linear-gradient(bottom, rgba(105,89,77,1) 0%, rgba(0,0,0,0) 100%);
+        background: -o-linear-gradient(bottom, rgba(105,89,77,1) 0%, rgba(0,0,0,0) 100%);
+        background: linear-gradient(0deg, rgba(105,89,77,1) 0%, rgba(0,0,0,0) 100%);
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        bottom: 0;
+    }
+
+    img {
+        width: 100%;
+        height: 51rem;
+        -o-object-fit: cover;
+           object-fit: cover;
+        -o-object-position: bottom;
+           object-position: bottom;
+    }
+
+    .container {
+        position: absolute;
+        bottom: 4em;
+
+        .content {
+            text-align: left;
+            width: 55%;
+            z-index: 1;
+            position: relative;
+    
+            .page-heading {
+                margin: 0;
+                text-align: left;
+                color: #ffffff;
+                font-size: 4.5rem;
+                text-transform: uppercase;
+            }
+
+            p {
+                color: #ffffff;
+            }
+        }
+    }
+
+}
+
+.productGrid {
+    width: 97.5%;
+    margin: auto;
+    border: 1px solid #a5a0a5;
+    background: rgb(232, 230, 229);
+    background: -webkit-linear-gradient(260deg, rgba(232, 230, 229, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    background: -moz-linear-gradient(260deg, rgba(232, 230, 229, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    background: -o-linear-gradient(260deg, rgba(232, 230, 229, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(190deg, rgba(232, 230, 229, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    position: relative;
+
+    .product {
+        width: 33.333% !important;
+        padding: 0;
+        position: relative;
+        height: 34em;
+
+        &:hover .card-text, &:hover .card-title a {
+            color: var(--opt-color-primary) !important;
+        }
+
+        &:nth-child(2),
+        &:nth-child(5) {
+            border-left: 1px solid #a5a0a5;
+            border-right: 1px solid #a5a0a5;
+        }
+
+        &:nth-child(4),
+        &:nth-child(5),
+        &:nth-child(6) {
+            border-top: 1px solid #a5a0a5;
+        }
+
+        @media screen and (max-width: 767px){
+            width: 100% !important;
+        }
+
+        .card-top-headline {
+            text-align: center;
+            margin: 1em 0;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        hr {
+            border: none;
+            border-bottom: 1px solid #a5a0a5;
+            margin: 0;
+        }
+
+        .card-figure {
+            height: 25em;
+            background-color: rgba(0, 0, 0, 0);
+
+            .card-img-container {
+                margin: 0;
+                
+                img {
+                    height: 25em;
+                    -o-object-fit: contain;
+                    object-fit: contain;
+                    -o-object-position: bottom center;
+                    object-position: bottom center;
+                    width: 100%;
+                    margin: 0;
+                }
+            }
+        }
+
+        .card-body {
+            position: absolute;
+            width: 90%;
+            margin: auto;
+            left: 0;
+            right: 0;
+            bottom: 1.5em;
+
+            .card-text {
+                text-transform: uppercase;
+                color: var(--opt-color-text-dark);
+            }
+
+            .card-title {
+                font-size: var(--text-s);
+                font-family: 'Avenir Next' !important;
+                color: var(--opt-color-text-dark);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px){
+    .category-header img {
+        height: 25rem;
+    }
+    
+    .category-header .container .content {
+        width: 100%;
+    }
+    
+    .category-header .container .content .page-heading {
+        font-size: 2.8rem;
+    }
+    
+    .category-header .container {
+        bottom: 0.5em;
+    }
+    
+    .category-featured-content {
+        padding: 0 1em;
+    }
+    
+    .category-products-content {
+        padding: 0 0.5em;
+    }
+    
+    .productGrid .product:nth-child(2), .productGrid .product:nth-child(3) {
+        border-top: 1px solid #a5a0a5;
+    }
+    
+    .productGrid .product:nth-child(2), .productGrid .product:nth-child(5) {
+        border-left: 0;
+        border-right: 0;
+    }
+}
