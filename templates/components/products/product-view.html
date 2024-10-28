@@ -64,7 +64,7 @@
                 {{/if}}
             </div>
         </figure>
-        <ul class="productView-thumbnails"{{#gt product.images.length 5}} data-slick='{
+        <!-- <ul class="productView-thumbnails"{{#gt product.images.length 5}} data-slick='{
                 "infinite": false,
                 "mobileFirst": true,
                 "dots": false,
@@ -90,30 +90,35 @@
                     </a>
                 </li>
             {{/each}}
-        </ul>
+        </ul> -->
+        <div class="pairs-with">
+            {{#if product.related_products}}
+                <p>PAIRS WELL WITH</p>
+                <div class="product-grid">
+                    {{> components/products/product-pairs products=product.related_products columns=2 list="Related Products"}}
+                </div>
+            {{/if}}
+        </div>
     </section>
 
     <section class="productView-details product-data">
         <div class="productView-product">
-            <h1 class="productView-title">{{product.title}}</h1>
+            <div class="card-top-headline">
+                {{#each product.custom_fields}}
+                    {{#if this.name '===' 'Top Headline'}}
+                        {{this.value}}
+                    {{/if}}
+                {{/each}}
+            </div>
+
             {{#if product.brand}}
                 <h2 class="productView-brand">
                     <a href="{{product.brand.url}}"><span>{{product.brand.name}}</span></a>
                 </h2>
             {{/if}}
-            {{#if product.call_for_price}}
-                <p class="productView-price">
-                    <span>{{product.call_for_price}}</span>
-                </p>
-            {{/if}}
-            <div class="productView-price">
-                {{#or customer (unless settings.hide_price_from_guests)}}
-                    {{> components/products/price price=product.price}}
-                {{else}}
-                    {{> components/common/login-for-pricing}}
-                {{/or}}
-            </div>
-            {{{region name="product_below_price"}}}
+
+            <h1 class="productView-title">{{product.title}}</h1>
+            
             <div class="productView-rating">
                 {{#if settings.show_product_rating}}
                     {{> components/products/ratings rating=product.rating}}
@@ -138,8 +143,31 @@
                     {{/unless}}
                 {{/if}}
             </div>
+
+            <div class="short-description">
+                {{#each product.custom_fields}}
+                    {{#if this.name '===' 'Short Description'}}
+                        {{this.value}}
+                    {{/if}}
+                {{/each}}
+            </div>
+
+            {{#if product.call_for_price}}
+                <p class="productView-price">
+                    <span>{{product.call_for_price}}</span>
+                </p>
+            {{/if}}
+            <div class="productView-price">
+                {{#or customer (unless settings.hide_price_from_guests)}}
+                    {{> components/products/price price=product.price}}
+                {{else}}
+                    {{> components/common/login-for-pricing}}
+                {{/or}}
+            </div>
+            {{{region name="product_below_price"}}}
+
             {{product.detail_messages}}
-            <dl class="productView-info">
+            <!-- <dl class="productView-info">
                 <dt class="productView-info-name sku-label"{{#unless product.sku}} style="display: none;"{{/unless}}>{{lang 'products.sku'}}</dt>
                 <dd class="productView-info-value" data-product-sku>{{product.sku}}</dd>
                 <dt class="productView-info-name upc-label"{{#unless product.upc}} style="display: none;"{{/unless}}>{{lang 'products.upc'}}</dt>
@@ -221,7 +249,7 @@
                 {{#if theme_settings.show_custom_fields_tabs '!==' true}}
                     {{> components/products/custom-fields }}
                 {{/if}}
-            </dl>
+            </dl> -->
         </div>
     </section>
 
@@ -262,15 +290,29 @@
                 {{> components/common/wishlist-dropdown}}
             {{/if}}
         </div>
-        {{> components/common/share url=product.url}}
+
+        <div class="recommended-for">
+            {{#each product.custom_fields}}
+                {{#if this.name '===' 'Recommended for'}}
+                    <p class="headline">Recommended for:</p>
+                    <p>{{this.value}}</p>
+                {{/if}}
+                {{#if this.name '===' 'Recommended for description'}}
+                    <p>{{this.value}}</p>
+                {{/if}}
+            {{/each}}
+        </div>
+
+        <!-- {{> components/common/share url=product.url}} -->
     </section>
 
     <article class="productView-description">
-        {{#if theme_settings.show_product_details_tabs}}
+        {{> components/products/description}}
+        <!-- {{#if theme_settings.show_product_details_tabs}}
             {{> components/products/description-tabs}}
         {{else}}
             {{> components/products/description}}
-        {{/if}}
+        {{/if}} -->
     </article>
 </div>
 

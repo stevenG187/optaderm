@@ -1,4 +1,3 @@
-{{#if reviews.total}}
 <section class="toggle productReviews" id="product-reviews" data-product-reviews>
     <h4 class="toggle-title">
         {{lang 'products.reviews.header' total=reviews.total}}
@@ -42,4 +41,3 @@
         {{> components/common/paginator pagination.reviews reload=true}}
     </div>
 </section>
-{{/if}}
