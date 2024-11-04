@@ -1,0 +1,52 @@
+
+<div class="footer-cta page">
+    <div class="flex-row align-center">
+        <div class="w-30 text-center">
+            <h2>FROM US TO YOU</h2>
+        </div>
+        <div class="w-70">
+            {{> components/common/subscription-form}}
+        </div>
+    </div>
+</div>
+
+<footer class="footer page" role="contentinfo">
+    <div class="container flex-row">
+        <div class="footer-item about-menu w-20">
+            <h3 class="footer-info-heading">About</h3>
+            <ul class="footer-info-list">
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Face</a></li>
+                <li><a href="#">Body</a></li>
+                <li><a href="#">Skin Conditions</a></li>
+                <li><a href="#">Clinic</a></li>
+                <li><a href="#">Affiliates</a></li>
+            </ul>
+        </div>
+        <div class="footer-item support-menu w-20">
+            <h3 class="footer-info-heading">Support</h3>
+            <ul class="footer-info-list">
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Legal</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-item social-media w-20">
+            {{> components/common/social-links}}
+        </div>
+        <div class="footer-item info w-40">
+            <div class="logo">
+                <img src="{{cdn 'img/OPTADERM_Logo_White.webp'}}" width="300" height="46" alt="{{settings.store_name}} Logo"/>
+                <p>To have the best skin at any age</p>
+            </div>
+            <div class="powered-links">
+                <ul class="links flex-row">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+                <p class="powered-by">&copy; {{moment format="YYYY"}} {{settings.store_name}} Products. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>

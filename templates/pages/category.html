@@ -15,22 +15,9 @@ category:
 
 {{#partial "page"}}
 
-{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-{{#if category.image}}
-    {{> components/common/responsive-img
-        image=category.image
-        fallback_size=theme_settings.zoom_size
-        lazyload=theme_settings.lazyload_mode
-        class="category-header-image"
-    }}
-{{/if}}
-{{#unless theme_settings.hide_category_page_heading }}
-    <h1 class="page-heading">{{category.name}}</h1>
-    {{{region name="category_below_header"}}}
-{{/unless}}
-{{{category.description}}}
+<!-- {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}} -->
 <div class="page">
-    {{#if category.faceted_search_enabled}}
+    <!-- {{#if category.faceted_search_enabled}}
         <aside class="page-sidebar" id="faceted-search-container">
             {{> components/category/sidebar}}
         </aside>
@@ -42,15 +29,106 @@ category:
         <aside class="page-sidebar" id="faceted-search-container">
             {{> components/category/sidebar}}
         </aside>
-    {{/if}}
+    {{/if}} -->
 
-    <main class="page-content" id="product-listing-container">
-        {{> components/category/product-listing}}
-    </main>
-
-    <div class="page-region">
-        {{{region name="category_below_content"}}}
+    <div class="category-header">
+        {{#if category.image}}
+            {{> components/common/responsive-img
+                image=category.image
+                fallback_size=theme_settings.zoom_size
+                lazyload=theme_settings.lazyload_mode
+                class="category-header-image"
+            }}
+        {{/if}}    
+        <div class="container">
+            <div class="content">
+                {{#unless theme_settings.hide_category_page_heading }}
+                    <h1 class="page-heading">{{category.name}}</h1>
+                    {{{region name="category_below_header"}}}
+                {{/unless}}
+                {{{category.description}}}
+            </div>
+        </div>
     </div>
+
+    <div class="category-featured-content">
+        <div class="top-content-header light text-center">
+            <p>Featured {{category.name}} Products</p>
+        </div>
+        {{> components/category/featured-product-listing}}  
+    </div>
+
+    <div class="category-products-content" id="product-listing-container">
+        <div class="top-content-header light text-center">
+            <p>ALL {{category.name}}</p>
+        </div>
+        {{> components/category/product-listing}}
+    </div>
+
+    <!-- <div class="page-region">
+        {{{region name="category_below_content"}}}
+    </div> -->
+
+    <div class="hp-section6">
+        <div class="container top-content-grid flex-row align-center">
+            <div class="w-33"></div>
+            <div class="w-33 text-center">
+                <p>FEATURED BLOGS</p>
+            </div>
+            <div class="w-33 text-right">
+                <a href="#" class="button-outline">VIEW ALL BLOGS</a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="flex-row align-center col-2">
+                <div class="w-33">
+                    <h2>Skin Deep</h2>
+                </div>
+                <div class="w-67">
+                    <p>Uncover the truth behind skincare myths and learn how to achieve radiant skin.</p>
+                </div>
+            </div>
+            <div class="flex-row col-3">
+                <div class="w-33">
+                    <img src="https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/hp-img-19.jpg?t=1729058440" alt="When to use Vitamin C Serum Vitamin C Serum">
+                    <div class="blog-content">
+                        <h3>When to use Vitamin C Serum Vitamin C Serum</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper </p>
+                        <ul class="blog-tag flex-row">
+                            <li>ACNE</li>
+                            <li>SKIN HEALTH</li>
+                            <li>AGING SKIN</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="w-33">
+                    <img src="https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/hp-img-17.jpg?t=1729058438" alt="When to use Vitamin C Serum Vitamin C Serum">
+                    <div class="blog-content">
+                        <h3>When to use Vitamin C Serum Vitamin C Serum</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper </p>
+                        <ul class="blog-tag flex-row">
+                            <li>ACNE</li>
+                            <li>SKIN HEALTH</li>
+                            <li>AGING SKIN</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="w-33">
+                    <img src="https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/hp-img-18.jpg?t=1729058439" alt="When to use Vitamin C Serum Vitamin C Serum">
+                    <div class="blog-content">
+                        <h3>When to use Vitamin C Serum Vitamin C Serum</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper </p>
+                        <ul class="blog-tag flex-row">
+                            <li>ACNE</li>
+                            <li>SKIN HEALTH</li>
+                            <li>AGING SKIN</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>   
 </div>
 
 {{/partial}}

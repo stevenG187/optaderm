@@ -1,5 +1,6 @@
-<h3 class="footer-info-heading">{{lang 'newsletter.subscribe'}}</h3>
-<p>{{lang 'newsletter.subscribe_intro'}}</p>
+<!-- <h3 class="footer-info-heading">{{lang 'newsletter.subscribe'}}</h3> 
+<p>{{lang 'newsletter.subscribe_intro'}}</p> -->
+<h3>Keep up with the latest Optaderm product launches, skincare tips, exclusive offers, and more.</h3>
 
 <form class="form" action="{{urls.subscribe.action}}" method="post">
     <fieldset class="form-fieldset">
@@ -14,7 +15,7 @@
                        name="nl_email"
                        type="email"
                        value="{{customer.email}}"
-                       placeholder="{{lang 'newsletter.email_placeholder'}}"
+                       placeholder="Email Address"
                        aria-describedby="alertBox-message-text"
                        aria-required="true"
                        autocomplete="email"
@@ -22,12 +23,20 @@
                 >
                 <input class="button button--primary form-prefixPostfix-button--postfix"
                        type="submit"
-                       value="{{lang 'newsletter.subscribe_submit'}}"
+                       value="Sign me up"
                 >
             </div>
             {{#if settings.show_newsletter_summary }}
                 <div class="footer-newsletter-summary">{{settings.newsletter_summary}}</div>
             {{/if}}
+        </div>
+        
+        <!-- Terms input section -->
+        <div class="form-field">
+            <label for="terms-checkbox" class="form-label">
+                <input type="checkbox" id="terms-checkbox" name="terms" required>
+                I have read and agree to the <a href="/terms-of-service" target="_blank">terms of service</a> and <a href="/privacy-policy" target="_blank">privacy policy</a>, and agree to receive emails.
+            </label>
         </div>
     </fieldset>
 </form>

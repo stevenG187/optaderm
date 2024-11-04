@@ -78,5 +78,18 @@
 
 @import "layouts/layouts"; // 1
 
+@import "custom/slick";
+@import "custom/slick-theme";
+@import "layouts/base";
 @import "custom/forms/forms";
 @import "custom/page/interim";
+@import "custom/custom-header-footer";
+@import "custom/page/home";
+@import "custom/page/about";
+@import "custom/page/blog";
+@import "custom/page/contact";
+@import "custom/page/faq";
+@import "custom/page/product";
+@import "custom/page/clinic";
+@import "custom/page/skin-concern";
+@import "custom/page/skin-concern-tertiary";

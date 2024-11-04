@@ -13,13 +13,13 @@ product:
 
 {{#partial "page"}}
 
-    {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+    <!-- {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}} -->
 
     {{#each product.shipping_messages}}
         {{> components/common/alert/alert-info message}}
     {{/each}}
 
-    <div>
+    <div class="container">
         {{> components/products/product-view}}
 
         {{{region name="product_below_content"}}}
@@ -28,11 +28,8 @@ product:
             {{> components/products/videos product.videos}}
         {{/if}}
 
-        {{#all settings.show_product_reviews theme_settings.show_product_reviews (if theme_settings.show_product_details_tabs '!==' true)}}
-            {{> components/products/reviews reviews=product.reviews product=product urls=urls}}
-        {{/all}}
+        {{> components/products/reviews reviews=product.reviews product=product urls=urls}}
 
-        {{> components/products/tabs}}
     </div>
 
     {{> components/products/schema}}
