@@ -260,6 +260,8 @@
 
     .bg-content {
         padding: 15em 0 0;
+        z-index: 1;
+        position: relative;
 
         .flex-row {
             max-width: 89rem;
@@ -289,20 +291,30 @@
     .container {
         max-width: 51rem;
         padding: 2em 0;
-        position: relative;
+        
+        li {
+            margin: 1em 0;
+            position: relative;
 
-        &:before {
+            &:before {
+                content: '';
+                width: 1px;
+                height: 11.6rem;
+                position: absolute;
+                left: -16px;
+                bottom: 0;
+                background-color: #333333;
+            }
+        }
+
+        li:last-child:after {
             content: '';
             width: 1px;
             height: 11.6rem;
             position: absolute;
-            left: 2px;
-            top: 0;
-            background-color: #333333;
-        }
-
-        li {
-            margin: 1em 0;
+            left: -16px;
+            top: 13px;
+            background-color: #ffffff;
         }
     }
 }
@@ -457,6 +469,11 @@
     
     .about-section6 .bg-content {
         padding-top: 10em;
+    }
+
+    .about-section6 .container li:before,
+    .about-section6 .container li:last-child:after {
+        left: -15px;
     }
 }
 
