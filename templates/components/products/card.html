@@ -27,14 +27,12 @@
     {{/or}}"
 >
 
-    <div class="card-top-headline">
-        {{#filter custom_fields 'Top Headline' property='name' }}
+    {{#filter custom_fields 'Top Headline' property='name' }}
+        <div class="card-top-headline">
             {{value}}
-        {{/filter}}
-    </div>
-
-    <hr>
-
+        </div>
+    {{/filter}}
+    
     <figure class="card-figure">
         {{#if stock_level '===' 0}}
             {{#if theme_settings.pdp_sold_out_label '===' ''}}

@@ -1,15 +1,17 @@
-{{#if page_type '===' 'blog'}} 
-    <header class="header page dark-header" role="banner">
-{{else if page_type '===' 'blog_post'}} 
-    <header class="header page dark-header" role="banner">
-{{else if template '===' 'pages\custom\page\contact'}} 
-    <header class="header page dark-header" role="banner">        
-{{else if template '===' 'pages\custom\page\faq'}} 
-    <header class="header page dark-header" role="banner">      
-{{else if page_type '===' 'product'}} 
-    <header class="header page dark-header" role="banner">           
-{{else}}
+{{#if template '===' 'pages\custom\page\homepage'}} 
     <header class="header page" role="banner">
+{{else if template '===' 'pages\custom\page\clinic'}} 
+    <header class="header page" role="banner">
+{{else if template '===' 'pages\custom\page\about'}} 
+    <header class="header page" role="banner"> 
+{{else if page_type '===' 'category'}} 
+    <header class="header page" role="banner">  
+{{else if template '===' 'pages\custom\page\skin-concern'}} 
+    <header class="header page" role="banner">     
+{{else if template '===' 'pages\custom\page\hyperpigmentation'}} 
+    <header class="header page" role="banner">                                   
+{{else}}
+    <header class="header page dark-header" role="banner">
 {{/if}}
     <div class="header-top">
         <div class="flex-row align-center">

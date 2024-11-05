@@ -48,7 +48,31 @@
         {{~inject 'carouselActiveDotAriaLabel' (lang 'carousel.active_dot_aria_label')}}
         {{~inject 'carouselContentAnnounceMessage' (lang 'carousel.content_announce_message')}}
     </head>
-    <body>
+    {{#if template '===' 'pages\custom\page\homepage'}} 
+        <body class="with-header-bg">
+    {{else if template '===' 'pages\custom\page\clinic'}} 
+        <body class="with-header-bg">
+    {{else if template '===' 'pages\custom\page\about'}} 
+        <body class="with-header-bg">
+    {{else if page_type '===' 'category'}} 
+        <body class="with-header-bg">
+    {{else if template '===' 'pages\custom\page\skin-concern'}} 
+        <body class="with-header-bg">  
+    {{else if template '===' 'pages\custom\page\hyperpigmentation'}} 
+        <body class="with-header-bg">    
+    {{else if page_type '===' 'blog'}} 
+        <body class="with-header-bg">       
+    {{else if page_type '===' 'blog_post'}} 
+        <body class="with-header-bg">  
+    {{else if template '===' 'pages\custom\page\faq'}} 
+        <body class="with-header-bg">   
+    {{else if template '===' 'pages\custom\page\contact'}} 
+        <body class="with-header-bg"> 
+    {{else if page_type '===' 'product'}} 
+        <body class="with-header-bg">                             
+    {{else}}
+        <body class="no-header-bg">
+    {{/if}}
         <svg data-src="{{cdn 'img/icon-sprite.svg'}}" class="icons-svg-sprite"></svg>
 
         {{> components/custom/custom-header }}

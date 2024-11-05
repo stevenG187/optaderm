@@ -119,6 +119,14 @@ body {
     padding: 0;
 }
 
+.no-header-bg {
+    padding-top: 10em !important;
+
+    @media screen and (max-width: 1024px){
+        padding-top: 5em !important;
+    }
+}
+
 .page {
     :focus {
         outline: none !important;

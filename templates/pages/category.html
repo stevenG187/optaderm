@@ -39,7 +39,14 @@ category:
                 lazyload=theme_settings.lazyload_mode
                 class="category-header-image"
             }}
-        {{/if}}    
+        {{else}}
+            {{> components/common/responsive-img
+                image="https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/mixed-race-woman-applying-face-cream-68111.jpg?t=1730808466"
+                fallback_size=theme_settings.zoom_size
+                lazyload=theme_settings.lazyload_mode
+                class="category-header-image"
+            }}
+        {{/if}}
         <div class="container">
             <div class="content">
                 {{#unless theme_settings.hide_category_page_heading }}
