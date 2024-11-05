@@ -115,6 +115,10 @@
     font-display: swap;
 }
 
+body , html {
+    overflow-x: hidden;
+}
+
 body {
     padding: 0;
 }
