@@ -1,33 +1,51 @@
 {{#partial "page"}}
 
-{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-
-<main class="page">
-    {{#unless theme_settings.hide_contact_us_page_heading }}
-        <h1 class="page-heading">{{page.title}}</h1>
-    {{/unless}}
-
-    {{#if page.sub_pages}}
-        <nav class="navBar navBar--sub">
-            <ul class="navBar-section account-navigation">
-                {{#each page.sub_pages}}
-                    <li class="navBar-item"><a class="navBar-action" href="{{url}}">{{title}}</a></li>
-                {{/each}}
-            </ul>
-        </nav>
-    {{/if}}
-
-    <div id="contact-us-page" class="page-content page-content--centered">
-        {{#if forms.contact.success}}
-            <div id="contact-us-success">{{{lang 'forms.contact_us.successful' shopPath=urls.home}}}</div>
-        {{else}}
-            <p>{{{page.content}}}</p>
-            {{> components/page/contact-us-form}}
-        {{/if}}
-
+<div class="contact-sec1">
+    <div class="container">
+        <div class="top-section text-center">
+            <h1>CONTACT US</h1>
+            <p>Have any questions, concerns, or skincare needs? We're always here to help - just send us a message.</p>
+        </div>
+        <hr>
+        <div class="content flex-row">
+            <div class="w-40">
+                <div class="info">
+                    <p>CUSTOMER SUPPORT</p>
+                    <a href="mailto:support@optaderm.com">support@optaderm.com</a>
+                </div>
+                <div class="info">
+                    <p>SALES</p>
+                    <a href="mailto:sales@optaderm.com">sales@optaderm.com</a>
+                </div>
+                <div class="info">
+                    <p>SKINCARE GUIDANCE</p>
+                    <a href="mailto:support@optaderm.com">support@optaderm.com</a>
+                </div>
+                <div class="info">
+                    <p>AFFILIATES</p>
+                    <a href="mailto:support@optaderm.com">support@optaderm.com</a>
+                </div>
+                <div class="info">
+                    <a href="#">CLINIC LOCATION + HOURS</a>
+                </div>
+                <div class="info flex-row align-center">
+                    <img src="https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/phone-icon.png?t=1729237054" alt="Phone">
+                    <a href="tel:1-800-711-2026">1-800-711-2026</a>
+                </div>
+            </div>
+            <div class="w-60">
+                <div class="contact-form">
+                    {{#if forms.contact.success}}
+                        <div id="contact-us-success">{{{lang 'forms.contact_us.successful'}}}</div>
+                    {{else}}
+                        {{> components/page/contact-us-form}}
+                    {{/if}}
+                </div>
+            </div>
+        </div>
     </div>
-
-</main>
+    <hr>
+</div>
 
 {{/partial}}
 
