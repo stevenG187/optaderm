@@ -63,7 +63,7 @@
 .productGrid {
     width: 97.5%;
     margin: auto;
-    border: 1px solid #a5a0a5;
+    border: 0;
     background: rgb(232, 230, 229);
     background: -webkit-linear-gradient(260deg, rgba(232, 230, 229, 1) 0%, rgba(255, 255, 255, 1) 100%);
     background: -moz-linear-gradient(260deg, rgba(232, 230, 229, 1) 0%, rgba(255, 255, 255, 1) 100%);
@@ -82,16 +82,9 @@
             color: var(--opt-color-primary) !important;
         }
 
-        &:nth-child(2),
-        &:nth-child(5) {
-            border-left: 1px solid #a5a0a5;
-            border-right: 1px solid #a5a0a5;
-        }
-
-        &:nth-child(4),
-        &:nth-child(5),
-        &:nth-child(6) {
-            border-top: 1px solid #a5a0a5;
+        &:nth-child(3n + 2) {
+            border-right: 0;
+            border-left: 0;
         }
 
         @media screen and (max-width: 767px){
@@ -103,7 +96,7 @@
             padding: 1em 0;
             letter-spacing: 0.05em;
             text-transform: uppercase;
-            border-bottom: 2px solid #a5a0a5;
+            border-bottom: 1px solid #a5a0a5;
         }
 
         // hr {
@@ -118,6 +111,7 @@
 
             .card-img-container {
                 margin: 0;
+                max-width: 100%;
                 
                 img {
                     height: 25em;
@@ -199,10 +193,6 @@
                 display: block;
             }
 
-            &:nth-child(1) {
-                border-right: 2px solid #928d93;
-            }
-
             .card-figure {
                 background-color: rgba(0, 0, 0, 0);
             }
@@ -211,6 +201,7 @@
     }
 }
 
+.productGrid
 .productView {
     padding-top: 13rem;
 
@@ -394,12 +385,7 @@
         padding: 0 0.5em;
     }
     
-    .productGrid .product:nth-child(2), .productGrid .product:nth-child(3) {
-        border-top: 1px solid #a5a0a5;
-    }
-    
-    .productGrid .product:nth-child(2), .productGrid .product:nth-child(5) {
-        border-left: 0;
-        border-right: 0;
+    .productGrid .product:nth-child(3n + 2) {
+        border: 1px solid #a5a0a5;
     }
 }

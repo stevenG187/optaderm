@@ -1,3 +1,9 @@
+---
+blog:
+    recent_posts:
+        limit: {{theme_settings.homepage_blog_posts_count}}
+---
+
 {{#partial "page"}}
 
 <div class="clinic-sec1 bg-center" style="background-image: url(https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/clinic-bg1.jpg?t=1729151733);">
@@ -192,66 +198,7 @@
     </div>
 </div>
 
-<div class="hp-section6">
-    <div class="container top-content-grid flex-row align-center">
-        <div class="w-33"></div>
-        <div class="w-33 text-center">
-            <p>FEATURED BLOGS</p>
-        </div>
-        <div class="w-33 text-right">
-            <a href="#" class="button-outline">VIEW ALL BLOGS</a>
-        </div>
-    </div>
-    <div class="content">
-        <div class="flex-row align-center col-2">
-            <div class="w-33">
-                <h2>Skin Deep</h2>
-            </div>
-            <div class="w-67">
-                <p>Uncover the truth behind skincare myths and learn how to achieve radiant skin.</p>
-            </div>
-        </div>
-        <div class="flex-row col-3">
-            <div class="w-33">
-                <img src="https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/hp-img-19.jpg?t=1729058440" alt="When to use Vitamin C Serum Vitamin C Serum">
-                <div class="blog-content">
-                    <h3>When to use Vitamin C Serum Vitamin C Serum</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper </p>
-                    <ul class="blog-tag flex-row">
-                        <li>ACNE</li>
-                        <li>SKIN HEALTH</li>
-                        <li>AGING SKIN</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="w-33">
-                <img src="https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/hp-img-17.jpg?t=1729058438" alt="When to use Vitamin C Serum Vitamin C Serum">
-                <div class="blog-content">
-                    <h3>When to use Vitamin C Serum Vitamin C Serum</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper </p>
-                    <ul class="blog-tag flex-row">
-                        <li>ACNE</li>
-                        <li>SKIN HEALTH</li>
-                        <li>AGING SKIN</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="w-33">
-                <img src="https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/hp-img-18.jpg?t=1729058439" alt="When to use Vitamin C Serum Vitamin C Serum">
-                <div class="blog-content">
-                    <h3>When to use Vitamin C Serum Vitamin C Serum</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper </p>
-                    <ul class="blog-tag flex-row">
-                        <li>ACNE</li>
-                        <li>SKIN HEALTH</li>
-                        <li>AGING SKIN</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <hr>
-</div>
+{{> components/custom/page/featured-blogs}}
 
 {{/partial}}
 

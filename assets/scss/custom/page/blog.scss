@@ -50,6 +50,11 @@
     .w-33 {
         margin-bottom: 1em;
         border: 1px solid #a5a0a5;
+
+        &:nth-child(3n + 2) {
+            border-right: 0;
+            border-left: 0;
+        }
     }
 
     .blog-content {
@@ -260,5 +265,9 @@
 
     .blog-single .blog-tag li {
         margin: 0.5em 0.5em 0.5em 0;
+    }
+
+    .blog-sec3 .w-33:nth-child(3n + 2) {
+        border: 1px solid #a5a0a5;
     }
 }

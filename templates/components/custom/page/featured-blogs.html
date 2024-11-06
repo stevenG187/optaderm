@@ -1,0 +1,27 @@
+<div class="featured-blog-section">
+    <div class="container top-content-grid flex-row align-center">
+        <div class="w-33"></div>
+        <div class="w-33 text-center">
+            <p>FEATURED BLOGS</p>
+        </div>
+        <div class="w-33 text-right">
+            <a href="/blog" class="button-outline">VIEW ALL BLOGS</a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="flex-row align-center col-2">
+            <div class="w-33">
+                <h2>Skin Deep</h2>
+            </div>
+            <div class="w-67">
+                <p>Uncover the truth behind skincare myths and learn how to achieve radiant skin.</p>
+            </div>
+        </div>
+        <div class="flex-row col-3">
+            {{#each blog.recent_posts}}
+                {{> components/blog/post post=this theme_settings=../theme_settings}}
+            {{/each}}
+        </div>
+    </div>
+    <hr>
+</div>
