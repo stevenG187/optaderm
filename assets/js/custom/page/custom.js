@@ -67,6 +67,15 @@ jQuery(function ($) {
             prevArrow: '<div class="arrow-prev"><img src="https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/prev-arrow-dark.png?t=1729075424" alt-"Arrow"></div>',
         }); 
 
+        $('.header.transparent').hover(
+            function() {
+                $(this).addClass('dark-header');
+            },
+            function() {
+                $(this).removeClass('dark-header');
+            }
+        );
+
     });
 });
 

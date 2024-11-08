@@ -10,6 +10,7 @@
     -o-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     transition: all 0.3s ease;
+    z-index: 9;
 
     &.sticky-active {
         position: fixed;
@@ -72,6 +73,12 @@
 
         .navPage-subMenu-list a, .has-subMenu.is-open{
             color: var(--opt-color-text-light) !important;
+        }
+
+        .main-header-menu {
+            a {
+                color: var(--opt-color-text-dark) !important;
+            }
         }
 
         .navPages-list {
@@ -153,6 +160,12 @@
             color: var(--opt-color-text-light) !important;
         }
 
+        .main-header-menu {
+            a {
+                color: var(--opt-color-text-dark) !important;
+            }
+        }
+
         .navPages-list {
             a {
                 color: var(--opt-color-text-dark) !important;
@@ -191,10 +204,37 @@
     }
 
     .header-bottom {
+        .main-header-menu {
+            display: flex;
+            flex-wrap: wrap;
+            list-style-type: none;
+            justify-content: center;
+            padding: 0.6em 0 1em;
+            margin: 0;
+
+            a {
+                color: var(--opt-color-text-light);
+                font-weight: 500;
+                font-size: var(--text-s);
+                text-transform: uppercase;
+                margin: 0 1.5em;
+
+                &:hover {
+                    color: var(--opt-color-primary) !important;
+                }
+    
+                svg {
+                    fill: var(--opt-color-text-light);
+                    stroke: var(--opt-color-text-light);
+                }
+            }
+        }
+
         a {
             color: var(--opt-color-text-light);
             font-weight: 500;
             font-size: var(--text-s);
+            text-transform: uppercase;
 
             svg {
                 fill: var(--opt-color-text-light);
@@ -269,8 +309,8 @@
             padding: .5em 0;
 
             &:hover {
-                border-bottom-color: var(--opt-color-primary);
-                color: var(--opt-color-primary);
+                border-bottom-color: var(--opt-color-primary) !important;
+                color: var(--opt-color-primary) !important;
             }
         }
     }
@@ -649,6 +689,14 @@
     
     .footer-cta form .form-field .button {
         margin-top: 0.5em;
+    }
+
+    .header-bottom {
+        display: none;
+    }
+    
+    .header hr {
+        margin-bottom: -2px;
     }
 }
 

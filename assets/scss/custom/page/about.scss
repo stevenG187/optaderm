@@ -292,30 +292,38 @@
     .container {
         max-width: 51rem;
         padding: 2em 0;
-        
-        li {
-            margin: 1em 0;
-            position: relative;
 
-            &:before {
+        ul {
+            margin: 0 0 2em 0.9em;
+
+            li {
+                margin: 1em 0;
+                position: relative;
+    
+                &:before {
+                    content: '';
+                    width: 1px;
+                    height: 12.6rem;
+                    position: absolute;
+                    left: -20px;
+                    bottom: 0;
+                    background-color: #333333;
+                }
+
+                &::marker {
+                    font-size: 26px;
+                }
+            }
+    
+            li:last-child:after {
                 content: '';
                 width: 1px;
                 height: 11.6rem;
                 position: absolute;
-                left: -16px;
-                bottom: 0;
-                background-color: #333333;
+                left: -20px;
+                top: 19px;
+                background-color: #ffffff;
             }
-        }
-
-        li:last-child:after {
-            content: '';
-            width: 1px;
-            height: 11.6rem;
-            position: absolute;
-            left: -16px;
-            top: 13px;
-            background-color: #ffffff;
         }
     }
 }
