@@ -112,11 +112,15 @@ document.addEventListener("DOMContentLoaded", function() {
     const seeMoreSection = document.querySelector(".see-more-our-team");
     const seeAllButton = document.querySelector(".see-all");
 
-    seeAllButton.addEventListener("click", function() {
-        const sectionHeight = seeMoreSection.scrollHeight;
-        seeMoreSection.style.maxHeight = sectionHeight + 'px';
-        seeAllButton.style.display = "none";
-    });
+    if (seeMoreSection && seeAllButton) { // Check if elements exist
+        seeAllButton.addEventListener("click", function() {
+            const sectionHeight = seeMoreSection.scrollHeight;
+            seeMoreSection.style.maxHeight = sectionHeight + 'px';
+            seeAllButton.style.display = "none";
+        });
 
-    seeMoreSection.style.maxHeight = '0px';
+        seeMoreSection.style.maxHeight = '0px';
+    } else {
+        console.warn("See More section or See All button not found in the DOM.");
+    }
 });

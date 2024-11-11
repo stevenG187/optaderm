@@ -60,15 +60,21 @@
     }
 }
 
+.category-name {
+    position: relative;
+
+    #product-list {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -170px;
+    }
+}
+
 .productGrid {
     width: 97.5%;
     margin: auto;
     border: 0;
-    background: rgb(232, 230, 229);
-    background: -webkit-linear-gradient(260deg, rgba(232, 230, 229, 1) 0%, rgba(255, 255, 255, 1) 100%);
-    background: -moz-linear-gradient(260deg, rgba(232, 230, 229, 1) 0%, rgba(255, 255, 255, 1) 100%);
-    background: -o-linear-gradient(260deg, rgba(232, 230, 229, 1) 0%, rgba(255, 255, 255, 1) 100%);
-    background: linear-gradient(190deg, rgba(232, 230, 229, 1) 0%, rgba(255, 255, 255, 1) 100%);
     position: relative;
 
     .product {
@@ -77,6 +83,11 @@
         position: relative;
         height: 34em;
         border: 1px solid #a5a0a5;
+        background: rgb(232, 230, 229);
+        background: -webkit-linear-gradient(260deg, rgba(232, 230, 229, 1) 0%, rgba(255, 255, 255, 1) 100%);
+        background: -moz-linear-gradient(260deg, rgba(232, 230, 229, 1) 0%, rgba(255, 255, 255, 1) 100%);
+        background: -o-linear-gradient(260deg, rgba(232, 230, 229, 1) 0%, rgba(255, 255, 255, 1) 100%);
+        background: linear-gradient(190deg, rgba(232, 230, 229, 1) 0%, rgba(255, 255, 255, 1) 100%);
 
         &:hover .card-text, &:hover .card-title a {
             color: var(--opt-color-primary) !important;
@@ -85,6 +96,10 @@
         &:nth-child(3n + 2) {
             border-right: 0;
             border-left: 0;
+        }
+
+        &:last-child {
+            border-right: 1px solid #a5a0a5;
         }
 
         @media screen and (max-width: 767px){

@@ -5,6 +5,9 @@ category:
 blog:
     recent_posts:
         limit: {{theme_settings.homepage_blog_posts_count}}
+products:
+    featured:
+        limit: 3  
 ---
 {{inject "categoryProductsPerPage" theme_settings.categorypage_products_per_page}}
 {{#partial "head"}}
@@ -65,13 +68,21 @@ blog:
         <div class="top-content-header light text-center">
             <p>Featured {{category.name}} Products</p>
         </div>
-        {{> components/category/featured-product-listing}}  
+        <!-- {{> components/category/featured-product-listing}}   -->
+
+        {{#if products.featured}}
+            {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
+        {{/if}}
+    </div>
+
+    <div class="category-name">
+        <div class="top-content-header light text-center">
+            <div id="product-list"></div>
+            <p>ALL {{category.name}}</p>
+        </div>
     </div>
 
     <div class="category-products-content" id="product-listing-container">
-        <div class="top-content-header light text-center">
-            <p>ALL {{category.name}}</p>
-        </div>
         {{> components/category/product-listing}}
     </div>
 
