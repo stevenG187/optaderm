@@ -2,6 +2,9 @@
 blog:
     recent_posts:
         limit: {{theme_settings.homepage_blog_posts_count}}
+products:
+    featured:
+        limit: 6
 ---
 
 {{#partial "page"}}
@@ -24,7 +27,12 @@ blog:
             <a href="/shop" class="button-outline">VIEW ALL</a>
         </div>
     </div>
-    <div class="featured-content-grid flex-row">
+
+    {{#if products.featured}}
+        {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
+    {{/if}}
+
+    <!-- <div class="featured-content-grid flex-row">
         <div class="w-33">
             <a href="/transform-peptide-facial-concentrate-updating/">
                 <p class="prod-category">BESTSELLER</p>
@@ -104,7 +112,7 @@ blog:
                 <img src="https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/hp-img-12.jpg?t=1729058427" alt="RENEWAL" class="on-hover">
             </a>
         </div>
-    </div>
+    </div> -->
 </div>
 
 <div class="hp-section3">

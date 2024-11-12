@@ -30,7 +30,7 @@
 
         .content {
             text-align: left;
-            width: 55%;
+            width: 100%;
             z-index: 1;
             position: relative;
     
@@ -44,6 +44,7 @@
 
             p {
                 color: #ffffff;
+                width: 55%;
             }
         }
     }
@@ -379,7 +380,7 @@
         height: 25rem;
     }
     
-    .category-header .container .content {
+    .category-header .container .content p {
         width: 100%;
     }
     
