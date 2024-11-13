@@ -43,6 +43,12 @@
 
 .sc-tertiary-sec3 {
     padding: 0 1em;
+
+    .productGrid {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 }
 
 .sc-tertiary-sec4 {
@@ -115,6 +121,10 @@
     
     .sc-tertiary-sec1 h1 {
         font-size: 1.5em;
+    }
+
+    .sc-tertiary-sec3 .productGrid .product .card-figure .card-img-container img {
+        object-position: center;
     }
 }
 
