@@ -103,13 +103,14 @@
 
     <section class="productView-details product-data">
         <div class="productView-product">
-            <div class="card-top-headline">
-                {{#each product.custom_fields}}
-                    {{#if this.name '===' 'Top Headline'}}
-                        {{this.value}}
-                    {{/if}}
-                {{/each}}
-            </div>
+            
+            {{#each product.custom_fields}}
+                {{#if this.name '===' 'Top Headline'}}
+                <div class="card-top-headline">
+                    {{this.value}}
+                </div>
+                {{/if}}
+            {{/each}}
 
             {{#if product.brand}}
                 <h2 class="productView-brand">

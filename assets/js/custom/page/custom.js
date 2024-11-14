@@ -76,6 +76,10 @@ jQuery(function ($) {
             }
         );
 
+        $('.legacy-popup .container .close-btn').click(function() {
+            $('.legacy-popup').css('display', 'none');
+        });
+
     });
 });
 
