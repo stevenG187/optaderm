@@ -128,3 +128,15 @@ document.addEventListener("DOMContentLoaded", function() {
         console.warn("See More section or See All button not found in the DOM.");
     }
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Check if the customer is in the Legacy group and hasn't been redirected in this session
+    if (sessionStorage.getItem("isLegacyCustomer") === "true" && !sessionStorage.getItem("hasRedirectedToLegacy")) {
+        setTimeout(function() {
+            // Redirect to /legacy page
+            window.location.href = "/legacy";
+            // Set a flag to prevent multiple redirects in the same session
+            sessionStorage.setItem("hasRedirectedToLegacy", "true");
+        }, 5000); // 5-second delay
+    }
+});
