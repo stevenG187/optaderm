@@ -69,15 +69,19 @@ products:
                     {{#if this.value '===' 'Dull & Lacklustre Skin'}}
                         <li class="product">
                             <article class="card"> 
-                                {{#each ../custom_fields}}
-                                    {{#if this.name '===' 'Top Headline'}}
-                                        <div class="card-top-headline">
-                                            {{this.value}}
-                                        </div>
-                                    {{/if}}
-                                {{/each}}     
-                                <figure class="card-figure">
-                                    <a href="{{../url}}">
+                                <a href="{{url}}"
+                                    class="card-figure__link"
+                                    aria-label="{{> components/products/product-info}}"
+                                    data-event-type="product-click"
+                                >
+                                    {{#each ../custom_fields}}
+                                        {{#if this.name '===' 'Top Headline'}}
+                                            <div class="card-top-headline">
+                                                {{this.value}}
+                                            </div>
+                                        {{/if}}
+                                    {{/each}}     
+                                    <figure class="card-figure">
                                         <div class="card-img-container">
                                             <img {{#if ../image}}
                                             src="{{getImageSrcset ../image 1x=(default fallback_size '160w')}}" alt="{{../image.alt}}" title="{{../image.alt}}" {{!--
@@ -104,16 +108,19 @@ products:
                                                 {{#if lazyload '==' 'lazyload'}}loading="lazy"{{/if}}
                                                 {{otherAttributes}} />
                                         </div>
-                                    </a>
-                                </figure>
-                                <div class="card-body">
-                                    <p class="card-text">{{../brand.name}}</p>
-                                    <h3 class="card-title">
-                                        <a href="{{../url}}">
+                                    </figure>
+                                    <div class="card-body">
+                                        <p class="card-text">{{../brand.name}}</p>
+                                        <h3 class="card-title">
                                             {{../name}}
-                                        </a>
-                                    </h3>
-                                </div>
+                                        </h3>
+                                    </div>
+                                    {{#each ../custom_fields}}
+                                        {{#if this.name '===' 'Card Hover Image'}}
+                                            <img src="{{this.value}}" alt="Hover Image" class="on-hover">
+                                        {{/if}}
+                                    {{/each}}
+                                </a>
                             </article>
                         </li>
                         {{/if}}

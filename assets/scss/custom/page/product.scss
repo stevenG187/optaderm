@@ -163,21 +163,47 @@
     border: 0;
     position: relative;
 
+    .card {
+        margin: 0;
+        position: relative;
+
+        .card-figure__link {
+            padding-bottom: 4em;
+        }
+
+        &:hover .on-hover {
+            opacity: 1;
+        }
+
+        a {
+            &:hover .card-text, &:hover .card-title {
+                color: var(--opt-color-text-light) !important;
+            }
+        }
+
+        .on-hover {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: all ease .3s;
+            opacity: 0;
+        }
+        
+    }
+
     .product {
         width: 33.333% !important;
         padding: 0;
         position: relative;
-        height: 34em;
         border: 1px solid #a5a0a5;
         background: rgb(232, 230, 229);
         background: -webkit-linear-gradient(260deg, rgba(232, 230, 229, 1) 0%, rgba(255, 255, 255, 1) 100%);
         background: -moz-linear-gradient(260deg, rgba(232, 230, 229, 1) 0%, rgba(255, 255, 255, 1) 100%);
         background: -o-linear-gradient(260deg, rgba(232, 230, 229, 1) 0%, rgba(255, 255, 255, 1) 100%);
         background: linear-gradient(190deg, rgba(232, 230, 229, 1) 0%, rgba(255, 255, 255, 1) 100%);
-
-        &:hover .card-text, &:hover .card-title a {
-            color: var(--opt-color-primary) !important;
-        }
 
         &:nth-child(3n + 2) {
             border-right: 0;
@@ -198,30 +224,31 @@
             letter-spacing: 0.05em;
             text-transform: uppercase;
             border-bottom: 1px solid #a5a0a5;
+            position: absolute;
+            width: 100%;
+            z-index: 1;
         }
 
-        // hr {
-        //     border: none;
-        //     border-bottom: 1px solid #a5a0a5;
-        //     margin: 0;
-        // }
-
         .card-figure {
-            height: 25em;
+            height: 31em;
             background-color: rgba(0, 0, 0, 0);
+            padding-top: 4em;
 
             .card-img-container {
                 margin: 0;
                 max-width: 100%;
+                position: relative;
+                height: 100%;
                 
                 img {
                     height: 25em;
                     -o-object-fit: contain;
                     object-fit: contain;
-                    -o-object-position: bottom center;
-                    object-position: bottom center;
+                    -o-object-position: center;
+                    object-position: center;
                     width: 100%;
                     margin: 0;
+                    height: 100%;
                 }
             }
         }
@@ -233,6 +260,7 @@
             left: 0;
             right: 0;
             bottom: 1.5em;
+            z-index: 1;
 
             .card-text {
                 text-transform: uppercase;

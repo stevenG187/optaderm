@@ -68,10 +68,9 @@ products:
         <div class="top-content-header light text-center">
             <p>Featured {{category.name}} Products</p>
         </div>
-        <!-- {{> components/category/featured-product-listing}}   -->
 
         {{#if products.featured}}
-            {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
+            {{> components/category/featured-product-listing products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
         {{/if}}
     </div>
 

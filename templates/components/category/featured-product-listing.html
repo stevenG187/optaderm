@@ -1,61 +1,9 @@
-{{#if category.products}}
-    <ul class="productGrid">
-        {{#each category.products}}
-            {{#each this.custom_fields}}
-                {{#if this.name '===' 'featured'}}
-                    {{#if this.value '===' 'yes'}}
-                        <li class="product">
-                            <article class="card">
-                                <div class="card-top-headline">
-                                    {{#each ../custom_fields}}
-                                        {{#if this.name '===' 'Top Headline'}}
-                                                {{this.value}}
-                                        {{/if}}
-                                    {{/each}}
-                                </div>
-                                <figure class="card-figure">
-                                    <a href="{{../url}}">
-                                        <div class="card-img-container">
-                                            <img {{#if ../image}}
-                                            src="{{getImageSrcset ../image 1x=(default fallback_size '160w')}}" alt="{{../image.alt}}" title="{{../image.alt}}" {{!--
-                                                  Allow lazysizes to generate the 'sizes' attribute automatically --}}data-sizes="auto"
-                                                  {{#unless lazyload '==' 'disabled'}}
-                                                    {{#if lazyload '==' 'lazyload+lqip'}}
-                                                    {{!-- If we want a LQIP, include it as the default srcset (will be overwritten by lazysizes) --}}
-                                                    srcset="{{getImageSrcset ../image 1x=(default lqip_size '80w')}}"
-                                                    {{else}}
-                                                      {{!-- If we don't want a LQIP, use a 1px transparent gif for the stand-in image
-                                                            This requires no additional network request, so it's fast --}}
-                                                    srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-                                                    {{/if}}
-                                                {{/unless}}
-                                                {{!-- If lazyloading is disabled, just use "srcset". If it is not disabled, use "data-srcset" so lazysizes will use
-                                                      this after page load --}}
-                                                {{!--
-                                                Generate the srcset string using the default sizes defined in the helper. This will allow the browser to
-                                                pick the best-sized image based on its own understanding of how it will render the page.
-                                                --}}
-                                                {{#unless lazyload '==' 'disabled'}}data-{{/unless}}srcset="{{getImageSrcset ../image use_default_sizes=true }}"
-                                                {{else if default_image}}src="{{cdn default_image}}" alt="{{lang 'products.card_default_image_alt'}}"{{/if}}
-                                                class="{{#unless lazyload '==' 'disabled'}}lazyload{{/unless}}{{#if class}} {{class}}{{/if}}"
-                                                {{#if lazyload '==' 'lazyload'}}loading="lazy"{{/if}}
-                                                {{otherAttributes}} />
-                                        </div>
-                                    </a>
-                                </figure>
-                                <div class="card-body">
-                                    <p class="card-text">{{../brand.name}}</p>
-                                    <h3 class="card-title">
-                                        <a href="{{../url}}">
-                                            {{../name}}
-                                        </a>
-                                    </h3>
-                                </div>
-                            </article>
-                        </li>
-                        {{/if}}
-                {{/if}}
-            {{/each}}
-        {{/each}}
-    </ul>
-{{/if}}
+<!-- <h2 class="page-heading">{{lang 'products.featured' }}</h2> -->
+
+<ul class="productGrid productGrid--maxCol{{ columns }}" data-product-type="featured" data-list-name="Featured Products">
+    {{#each category.products}}
+        <li class="product">
+                {{>components/products/card settings=../settings theme_settings=../theme_settings customer=../customer event="list" position=(add @index 1)}}
+        </li>
+    {{/each}}
+</ul>
