@@ -575,6 +575,11 @@
     }
 }
 
+hr.footer-line {
+    margin: 4em 0 0;
+    border-color: var(--opt-color-text-dark);
+}
+
 .footer {
     .footer-item {
         color: var(--opt-color-text-light);
