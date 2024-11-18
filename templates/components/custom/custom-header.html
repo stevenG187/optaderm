@@ -1,28 +1,28 @@
-{{#if template '===' 'pages/custom/page/homepage'}} 
+{{#if template '===' 'pages\custom\page\homepage'}} 
     <header class="header page transparent" role="banner">
-{{else if template '===' 'pages/custom/page/clinic'}} 
+{{else if template '===' 'pages\custom\page\clinic'}} 
     <header class="header page transparent" role="banner">
-{{else if template '===' 'pages/custom/page/about'}} 
+{{else if template '===' 'pages\custom\page\about'}} 
     <header class="header page transparent" role="banner"> 
 {{else if page_type '===' 'category'}} 
     <header class="header page transparent" role="banner">  
-{{else if template '===' 'pages/custom/page/skin-concerns'}} 
+{{else if template '===' 'pages\custom\page\skin-concern'}} 
     <header class="header page transparent" role="banner">     
-{{else if template '===' 'pages/custom/page/hyperpigmentation'}} 
+{{else if template '===' 'pages\custom\page\hyperpigmentation'}} 
     <header class="header page transparent" role="banner">        
-{{else if template '===' 'pages/custom/page/rosacea'}} 
+{{else if template '===' 'pages\custom\page\rosacea'}} 
     <header class="header page transparent" role="banner"> 
-{{else if template '===' 'pages/custom/page/blemishes-acne'}} 
+{{else if template '===' 'pages\custom\page\blemishes-acne'}} 
     <header class="header page transparent" role="banner">  
-{{else if template '===' 'pages/custom/page/redness'}} 
+{{else if template '===' 'pages\custom\page\redness'}} 
     <header class="header page transparent" role="banner">    
-{{else if template '===' 'pages/custom/page/dehydrated-dry-skin'}} 
+{{else if template '===' 'pages\custom\page\dehydrated-dry-skin'}} 
     <header class="header page transparent" role="banner">  
-{{else if template '===' 'pages/custom/page/dull-skin-lack-of-luster'}} 
+{{else if template '===' 'pages\custom\page\dull-skin-lack-of-luster'}} 
     <header class="header page transparent" role="banner">        
-{{else if template '===' 'pages/custom/page/eczema'}} 
+{{else if template '===' 'pages\custom\page\eczema'}} 
     <header class="header page transparent" role="banner">  
-{{else if template '===' 'pages/custom/page/psoriasis'}} 
+{{else if template '===' 'pages\custom\page\psoriasis'}} 
     <header class="header page transparent" role="banner">                                             
 {{else}}
     <header class="header page dark-header" role="banner">
@@ -144,20 +144,41 @@
                         <a href="https://optadermclinic.janeapp.com/" target="_blank">Book Appointment</a>
                     </li>
                     <li class="account">
-                        <a href="/login.php">
-                            <svg width="100%" height="100%" viewBox="0 0 154 165" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-miterlimit:10;">
-                                <g transform="matrix(1,0,0,1,-12099.8,-3877.54)">
-                                    <g transform="matrix(8.33333,0,0,8.33333,0,0)">
-                                        <g transform="matrix(1,0,0,1,1467.85,476.533)">
-                                            <path d="M0,5.954C-0.386,2.603 -3.228,0 -6.682,0C-10.136,0 -12.979,2.603 -13.365,5.954L0,5.954Z" style="fill:none;fill-rule:nonzero;stroke:white;stroke-width:0.5px;"/>
-                                        </g>
-                                        <g transform="matrix(0,-1,-1,0,1461.17,467.818)">
-                                            <circle cx="-3.279" cy="0" r="3.279" style="fill:none;stroke:white;stroke-width:0.5px;"/>
+                        {{#if customer}}
+                            <a href="{{urls.account.index}}"
+                            aria-label="{{lang 'common.account'}}"
+                            >
+                                <svg width="100%" height="100%" viewBox="0 0 154 165" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-miterlimit:10;">
+                                    <g transform="matrix(1,0,0,1,-12099.8,-3877.54)">
+                                        <g transform="matrix(8.33333,0,0,8.33333,0,0)">
+                                            <g transform="matrix(1,0,0,1,1467.85,476.533)">
+                                                <path d="M0,5.954C-0.386,2.603 -3.228,0 -6.682,0C-10.136,0 -12.979,2.603 -13.365,5.954L0,5.954Z" style="fill:none;fill-rule:nonzero;stroke:white;stroke-width:0.5px;"/>
+                                            </g>
+                                            <g transform="matrix(0,-1,-1,0,1461.17,467.818)">
+                                                <circle cx="-3.279" cy="0" r="3.279" style="fill:none;stroke:white;stroke-width:0.5px;"/>
+                                            </g>
                                         </g>
                                     </g>
-                                </g>
-                            </svg>
-                        </a>
+                                </svg>
+                            </a>
+                        {{else}}
+                            <a href="{{urls.auth.login}}"
+                            aria-label="{{lang 'common.login'}}"
+                            >
+                                <svg width="100%" height="100%" viewBox="0 0 154 165" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-miterlimit:10;">
+                                    <g transform="matrix(1,0,0,1,-12099.8,-3877.54)">
+                                        <g transform="matrix(8.33333,0,0,8.33333,0,0)">
+                                            <g transform="matrix(1,0,0,1,1467.85,476.533)">
+                                                <path d="M0,5.954C-0.386,2.603 -3.228,0 -6.682,0C-10.136,0 -12.979,2.603 -13.365,5.954L0,5.954Z" style="fill:none;fill-rule:nonzero;stroke:white;stroke-width:0.5px;"/>
+                                            </g>
+                                            <g transform="matrix(0,-1,-1,0,1461.17,467.818)">
+                                                <circle cx="-3.279" cy="0" r="3.279" style="fill:none;stroke:white;stroke-width:0.5px;"/>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </a>
+                        {{/if}}
                     </li>
                     <!--<li class="flag">-->
                     <!--    <a href="#">-->
