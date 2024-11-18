@@ -1,3 +1,88 @@
+.legacy-popup {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+
+    .overlay {
+        background-color: rgba(0,0,0,.7);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .container {
+        max-width: 75%;
+        padding: 0;
+
+        .close-btn {
+            position: absolute;
+            right: 0.2em;
+            top: 0.2em;
+            font-size: 2.5rem;
+            z-index: 1;
+            background-color: #ffffff;
+            line-height: 0em;
+            width: 1em;
+            height: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 0.1em;
+            cursor: pointer;
+        }
+
+        .content {
+            position: relative;
+            background-image: url(https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/copy-of-optaderm-clinic-12.jpg?t=1731587110);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: bottom center;
+            padding: 35% 3% 2%;
+
+            &:before {
+                content: '';
+                background: #403f41;
+                background: -webkit-gradient(linear, left bottom, left top, from(#403f41), to(rgba(0, 0, 0, 0)));
+                background: linear-gradient(0deg, #403f41 0%, rgba(0, 0, 0, 0) 100%);
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                right: 0;
+            }
+
+            
+            h2 {
+                position: relative;
+                color: var(--opt-color-text-light);
+                margin: 0;
+                font-size: 3.5rem;
+            }
+
+            h3 {
+                position: relative;
+                color: var(--opt-color-text-light);
+                margin: 0;
+                font-size: 1.5rem;
+            }
+
+            p {
+                position: relative;
+                margin: 0.5em 0;
+                color: var(--opt-color-text-light);
+                font-size: var(--text-m);
+            }
+        }
+    }
+}
+
 .category-header {
     position: relative;
 
@@ -17,7 +102,7 @@
 
     img {
         width: 100%;
-        height: 75rem;
+        height: 51rem;
         -o-object-fit: cover;
            object-fit: cover;
         -o-object-position: bottom;
@@ -78,21 +163,48 @@
     border: 0;
     position: relative;
 
+    .card {
+        margin: 0;
+        position: relative;
+
+        .card-figure__link {
+            padding-bottom: 4em;
+        }
+
+        &:hover .on-hover {
+            opacity: 1;
+        }
+
+        a {
+            &:hover .card-text, &:hover .card-title {
+                color: var(--opt-color-text-light) !important;
+            }
+        }
+
+        .on-hover {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: all ease .3s;
+            opacity: 0;
+            z-index: 2;
+        }
+        
+    }
+
     .product {
         width: 33.333% !important;
         padding: 0;
         position: relative;
-        height: 34em;
         border: 1px solid #a5a0a5;
         background: rgb(232, 230, 229);
         background: -webkit-linear-gradient(260deg, rgba(232, 230, 229, 1) 0%, rgba(255, 255, 255, 1) 100%);
         background: -moz-linear-gradient(260deg, rgba(232, 230, 229, 1) 0%, rgba(255, 255, 255, 1) 100%);
         background: -o-linear-gradient(260deg, rgba(232, 230, 229, 1) 0%, rgba(255, 255, 255, 1) 100%);
         background: linear-gradient(190deg, rgba(232, 230, 229, 1) 0%, rgba(255, 255, 255, 1) 100%);
-
-        &:hover .card-text, &:hover .card-title a {
-            color: var(--opt-color-primary) !important;
-        }
 
         &:nth-child(3n + 2) {
             border-right: 0;
@@ -113,30 +225,31 @@
             letter-spacing: 0.05em;
             text-transform: uppercase;
             border-bottom: 1px solid #a5a0a5;
+            position: absolute;
+            width: 100%;
+            z-index: 1;
         }
 
-        // hr {
-        //     border: none;
-        //     border-bottom: 1px solid #a5a0a5;
-        //     margin: 0;
-        // }
-
         .card-figure {
-            height: 25em;
+            height: 31em;
             background-color: rgba(0, 0, 0, 0);
+            padding-top: 4em;
 
             .card-img-container {
                 margin: 0;
                 max-width: 100%;
+                position: relative;
+                height: 100%;
                 
                 img {
                     height: 25em;
                     -o-object-fit: contain;
                     object-fit: contain;
-                    -o-object-position: bottom center;
-                    object-position: bottom center;
+                    -o-object-position: center;
+                    object-position: center;
                     width: 100%;
                     margin: 0;
+                    height: 100%;
                 }
             }
         }
@@ -148,6 +261,7 @@
             left: 0;
             right: 0;
             bottom: 1.5em;
+            z-index: 3;
 
             .card-text {
                 text-transform: uppercase;
@@ -164,6 +278,10 @@
 }
 
 .pairs-with {
+    .on-hover {
+        display: none;
+    }
+
     p {
         text-transform: uppercase;
         letter-spacing: 0.1rem;
@@ -336,7 +454,7 @@
             margin-bottom: 1rem;
 
             &.rf {
-                margin-bottom: 10px;
+                margin-bottom: 0;
             }
 
             &.rfd {
@@ -362,6 +480,18 @@
             font-weight: 500;
         }
 
+        .desc-headline {
+            padding-bottom: 0;
+            font-family: 'Avenir Next' !important;
+            font-size: var(--text-m);
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            font-weight: 500;
+            margin-bottom: 0;
+            padding: 0;
+            display: block;
+        }
+
         p {
             margin-bottom: 1em !important;
         }
@@ -385,9 +515,25 @@
     .productView {
         padding-top: 9rem;
     }
+
+    .legacy-popup .container .content h2 {
+        font-size: 3rem;
+    }
 }
 
 @media screen and (max-width: 767px){
+    .legacy-popup .container .content h2 {
+        font-size: 2rem;
+    }
+    
+    .legacy-popup .container {
+        max-width: 90%;
+    }
+    
+    .legacy-popup .container .content h3 {
+        font-size: 1.1rem;
+    }
+    
     .category-header img {
         height: 25rem;
     }
