@@ -1,7 +1,11 @@
 .clinic-sec1 {
-    padding: 30em 0 3em;
+    padding: 40em 0 3em;
     color: var(--opt-color-text-light);
-
+    
+   .container.clinic-header {
+        margin-left: 0;
+    }
+    
     .content {
         width: 30%;
 

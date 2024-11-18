@@ -432,6 +432,14 @@ $card-preview-zoom-bottom-offset:       6rem;
     }
 }
 
+button.coupon-code-add,
+button.coupon-code-cancel,
+button.shipping-estimate-show,
+button.gift-certificate-add,
+button.gift-certificate-cancel {
+    border: none;
+}
+
 .coupon-code-cancel,
 .shipping-estimate-show[aria-expanded="true"] {
     font-style: italic;

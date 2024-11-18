@@ -75,11 +75,6 @@ jQuery(function ($) {
                 $(this).removeClass('dark-header');
             }
         );
-
-        $('.legacy-popup .container .close-btn').click(function() {
-            $('.legacy-popup').css('display', 'none');
-        });
-
     });
 });
 
@@ -116,15 +111,13 @@ document.addEventListener("DOMContentLoaded", function() {
     const seeMoreSection = document.querySelector(".see-more-our-team");
     const seeAllButton = document.querySelector(".see-all");
 
-    if (seeMoreSection && seeAllButton) { // Check if elements exist
-        seeAllButton.addEventListener("click", function() {
-            const sectionHeight = seeMoreSection.scrollHeight;
-            seeMoreSection.style.maxHeight = sectionHeight + 'px';
-            seeAllButton.style.display = "none";
-        });
-
-        seeMoreSection.style.maxHeight = '0px';
-    } else {
-        console.warn("See More section or See All button not found in the DOM.");
-    }
+    if ( seeAllButton ) {
+    seeAllButton.addEventListener("click", function() {
+        const sectionHeight = seeMoreSection.scrollHeight;
+        seeMoreSection.style.maxHeight = sectionHeight + 'px';
+        seeAllButton.style.display = "none";
+    });
+}    if ( seeMoreSection ) {
+    seeMoreSection.style.maxHeight = '0px';
+}
 });

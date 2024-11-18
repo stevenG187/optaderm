@@ -1,28 +1,28 @@
-{{#if template '===' 'pages\custom\page\homepage'}} 
+{{#if template '===' 'pages/custom/page/homepage'}} 
     <header class="header page transparent" role="banner">
-{{else if template '===' 'pages\custom\page\clinic'}} 
+{{else if template '===' 'pages/custom/page/clinic'}} 
     <header class="header page transparent" role="banner">
-{{else if template '===' 'pages\custom\page\about'}} 
+{{else if template '===' 'pages/custom/page/about'}} 
     <header class="header page transparent" role="banner"> 
 {{else if page_type '===' 'category'}} 
     <header class="header page transparent" role="banner">  
-{{else if template '===' 'pages\custom\page\skin-concern'}} 
+{{else if template '===' 'pages/custom/page/skin-concerns'}} 
     <header class="header page transparent" role="banner">     
-{{else if template '===' 'pages\custom\page\hyperpigmentation'}} 
+{{else if template '===' 'pages/custom/page/hyperpigmentation'}} 
     <header class="header page transparent" role="banner">        
-{{else if template '===' 'pages\custom\page\rosacea'}} 
+{{else if template '===' 'pages/custom/page/rosacea'}} 
     <header class="header page transparent" role="banner"> 
-{{else if template '===' 'pages\custom\page\blemishes-acne'}} 
+{{else if template '===' 'pages/custom/page/blemishes-acne'}} 
     <header class="header page transparent" role="banner">  
-{{else if template '===' 'pages\custom\page\redness'}} 
+{{else if template '===' 'pages/custom/page/redness'}} 
     <header class="header page transparent" role="banner">    
-{{else if template '===' 'pages\custom\page\dehydrated-dry-skin'}} 
+{{else if template '===' 'pages/custom/page/dehydrated-dry-skin'}} 
     <header class="header page transparent" role="banner">  
-{{else if template '===' 'pages\custom\page\dull-skin-lack-of-luster'}} 
+{{else if template '===' 'pages/custom/page/dull-skin-lack-of-luster'}} 
     <header class="header page transparent" role="banner">        
-{{else if template '===' 'pages\custom\page\eczema'}} 
+{{else if template '===' 'pages/custom/page/eczema'}} 
     <header class="header page transparent" role="banner">  
-{{else if template '===' 'pages\custom\page\psoriasis'}} 
+{{else if template '===' 'pages/custom/page/psoriasis'}} 
     <header class="header page transparent" role="banner">                                             
 {{else}}
     <header class="header page dark-header" role="banner">
@@ -144,61 +144,40 @@
                         <a href="https://optadermclinic.janeapp.com/" target="_blank">Book Appointment</a>
                     </li>
                     <li class="account">
-                        {{#if customer}}
-                            <a href="{{urls.account.index}}"
-                            aria-label="{{lang 'common.account'}}"
-                            >
-                                <svg width="100%" height="100%" viewBox="0 0 154 165" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-miterlimit:10;">
-                                    <g transform="matrix(1,0,0,1,-12099.8,-3877.54)">
-                                        <g transform="matrix(8.33333,0,0,8.33333,0,0)">
-                                            <g transform="matrix(1,0,0,1,1467.85,476.533)">
-                                                <path d="M0,5.954C-0.386,2.603 -3.228,0 -6.682,0C-10.136,0 -12.979,2.603 -13.365,5.954L0,5.954Z" style="fill:none;fill-rule:nonzero;stroke:white;stroke-width:0.5px;"/>
-                                            </g>
-                                            <g transform="matrix(0,-1,-1,0,1461.17,467.818)">
-                                                <circle cx="-3.279" cy="0" r="3.279" style="fill:none;stroke:white;stroke-width:0.5px;"/>
-                                            </g>
-                                        </g>
-                                    </g>
-                                </svg>
-                            </a>
-                        {{else}}
-                            <a href="{{urls.auth.login}}"
-                            aria-label="{{lang 'common.login'}}"
-                            >
-                                <svg width="100%" height="100%" viewBox="0 0 154 165" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-miterlimit:10;">
-                                    <g transform="matrix(1,0,0,1,-12099.8,-3877.54)">
-                                        <g transform="matrix(8.33333,0,0,8.33333,0,0)">
-                                            <g transform="matrix(1,0,0,1,1467.85,476.533)">
-                                                <path d="M0,5.954C-0.386,2.603 -3.228,0 -6.682,0C-10.136,0 -12.979,2.603 -13.365,5.954L0,5.954Z" style="fill:none;fill-rule:nonzero;stroke:white;stroke-width:0.5px;"/>
-                                            </g>
-                                            <g transform="matrix(0,-1,-1,0,1461.17,467.818)">
-                                                <circle cx="-3.279" cy="0" r="3.279" style="fill:none;stroke:white;stroke-width:0.5px;"/>
-                                            </g>
-                                        </g>
-                                    </g>
-                                </svg>
-                            </a>
-                        {{/if}}
-                    </li>
-                    <li class="flag">
-                        <a href="#">
-                            <svg width="100%" height="100%" viewBox="0 0 165 119" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-                                <g transform="matrix(1,0,0,1,-12375.6,-3911.35)">
+                        <a href="/login.php">
+                            <svg width="100%" height="100%" viewBox="0 0 154 165" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-miterlimit:10;">
+                                <g transform="matrix(1,0,0,1,-12099.8,-3877.54)">
                                     <g transform="matrix(8.33333,0,0,8.33333,0,0)">
-                                        <g transform="matrix(1,0,0,1,1495.24,473.648)">
-                                            <path d="M0,5.378C0.032,5.373 2.505,5.655 2.505,5.655C2.505,5.655 2.233,5.133 2.248,4.905C2.276,4.612 4.74,2.705 4.74,2.705C4.74,2.705 4.151,2.437 4.129,2.33C4.001,2.052 4.579,0.649 4.579,0.649C4.579,0.649 3.251,1.034 3.101,0.959C2.951,0.884 2.758,0.199 2.758,0.199C2.758,0.199 1.623,1.527 1.516,1.58C1.409,1.634 1.205,1.548 1.227,1.345C1.248,1.141 1.784,-1.376 1.784,-1.376C1.784,-1.376 0.98,-0.905 0.819,-0.937C0.466,-1.065 -0.196,-2.683 -0.196,-2.683C-0.196,-2.683 -0.858,-1.065 -1.211,-0.937C-1.372,-0.905 -2.175,-1.376 -2.175,-1.376C-2.175,-1.376 -1.64,1.141 -1.618,1.345C-1.597,1.548 -1.8,1.634 -1.907,1.58C-2.015,1.527 -3.15,0.199 -3.15,0.199C-3.15,0.199 -3.343,0.884 -3.493,0.959C-3.643,1.034 -4.971,0.649 -4.971,0.649C-4.971,0.649 -4.392,2.052 -4.521,2.33C-4.542,2.437 -5.132,2.705 -5.132,2.705C-5.132,2.705 -2.668,4.612 -2.639,4.905C-2.625,5.133 -2.896,5.655 -2.896,5.655C-2.896,5.655 -0.424,5.373 -0.392,5.378C-0.359,5.383 -0.333,5.41 -0.311,5.469C-0.29,5.528 -0.418,8.061 -0.418,8.061L0.027,8.061C0.027,8.061 -0.102,5.528 -0.08,5.469C-0.059,5.41 -0.032,5.383 0,5.378" style="fill:white;fill-rule:nonzero;"/>
+                                        <g transform="matrix(1,0,0,1,1467.85,476.533)">
+                                            <path d="M0,5.954C-0.386,2.603 -3.228,0 -6.682,0C-10.136,0 -12.979,2.603 -13.365,5.954L0,5.954Z" style="fill:none;fill-rule:nonzero;stroke:white;stroke-width:0.5px;"/>
                                         </g>
-                                        <g transform="matrix(1,0,0,1,1501.99,469.564)">
-                                            <path d="M0,13.813C1.745,12.032 2.824,9.596 2.824,6.906C2.824,4.216 1.745,1.781 0,0L0,13.813Z" style="fill:white;fill-rule:nonzero;"/>
-                                        </g>
-                                        <g transform="matrix(1,0,0,1,1488.1,483.578)">
-                                            <path d="M0,-14.216C-1.866,-12.42 -3.032,-9.902 -3.032,-7.108C-3.032,-4.314 -1.866,-1.796 0,0L0,-14.216Z" style="fill:white;fill-rule:nonzero;"/>
+                                        <g transform="matrix(0,-1,-1,0,1461.17,467.818)">
+                                            <circle cx="-3.279" cy="0" r="3.279" style="fill:none;stroke:white;stroke-width:0.5px;"/>
                                         </g>
                                     </g>
                                 </g>
                             </svg>
                         </a>
                     </li>
+                    <!--<li class="flag">-->
+                    <!--    <a href="#">-->
+                    <!--        <svg width="100%" height="100%" viewBox="0 0 165 119" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">-->
+                    <!--            <g transform="matrix(1,0,0,1,-12375.6,-3911.35)">-->
+                    <!--                <g transform="matrix(8.33333,0,0,8.33333,0,0)">-->
+                    <!--                    <g transform="matrix(1,0,0,1,1495.24,473.648)">-->
+                    <!--                        <path d="M0,5.378C0.032,5.373 2.505,5.655 2.505,5.655C2.505,5.655 2.233,5.133 2.248,4.905C2.276,4.612 4.74,2.705 4.74,2.705C4.74,2.705 4.151,2.437 4.129,2.33C4.001,2.052 4.579,0.649 4.579,0.649C4.579,0.649 3.251,1.034 3.101,0.959C2.951,0.884 2.758,0.199 2.758,0.199C2.758,0.199 1.623,1.527 1.516,1.58C1.409,1.634 1.205,1.548 1.227,1.345C1.248,1.141 1.784,-1.376 1.784,-1.376C1.784,-1.376 0.98,-0.905 0.819,-0.937C0.466,-1.065 -0.196,-2.683 -0.196,-2.683C-0.196,-2.683 -0.858,-1.065 -1.211,-0.937C-1.372,-0.905 -2.175,-1.376 -2.175,-1.376C-2.175,-1.376 -1.64,1.141 -1.618,1.345C-1.597,1.548 -1.8,1.634 -1.907,1.58C-2.015,1.527 -3.15,0.199 -3.15,0.199C-3.15,0.199 -3.343,0.884 -3.493,0.959C-3.643,1.034 -4.971,0.649 -4.971,0.649C-4.971,0.649 -4.392,2.052 -4.521,2.33C-4.542,2.437 -5.132,2.705 -5.132,2.705C-5.132,2.705 -2.668,4.612 -2.639,4.905C-2.625,5.133 -2.896,5.655 -2.896,5.655C-2.896,5.655 -0.424,5.373 -0.392,5.378C-0.359,5.383 -0.333,5.41 -0.311,5.469C-0.29,5.528 -0.418,8.061 -0.418,8.061L0.027,8.061C0.027,8.061 -0.102,5.528 -0.08,5.469C-0.059,5.41 -0.032,5.383 0,5.378" style="fill:white;fill-rule:nonzero;"/>-->
+                    <!--                    </g>-->
+                    <!--                    <g transform="matrix(1,0,0,1,1501.99,469.564)">-->
+                    <!--                        <path d="M0,13.813C1.745,12.032 2.824,9.596 2.824,6.906C2.824,4.216 1.745,1.781 0,0L0,13.813Z" style="fill:white;fill-rule:nonzero;"/>-->
+                    <!--                    </g>-->
+                    <!--                    <g transform="matrix(1,0,0,1,1488.1,483.578)">-->
+                    <!--                        <path d="M0,-14.216C-1.866,-12.42 -3.032,-9.902 -3.032,-7.108C-3.032,-4.314 -1.866,-1.796 0,0L0,-14.216Z" style="fill:white;fill-rule:nonzero;"/>-->
+                    <!--                    </g>-->
+                    <!--                </g>-->
+                    <!--            </g>-->
+                    <!--        </svg>-->
+                    <!--    </a>-->
+                    <!--</li>-->
                     <li class="cart-bag">
                         <a data-cart-preview
                             data-dropdown="cart-preview-dropdown"
@@ -231,9 +210,9 @@
     <div class="header-bottom">
         <ul class="main-header-menu">
             <li><a href="/shop">Shop</a></li>
-            <li><a href="/face">Face</a></li>
-            <li><a href="/body">Body</a></li>
-            <li><a href="/skin-concern">Skin Concern</a></li>
+            <li><a href="/shop/face">Face</a></li>
+            <li><a href="/shop/body">Body</a></li>
+            <li><a href="/skin-concerns">Skin Concern</a></li>
             <li><a href="/clinic">Clinic</a></li>
         </ul>
         <!-- <div class="navPages-container" id="menu" data-menu>
@@ -261,37 +240,23 @@
         <div class="w-40">
             <ul>
                 <li><a href="/shop/">Shop</a></li>
-                <li><a href="/face/">Face</a></li>
-                <li><a href="/body/">Body</a></li>
-                <li><a href="/skin-concern">Skin Concern</a></li>
+                <li><a href="/shop/face/">Face</a></li>
+                <li><a href="/shop/body/">Body</a></li>
+                <li><a href="/skin-concerns">Skin Concern</a></li>
                 <li><a href="/clinic">Clinic</a></li>
             </ul>
         </div>
         <div class="w-20">
             <ul>
                 <li><a href="/shop/">Shop All</a></li>
-                <li><a href="#">Bestsellers</a></li>
-                <li><a href="#">Just In</a></li>
-                <li><a href="#">Collections</a></li>
-                <li><a href="#">New Formulations</a></li>
+                <li><a href="/shop/bestsellers">Bestsellers</a></li>
+                <li><a href="/shop/just-in">Just In</a></li>
+                <li><a href="/shop/collections">Collections</a></li>
+                <li><a href="/shop/new-formulations">New Formulations</a></li>
             </ul>
 
             <ul>
-                <li>
-                    {{#if customer}}
-                        <a href="{{urls.auth.logout}}"
-                        aria-label="{{lang 'common.logout'}}"
-                        >
-                            Sign Out
-                        </a>
-                    {{else}}
-                        <a href="{{urls.auth.login}}"
-                        aria-label="{{lang 'common.login'}}"
-                        >
-                            Sign In
-                        </a>
-                    {{/if}}
-                </li>
+                <li><a href="/login.php">Sign In</a></li>
                 <li><a href="/about">About Us</a></li>
                 <li><a href="/faq">FAQs</a></li>
             </ul>
@@ -299,36 +264,37 @@
         <div class="w-20">
             <ul>
                 <li><a href="/shop/face/cleansers/">Cleansers</a></li>
-                <li><a href="/shop/face/combination-treatment-moisturizers/">Treatment-Moisturizers</a></li>
+                <!--<li><a href="/shop/face/combination-treatment-moisturizers/">Combination Treatment Moisturizers</a></li>-->
                 <li><a href="/shop/face/exfoliants/">Exfoliants</a></li>
-                <li><a href="/face/lip-treatments/">Lip Treatments</a></li>
-                <li><a href="/shop/face/masks/">Masks</a></li>
+                <li><a href="/shop/face/lip-moisturizers/">Lip Moisturizers</a></li>
+                <!--<li><a href="/shop/face/masks/">Masks</a></li>-->
                 <li><a href="/shop/face/moisturizers/">Moisturizers</a></li>
-                <li><a href="/face/moisturizers/eye-moisturizers/">Eye Moisturizers</a></li>
-                <li><a href="/shop/face/peptide-treatments/">Treatments</a></li>
+                <!--<li><a href="/shop/face/eye-moisturizers/">Eye Moisturizers</a></li>-->
+                <li><a href="/shop/face/treatments/">Treatments</a></li>
                 <li><a href="/shop/face/toners/">Toners</a></li>
             </ul>
 
             <ul>
-                <li><a href="/shop/hair-care/">Hair Care</a></li>
-                <li><a href="/shop/body-care/">Body care</a></li>
+                <li><a href="/shop/hair/">Hair Care</a></li>
+                <li><a href="/shop/body/">Body care</a></li>
             </ul>
         </div>
         <div class="w-20">
             <ul>
-                <li><a href="/face/glycolic-acid/">Glycolic Acid</a></li>
-                <li><a href="/face/hyaluronic-acid/">Hyaluronic Acid</a></li>
-                <li><a href="/face/niacinamide/">Niacinamide</a></li>
-                <li><a href="/face/peptides/">Peptides</a></li>
-                <li><a href="/face/retinol/">Retinol</a></li>
-                <li><a href="/face/salicylic-acid/">Salicylic Acid</a></li>
+                <li><a href="/shop/glycolic-acid/">Glycolic Acid</a></li>
+                <li><a href="/shop/hyaluronic-acid/">Hyaluronic Acid</a></li>
+                <li><a href="/shop/niacinamide/">Niacinamide</a></li>
+                <li><a href="/shop/peptides/">Peptides</a></li>
+                <li><a href="/shop/retinol/">Retinol</a></li>
+                <!--<li><a href="/shop/salicylic-acid/">Salicylic Acid</a></li>-->
             </ul>
 
             <ul>
-                <li><a href="/face/anti-aging/">Anti-aging</a></li>
-                <li><a href="/face/dehydration/">Dehydration</a></li>
-                <li><a href="/hyperpigmentation">Hyperpigmentation</a></li>
-                <li><a href="/face/uneven-pores/">Uneven & Pores</a></li>
+                <li><a href="/shop/anti-aging/">Anti-aging</a></li>
+                    <li><a href="/shop/blemishes-acne/">Blemishes + Acne</a></li>
+                <li><a href="/shop/dehydration/">Dehydration</a></li>
+                <li><a href="/shop/hyperpigmentation">Hyperpigmentation</a></li>
+            
             </ul>
         </div>
     </div>

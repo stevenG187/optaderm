@@ -11,22 +11,3 @@
         {{{product.warranty}}}
     </div>
 {{/if}}
-
-<script>
-    const productDescription = {{{json product.description}}};
-
-    function formatDescriptionWithHr(description) {
-        let formatted = description
-            .replace("DESCRIPTION:", "<span class='desc-headline'>BENEFITS</span><br>")
-            .replace("DIRECTIONS:", "<hr><span class='desc-headline'>HOW TO USE</span><br>")
-            .replace("INGREDIENTS:", "<hr><span class='desc-headline'>INGREDIENTS</span><br>");
-        return formatted;
-    }
-
-    // Format the description and inject it
-    const formattedDescriptionWithHr = formatDescriptionWithHr(productDescription);
-    const descriptionElement = document.querySelector('.productView-description[data-event-type="product"]');
-    if (descriptionElement) {
-        descriptionElement.innerHTML = formattedDescriptionWithHr;
-    }
-</script>

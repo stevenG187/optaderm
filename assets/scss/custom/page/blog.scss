@@ -1,8 +1,8 @@
 .blog-sec1 {
-    padding-top: 11.5em;
+    padding-top: 13em;
 
     .subheadline {
-        margin: 0;
+        margin: 0 0 20px 0;
         font-size: var(--text-l);
         font-weight: 500;
     }
@@ -242,11 +242,14 @@
 
 @media screen and (max-width: 1024px){
     .blog-sec1, .blog-single {
-        padding-top: 8.5em;
+        padding-top: 10em;
     }
 }
 
 @media screen and (max-width: 767px){
+    .blog-sec1, .blog-single {
+        padding-top: 8.5em;
+    }
     .blog-sec1 h1 {
         font-size: 3rem;
     }

@@ -2,9 +2,6 @@
 blog:
     recent_posts:
         limit: {{theme_settings.homepage_blog_posts_count}}
-products:
-    featured:
-        limit: 6
 ---
 
 {{#partial "page"}}
@@ -12,7 +9,7 @@ products:
 <div class="hp-section1 bg-bottom">
     <div class="container">
         <h1>We never stop innovating for you</h1>
-        <p>We’ve taken performance-driven <br>skincare further with science.</p>
+        <p>We take performance-driven <br>skincare further with science.</p>
         <a href="/shop" class="button-outline">Shop Now</a>
     </div>
 </div>
@@ -27,14 +24,9 @@ products:
             <a href="/shop" class="button-outline">VIEW ALL</a>
         </div>
     </div>
-
-    {{#if products.featured}}
-        {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
-    {{/if}}
-
-    <!-- <div class="featured-content-grid flex-row">
+    <div class="featured-content-grid flex-row">
         <div class="w-33">
-            <a href="/transform-peptide-facial-concentrate-updating/">
+            <a href="/transform-peptide-facial-concentrate/">
                 <p class="prod-category">BESTSELLER</p>
                 <div class="content">
                     <img src="https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/hp-img-1.png?t=1729058380" alt="TRANSFORM">
@@ -47,12 +39,12 @@ products:
             </a>
         </div>
         <div class="w-33">
-            <a href="/2024-eraser-spot-hyperpigmentation-correcting-serum-updating/">
+            <a href="/eraser-hyperpigmentation-correcting-serum/">
                 <p class="prod-category">JUST IN</p>
                 <div class="content">
                     <img src="https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/hp-img-2.png?t=1729058382" alt="ERASOR SPOT">
                     <div class="wrap">
-                        <h2 class="prod-title">ERASOR SPOT</h2>
+                        <h2 class="prod-title">ERASER SPOT</h2>
                         <p class="prod-subtitle">Hyperpigmentation Correcting Serum</p>
                     </div>
                 </div>
@@ -60,7 +52,7 @@ products:
             </a>
         </div>
         <div class="w-33">
-            <a href="/2024-pro-q-10-ceramide-lip-balm-updating/">
+            <a href="/pro-q-10-ceramide-lip-balm/">
                 <p class="prod-category">BESTSELLER</p>
                 <div class="content">
                     <img src="https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/hp-img-3.png?t=1729058383" alt="PRO Q10 + CERAMIDE">
@@ -77,10 +69,10 @@ products:
             <a href="#">
                 <p class="prod-category">COLLECTIONS</p>
                 <div class="content">
-                    <img src="https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/hp-img-4.png?t=1729058385" alt="HAIR CARE">
+                    <img src="https://cdn11.bigcommerce.com/s-vs5wislqit/products/440/images/532/350ml-_bottle_HairCare_HealthyHairShampoo_Melon__61798.1729482472.386.513__70748.1731578844.386.513.png?c=1" alt="HAIR CARE">
                     <div class="wrap">
                         <h2 class="prod-title">HAIR CARE</h2>
-                        <p class="prod-subtitle">Shampoo + Conditioner</p>
+                        <p class="prod-subtitle">Healthy Hair Shampoo</p>
                     </div>
                 </div>
                 <img src="https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/hp-img-10.jpg?t=1729058395" alt="HAIR CARE" class="on-hover">
@@ -112,7 +104,7 @@ products:
                 <img src="https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/hp-img-12.jpg?t=1729058427" alt="RENEWAL" class="on-hover">
             </a>
         </div>
-    </div> -->
+    </div>
 </div>
 
 <div class="hp-section3">
@@ -124,26 +116,19 @@ products:
             <a href="/shop/face/moisturizers/" class="item bg-center" style="background-image: url(https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/hp-img-16.jpg?t=1729058436);">MOISTURIZERS</a>
         </div>
         <div class="item-wrap">
-            <a href="/shop/face/peptide-treatments/" class="item bg-center" style="background-image: url(https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/hp-img-15.jpg?t=1729058434);">TREATMENTS</a>
+            <a href="/shop/face/treatments/" class="item bg-center" style="background-image: url(https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/hp-img-15.jpg?t=1729058434);">TREATMENTS</a>
         </div>
-        <div class="item-wrap">
-            <a href="/shop/face/masks/" class="item bg-center" style="background-image: url(https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/hp-img-14.jpg?t=1729058431);">MASKS</a>
-        </div>
-        <div class="item-wrap">
-            <a href="/shop/face/cleansers/" class="item bg-center" style="background-image: url(https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/hp-img-13.jpg?t=1729058429);">CLEANSERS</a>
-        </div>
-        <div class="item-wrap">
-            <a href="/shop/face/moisturizers/" class="item bg-center" style="background-image: url(https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/hp-img-16.jpg?t=1729058436);">MOISTURIZERS</a>
-        </div>
-        <div class="item-wrap">
-            <a href="/shop/face/peptide-treatments/" class="item bg-center" style="background-image: url(https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/hp-img-15.jpg?t=1729058434);">TREATMENTS</a>
-        </div>
-        <div class="item-wrap">
-            <a href="/shop/face/masks/" class="item bg-center" style="background-image: url(https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/hp-img-14.jpg?t=1729058431);">MASKS</a>
-        </div>
+        <!--<div class="item-wrap">-->
+        <!--    <a href="/shop/face/masks/" class="item bg-center" style="background-image: url(https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/hp-img-14.jpg?t=1729058431);">MASKS</a>-->
+        <!--</div>-->
         <div class="item-wrap">
             <a href="/shop/face/cleansers/" class="item bg-center" style="background-image: url(https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/hp-img-13.jpg?t=1729058429);">CLEANSERS</a>
-    
+        </div>
+        <div class="item-wrap">
+            <a href="/shop/face/exfoliants/" class="item bg-center" style="background-image: url(https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/hp-img-16.jpg?t=1729058436);">EXFOLIANTS</a>
+        </div>
+        <div class="item-wrap">
+            <a href="/shop/face/toners/" class="item bg-center" style="background-image: url(https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/hp-img-14.jpg?t=1729058431);">TONERS</a>
         </div>
     </div>
 </div>
@@ -156,7 +141,7 @@ products:
     <div class="container">
         <div class="content">
             <h2>Personalized Skincare Awaits</h2>
-            <p>Schedule a consultation with our skincare experts in Vancouver to create a treatment plan tailored just for you</p>
+            <p>Schedule a consultation with our skincare experts in Vancouver to create your tailored treatment plan.</p>
             <a href="https://optadermclinic.janeapp.com/" target="_blank" class="button-outline">BOOK APPOINTMENT</a>
         </div>
     </div>

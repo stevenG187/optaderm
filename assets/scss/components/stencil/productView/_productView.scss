@@ -401,12 +401,12 @@
             margin-top: spacing("quarter");
             padding: spacing("quarter") 0;
             text-align: center;
-            text-decoration: underline;
+            text-decoration: none;
             vertical-align: middle;
             width: 100%;
-
+            border-radius: 0;
             &:hover {
-                color: stencilColor("color-textSecondary--hover");
+                color: #ffffff;
             }
         }
     }

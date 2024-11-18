@@ -47,60 +47,46 @@
         {{~inject 'carouselArrowAndDotAriaLabel' (lang 'carousel.arrow_and_dot_aria_label')}}
         {{~inject 'carouselActiveDotAriaLabel' (lang 'carousel.active_dot_aria_label')}}
         {{~inject 'carouselContentAnnounceMessage' (lang 'carousel.content_announce_message')}}
-
-        {{#if customer}}
-            {{#if customer.customer_group_name '==' 'Legacy'}}
-                <script>
-                    if (!document.cookie.includes('redirected=true')) {
-                        setTimeout(function() {
-                            document.cookie = "redirected=true; path=/; max-age=" + 60 * 60 * 24; // Cookie expires in 1 day
-                            window.location.href = '/legacy';
-                        }, 10000);
-                    }
-                </script>
-            {{/if}}
-        {{/if}}
-
     </head>
-    {{#if template '===' 'pages\custom\page\homepage'}} 
-        <body class="with-header-bg">
-    {{else if template '===' 'pages\custom\page\clinic'}} 
-        <body class="with-header-bg">
-    {{else if template '===' 'pages\custom\page\about'}} 
-        <body class="with-header-bg">
-    {{else if page_type '===' 'category'}} 
-        <body class="with-header-bg">
-    {{else if template '===' 'pages\custom\page\skin-concern'}} 
-        <body class="with-header-bg">  
-    {{else if template '===' 'pages\custom\page\hyperpigmentation'}} 
-        <body class="with-header-bg">  
-    {{else if template '===' 'pages\custom\page\rosacea'}} 
-        <body class="with-header-bg">     
-    {{else if template '===' 'pages\custom\page\blemishes-acne'}} 
-        <body class="with-header-bg">
-    {{else if template '===' 'pages\custom\page\redness'}} 
-        <body class="with-header-bg"> 
-    {{else if template '===' 'pages\custom\page\dehydrated-dry-skin'}} 
-        <body class="with-header-bg">        
-    {{else if template '===' 'pages\custom\page\dull-skin-lack-of-luster'}} 
-        <body class="with-header-bg"> 
-    {{else if template '===' 'pages\custom\page\eczema'}} 
-        <body class="with-header-bg">         
-    {{else if template '===' 'pages\custom\page\psoriasis'}} 
-        <body class="with-header-bg">        
-    {{else if page_type '===' 'blog'}} 
-        <body class="with-header-bg">       
-    {{else if page_type '===' 'blog_post'}} 
-        <body class="with-header-bg">  
-    {{else if template '===' 'pages\custom\page\faq'}} 
-        <body class="with-header-bg">   
-    {{else if template "pages/contact-us"}}
-        <body class="with-header-bg"> 
-    {{else if page_type '===' 'product'}} 
-        <body class="with-header-bg">                             
-    {{else}}
-        <body class="no-header-bg">
-    {{/if}}
+    {{#if template '===' 'pages/custom/page/homepage'}} 
+    <body class="with-header-bg">
+{{else if template '===' 'pages/custom/page/clinic'}} 
+    <body class="with-header-bg">
+{{else if template '===' 'pages/custom/page/about'}} 
+    <body class="with-header-bg">
+{{else if template '===' 'pages/custom/page/skin-concerns'}} 
+    <body class="with-header-bg">
+{{else if template '===' 'pages/custom/page/hyperpigmentation'}} 
+    <body class="with-header-bg">
+{{else if template '===' 'pages/custom/page/rosacea'}} 
+    <body class="with-header-bg">
+{{else if template '===' 'pages/custom/page/blemishes-acne'}} 
+    <body class="with-header-bg">
+{{else if template '===' 'pages/custom/page/redness'}} 
+    <body class="with-header-bg">
+{{else if template '===' 'pages/custom/page/dehydrated-dry-skin'}} 
+    <body class="with-header-bg">
+{{else if template '===' 'pages/custom/page/dull-skin-lack-of-luster'}} 
+    <body class="with-header-bg">
+{{else if template '===' 'pages/custom/page/eczema'}} 
+    <body class="with-header-bg">
+{{else if template '===' 'pages/custom/page/psoriasis'}} 
+    <body class="with-header-bg">
+{{else if template '===' 'pages/custom/page/faq'}} 
+    <body class="with-header-bg">
+{{else if template '===' 'pages/contact-us'}} 
+    <body class="with-header-bg">
+{{else if page_type '===' 'category'}} 
+    <body class="with-header-bg">
+{{else if page_type '===' 'blog'}} 
+    <body class="with-header-bg">
+{{else if page_type '===' 'blog_post'}} 
+    <body class="with-header-bg">
+{{else if page_type '===' 'product'}} 
+    <body class="with-header-bg">
+{{else}}
+    <body class="no-header-bg">
+{{/if}}
         <svg data-src="{{cdn 'img/icon-sprite.svg'}}" class="icons-svg-sprite"></svg>
 
         {{> components/custom/custom-header }}
@@ -138,6 +124,5 @@
         <script src="{{cdn 'assets/js/custom/page/jquery.min.js'}}"></script>
         <script src="{{cdn 'assets/js/custom/page/slick.min.js'}}"></script>
         <script src="{{cdn 'assets/js/custom/page/custom.js'}}"></script>
-        
     </body>
 </html>

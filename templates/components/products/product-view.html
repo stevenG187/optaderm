@@ -103,14 +103,13 @@
 
     <section class="productView-details product-data">
         <div class="productView-product">
-            
-            {{#each product.custom_fields}}
-                {{#if this.name '===' 'Top Headline'}}
-                <div class="card-top-headline">
-                    {{this.value}}
-                </div>
-                {{/if}}
-            {{/each}}
+          {{#each product.custom_fields}}
+                    {{#if this.name '===' 'Top Headline'}}
+                    <div class="card-top-headline">
+                        {{this.value}}
+                    </div>
+                    {{/if}}
+                {{/each}}
 
             {{#if product.brand}}
                 <h2 class="productView-brand">
@@ -293,7 +292,7 @@
         </div>
 
         <div class="recommended-for">
-            <p class="headline">Recommended for:</p>
+            <p class="headline">Recommended to help reduce:</p>
             {{#each product.custom_fields}}
                 {{#if this.name '===' 'Recommended for'}}
                     <p class="rf">{{this.value}}</p>
