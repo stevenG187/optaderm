@@ -277,7 +277,21 @@
             </ul>
 
             <ul>
-                <li><a href="/login.php">Sign In</a></li>
+                <li>
+                    {{#if customer}}
+                        <a href="{{urls.auth.logout}}"
+                        aria-label="{{lang 'common.logout'}}"
+                        >
+                            Sign Out
+                        </a>
+                    {{else}}
+                        <a href="{{urls.auth.login}}"
+                        aria-label="{{lang 'common.login'}}"
+                        >
+                            Sign In
+                        </a>
+                    {{/if}}
+                </li>
                 <li><a href="/about">About Us</a></li>
                 <li><a href="/faq">FAQs</a></li>
             </ul>
