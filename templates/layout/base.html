@@ -47,6 +47,20 @@
         {{~inject 'carouselArrowAndDotAriaLabel' (lang 'carousel.arrow_and_dot_aria_label')}}
         {{~inject 'carouselActiveDotAriaLabel' (lang 'carousel.active_dot_aria_label')}}
         {{~inject 'carouselContentAnnounceMessage' (lang 'carousel.content_announce_message')}}
+
+        {{#if customer}}
+            {{#if customer.customer_group_name '==' 'Legacy'}}
+                <script>
+                    if (!document.cookie.includes('redirected=true')) {
+                        setTimeout(function() {
+                            document.cookie = "redirected=true; path=/; max-age=" + 60 * 60 * 24; // Cookie expires in 1 day
+                            window.location.href = '/legacy';
+                        }, 10000);
+                    }
+                </script>
+            {{/if}}
+        {{/if}}
+        
     </head>
     {{#if template '===' 'pages/custom/page/homepage'}} 
     <body class="with-header-bg">

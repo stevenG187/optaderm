@@ -66,48 +66,43 @@ products:
 
     <div class="category-featured-content">
         {{#unless category.name '===' "Lip Moisturizers"}}
-  {{#unless category.name '===' "Eye Moisturizers"}}
-    {{#unless category.name '===' "Masks"}}
-      {{#unless category.name '===' "Body Care"}}
-        {{#unless category.name '===' "Hair Care"}}
-          {{#unless category.name '===' "Glycolic Acid"}}
-            {{#unless category.name '===' "Hyaluronic Acid"}}
-              {{#unless category.name '===' "Niacinamide"}}
-                {{#unless category.name '===' "Peptides"}}
-                  {{#unless category.name '===' "Retinol"}}
-                    {{#unless category.name '===' "Salicylic Acid"}}
-                      {{#unless category.name '===' "Anti-Aging"}}
-                          {{#unless category.name '===' "Toners"}}
-                            {{#unless category.name '===' "Blemishes + Acne"}}
+        {{#unless category.name '===' "Eye Moisturizers"}}
+          {{#unless category.name '===' "Masks"}}
+            {{#unless category.name '===' "Body Care"}}
+              {{#unless category.name '===' "Hair Care"}}
+                {{#unless category.name '===' "Glycolic Acid"}}
+                  {{#unless category.name '===' "Hyaluronic Acid"}}
+                    {{#unless category.name '===' "Niacinamide"}}
+                      {{#unless category.name '===' "Peptides"}}
+                        {{#unless category.name '===' "Retinol"}}
+                          {{#unless category.name '===' "Salicylic Acid"}}
+                            {{#unless category.name '===' "Anti-Aging"}}
+                                {{#unless category.name '===' "Toners"}}
+                                  {{#unless category.name '===' "Blemishes + Acne"}}
         <div class="top-content-header light text-center">
-            <p>Featured Products</p>
+            <p>Featured {{category.name}} Products</p>
         </div>
-        <!-- {{> components/category/featured-product-listing}}   -->
-
-        {{> components/category/featured-product-listing products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
-    </div>
-                {{/unless}}
-                   {{/unless}}
-                  {{/unless}}
-                    {{/unless}}
-                  {{/unless}}
-                {{/unless}}
-              {{/unless}}
-            {{/unless}}
-          {{/unless}}
+        {{> components/category/featured-product-listing }}
         {{/unless}}
-      {{/unless}}
-    {{/unless}}
-  {{/unless}}
+        {{/unless}}
+       {{/unless}}
+         {{/unless}}
+       {{/unless}}
+     {{/unless}}
+   {{/unless}}
+ {{/unless}}
 {{/unless}}
+{{/unless}}
+{{/unless}}
+{{/unless}}
+{{/unless}}
+{{/unless}}
+    </div>
+
     <div class="category-name">
         <div class="top-content-header light text-center">
             <div id="product-list"></div>
-             {{#if category.name '===' "Shop All"}}
-            <p>{{category.name}} PRODUCTS</p>
-               {{else}}
-                   <p>ALL {{category.name}} PRODUCTS</p>
-                  {{/if}}
+            <p>ALL {{category.name}}</p>
         </div>
     </div>
 
