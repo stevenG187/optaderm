@@ -190,6 +190,7 @@
             object-position: center;
             transition: all ease .3s;
             opacity: 0;
+            z-index: 2;
         }
         
     }
@@ -260,7 +261,7 @@
             left: 0;
             right: 0;
             bottom: 1.5em;
-            z-index: 1;
+            z-index: 3;
 
             .card-text {
                 text-transform: uppercase;
@@ -277,6 +278,10 @@
 }
 
 .pairs-with {
+    .on-hover {
+        display: none;
+    }
+
     p {
         text-transform: uppercase;
         letter-spacing: 0.1rem;
@@ -473,6 +478,18 @@
             text-transform: uppercase;
             letter-spacing: 0.1rem;
             font-weight: 500;
+        }
+
+        .desc-headline {
+            padding-bottom: 0;
+            font-family: 'Avenir Next' !important;
+            font-size: var(--text-m);
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            font-weight: 500;
+            margin-bottom: 0;
+            padding: 0;
+            display: block;
         }
 
         p {
