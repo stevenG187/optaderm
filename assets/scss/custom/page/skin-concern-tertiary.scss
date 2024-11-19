@@ -39,6 +39,15 @@
         margin: 0.5rem 0 2rem;
         border-top: 1px solid #000000;
     }
+
+    a {
+        color: var(--opt-color-text-dark);
+        text-decoration: underline;
+
+        &:hover {
+            color: var(--opt-color-primary);
+        }
+    }
 }
 
 .sc-tertiary-sec3 {
