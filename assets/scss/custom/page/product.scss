@@ -275,6 +275,13 @@
             }
         }
     }
+    .product:hover {
+        background: rgb(150, 148, 147);
+        background: -webkit-linear-gradient(0deg, rgba(150, 148, 147, 1) 0%, rgba(255, 255, 255, 1) 100%);
+        background: -moz-linear-gradient(0deg, rgba(150, 148, 147, 1) 0%, rgba(255, 255, 255, 1) 100%);
+        background: -o-linear-gradient(0deg, rgba(150, 148, 147, 1) 0%, rgba(255, 255, 255, 1) 100%);
+        background: linear-gradient(0deg, rgba(150, 148, 147, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    }    
 }
 
 .pairs-with {
@@ -444,6 +451,7 @@
     }
 
     .recommended-for {
+        color: #878188;
         .headline {
             text-transform: uppercase;
             letter-spacing: 0.1rem;
@@ -465,6 +473,7 @@
 
     .productView-description {
         padding: 0 0.5rem;
+        color: #878188;
 
         .productView-title {
             display: none;
@@ -479,7 +488,6 @@
             letter-spacing: 0.1rem;
             font-weight: 500;
         }
-
         .desc-headline {
             padding-bottom: 0;
             font-family: 'Avenir Next' !important;
@@ -497,7 +505,7 @@
         }
 
         hr {
-            border: 1px solid #928d93;
+            border: 1px solid rgba(135, 129, 136, 0.25);
         }
     }
 }

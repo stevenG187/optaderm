@@ -13,20 +13,34 @@
 {{/if}}
 
 <script>
+    // Assuming `productDescription` is dynamically provided as a string from your backend
     const productDescription = {{{json product.description}}};
 
+    // Function to format the description while maintaining HTML structure
     function formatDescriptionWithHr(description) {
-        let formatted = description
-            .replace("DESCRIPTION:", "<span class='desc-headline'>BENEFITS</span><br>")
-            .replace("DIRECTIONS:", "<hr><span class='desc-headline'>HOW TO USE</span><br>")
-            .replace("INGREDIENTS:", "<hr><span class='desc-headline'>INGREDIENTS</span><br>");
-        return formatted;
+        // Create a temporary container to parse the HTML content
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = description;
+
+        // Replace keywords within the text content of each element
+        tempDiv.innerHTML = tempDiv.innerHTML
+            .replace(/DESCRIPTION:\s*/i, "<span class='desc-headline'>BENEFITS</span><br>")
+            .replace(/BENEFITS:\s*/i, "<span class='desc-headline'>BENEFITS</span><br>")
+            .replace(/DIRECTIONS:\s*/i, "<hr><span class='desc-headline'>HOW TO USE</span><br>")
+            .replace(/HOW TO USE:\s*/i, "<hr><span class='desc-headline'>HOW TO USE</span><br>")
+            .replace(/INGREDIENTS:\s*/i, "<hr><span class='desc-headline'>INGREDIENTS</span><br>");
+
+        return tempDiv.innerHTML;
     }
 
     // Format the description and inject it
     const formattedDescriptionWithHr = formatDescriptionWithHr(productDescription);
+    console.log('Formatted Description:', formattedDescriptionWithHr);
+
     const descriptionElement = document.querySelector('.productView-description[data-event-type="product"]');
     if (descriptionElement) {
         descriptionElement.innerHTML = formattedDescriptionWithHr;
     }
 </script>
+
+

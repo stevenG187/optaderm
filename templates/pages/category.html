@@ -79,10 +79,12 @@ products:
                             {{#unless category.name '===' "Anti-Aging"}}
                                 {{#unless category.name '===' "Toners"}}
                                   {{#unless category.name '===' "Blemishes + Acne"}}
+                                  {{#unless category.name '===' "Moisturizers"}}
         <div class="top-content-header light text-center">
             <p>Featured {{category.name}} Products</p>
         </div>
         {{> components/category/featured-product-listing }}
+        {{/unless}}
         {{/unless}}
         {{/unless}}
        {{/unless}}
@@ -102,7 +104,11 @@ products:
     <div class="category-name">
         <div class="top-content-header light text-center">
             <div id="product-list"></div>
-            <p>ALL {{category.name}}</p>
+            {{#if category.name '===' "Shop All"}}
+            <p>{{category.name}} PRODUCTS</p>
+               {{else}}
+                   <p>ALL {{category.name}} PRODUCTS</p>
+                  {{/if}}
         </div>
     </div>
 
