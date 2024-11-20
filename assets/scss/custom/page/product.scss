@@ -88,12 +88,12 @@
 
     &:before {
         content: '';
-        background: rgb(105,89,77);
-        background: -webkit-gradient(linear, left bottom, left top, from(rgba(105,89,77,1)), to(rgba(0,0,0,0)));
-        background: -webkit-linear-gradient(bottom, rgba(105,89,77,1) 0%, rgba(0,0,0,0) 100%);
-        background: -moz-linear-gradient(bottom, rgba(105,89,77,1) 0%, rgba(0,0,0,0) 100%);
-        background: -o-linear-gradient(bottom, rgba(105,89,77,1) 0%, rgba(0,0,0,0) 100%);
-        background: linear-gradient(0deg, rgba(105,89,77,1) 0%, rgba(0,0,0,0) 100%);
+        background: #00000080;
+        background: -webkit-gradient(linear, left bottom, left top, from(#00000080), to(rgba(0,0,0,0)));
+        background: -webkit-linear-gradient(bottom, #00000080 0%, rgba(0,0,0,0) 100%);
+        background: -moz-linear-gradient(bottom, #00000080 0%, rgba(0,0,0,0) 100%);
+        background: -o-linear-gradient(bottom, #00000080 0%, rgba(0,0,0,0) 100%);
+        background: linear-gradient(0deg, #00000080 0%, rgba(0,0,0,0) 100%);
         width: 100%;
         height: 50%;
         position: absolute;
@@ -105,8 +105,8 @@
         height: 65rem;
         -o-object-fit: cover;
            object-fit: cover;
-        -o-object-position: bottom;
-           object-position: bottom;
+        -o-object-position: center;
+           object-position: center;
     }
 
     .container {
@@ -347,7 +347,7 @@
 }
 
 .productView {
-    padding-top: 13rem;
+    padding-top: 14rem;
 
     .productView-details {
         padding-bottom: 0;
