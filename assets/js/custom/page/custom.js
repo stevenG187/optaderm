@@ -128,3 +128,27 @@ document.addEventListener("DOMContentLoaded", function() {
         console.warn("See More section or See All button not found in the DOM.");
     }
 });
+
+//BRAND NAME ON CARD
+document.addEventListener("DOMContentLoaded", () => {
+    function removeBrandFromTitle(containerSelector, brandSelector, titleSelector) {
+        const containers = document.querySelectorAll(containerSelector);
+
+        containers.forEach(container => {
+            const brandElement = container.querySelector(brandSelector);
+            const titleElement = container.querySelector(titleSelector);
+
+            if (brandElement && titleElement) {
+                const brandText = brandElement.textContent.trim().toLowerCase();
+                const fullTitle = titleElement.textContent.trim();
+
+                if (fullTitle.toLowerCase().startsWith(brandText)) {
+                    titleElement.textContent = fullTitle.slice(brandText.length).trim();
+                }
+            }
+        });
+    }
+
+    removeBrandFromTitle('.card-body', '.card-text', '.card-title');
+    removeBrandFromTitle('.productView-product', '.productView-brand span', '.productView-title');
+});
