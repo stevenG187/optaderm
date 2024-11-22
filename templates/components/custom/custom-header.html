@@ -271,8 +271,6 @@
             <ul>
                 <li><a href="/shop/">Shop All</a></li>
                 <li><a href="/shop/bestsellers">Bestsellers</a></li>
-                <li><a href="/shop/just-in">Just In</a></li>
-                <li><a href="/shop/collections">Collections</a></li>
                 <li><a href="/shop/new-formulations">New Formulations</a></li>
             </ul>
 
@@ -351,11 +349,9 @@
 </div>
 
 <script>
-    // Get the header element
     const header = document.querySelector('.header.page');
-    // Get the offset position to trigger the sticky effect
     const stickyOffset = header.offsetTop;
-    // Add or remove the 'sticky-active' class based on scroll position
+
     function handleStickyHeader() {
         if (window.pageYOffset > stickyOffset) {
             header.classList.add('sticky-active');
@@ -363,27 +359,24 @@
             header.classList.remove('sticky-active');
         }
     }
-    // Listen for the scroll event
     window.addEventListener('scroll', handleStickyHeader);
 
-    // Toggle the menu on hamburger click
     document.querySelector('.hamburgerMenu-toggle').addEventListener('click', function(event) {
         event.preventDefault();
         document.querySelector('.hamburger-content').classList.toggle('active');    
     });
-    // Close the menu on close button click
+
     document.querySelector('.close-btn').addEventListener('click', function(event) {
         event.preventDefault();
         document.querySelector('.hamburger-content').classList.remove('active');
         document.querySelector('body').classList.remove('has-activeNavPages');
     });
 
-    // Toggle search bar when search icon is clicked
     document.querySelector('.search-icon').addEventListener('click', function(event) {
         event.preventDefault();
         document.querySelector('.search-bar').classList.toggle('active');
     });
-    // Close search bar when close button is clicked
+    
     document.querySelector('.close-search-btn').addEventListener('click', function(event) {
         event.preventDefault();
         document.querySelector('.search-bar').classList.remove('active');

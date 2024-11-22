@@ -9,9 +9,9 @@ products:
 
 {{#partial "page"}}
 
-<div class="sc-tertiary-sec1 bg-center" style="background-image: url(https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/hyperpigmentation-bg.jpg?t=1732263112);">
+<div class="sc-tertiary-sec1 bg-center" style="background-image: url(https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/sc-tertiary-bg.jpg?t=1729495899);">
     <h1>HYPERPIGMENTATION</h1>
-    <img src="https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/skin-concern-focus.png?t=1732263110" alt="Skin Concer">
+    <img src="https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/skin-care-logo-removebg.png?t=1728998223" alt="Skin Concer">
 </div>
 
 <div class="sc-tertiary-sec2">
@@ -38,15 +38,15 @@ products:
 </div>
 
 <div class="sc-tertiary-sec3">
-    <div class="container top-content-grid flex-row align-center">
-        <div class="w-25"></div>
-        <div class="w-50 text-center">
-            <p>PRODUCTS TO MANAGE HYPERPIGMENTATION</p>
-        </div>
-        <div class="w-25 text-right">
-            <a href="/shop" class="button-outline">SHOP ALL</a>
-        </div>
-    </div>
+    <!--<div class="container top-content-grid flex-row align-center">-->
+    <!--    <div class="w-25"></div>-->
+    <!--    <div class="w-50 text-center">-->
+    <!--        <p>PRODUCTS TO MANAGE HYPERPIGMENTATION</p>-->
+    <!--    </div>-->
+    <!--    <div class="w-25 text-right">-->
+    <!--        <a href="/shop" class="button-outline">SHOP ALL</a>-->
+    <!--    </div>-->
+    <!--</div>-->
 
     {{#if products.featured}}
         <ul class="productGrid">
@@ -101,11 +101,11 @@ products:
                                             {{../name}}
                                         </h3>
                                     </div>
-                                    <!-- {{#each ../custom_fields}}
+                                    {{#each ../custom_fields}}
                                         {{#if this.name '===' 'Card Hover Image'}}
                                             <img src="{{this.value}}" alt="Hover Image" class="on-hover">
                                         {{/if}}
-                                    {{/each}} -->
+                                    {{/each}}
                                 </a>
                             </article>
                         </li>

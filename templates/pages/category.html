@@ -80,10 +80,16 @@ products:
                                 {{#unless category.name '===' "Toners"}}
                                   {{#unless category.name '===' "Blemishes + Acne"}}
                                   {{#unless category.name '===' "Moisturizers"}}
+                                  {{#unless category.name '===' "Exfoliants"}}
+                                  {{#unless category.name '===' "Dehydration"}}
+                                    {{#unless category.name '===' "Legacy"}}
         <div class="top-content-header light text-center">
             <p>Featured {{category.name}} Products</p>
         </div>
         {{> components/category/featured-product-listing }}
+        {{/unless}}
+        {{/unless}}
+        {{/unless}}
         {{/unless}}
         {{/unless}}
         {{/unless}}

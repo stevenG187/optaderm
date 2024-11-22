@@ -3,14 +3,15 @@ blog:
     recent_posts:
         limit: {{theme_settings.homepage_blog_posts_count}}
 products:
-    limit: 1000   
+    featured:
+        limit: 1000   
 ---
 
 {{#partial "page"}}
 
-<div class="sc-tertiary-sec1 bg-center" style="background-image: url(https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/rosacea-bg.jpg?t=1732263114);">
+<div class="sc-tertiary-sec1 bg-center" style="background-image: url(https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/rosacea0.jpg?t=1732085764);">
     <h1>Rosacea</h1>
-    <img src="https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/skin-concern-focus.png?t=1732263110" alt="Skin Concer">
+    <img src="https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/skin-care-logo-removebg.png?t=1728998223" alt="Skin Concern">
 </div>
 
 <div class="sc-tertiary-sec2">
@@ -47,12 +48,11 @@ products:
         </div>
     </div>
 
-    {{#if products }}
-        <ul class="productGrid">
-            {{#each products}}
-            <p>{{this}}</p>
-                {{#each this.custom_fields}}
-                    {{#if this.value '===' 'Rosacea'}}
+    {{#if products.featured}}
+    <ul class="productGrid">
+        {{#each products.featured}}
+            {{#each this.custom_fields}}
+                {{#if this.value '===' 'Rosacea'}}
                         <li class="product">
                             <article class="card"> 
                                 <a href="{{url}}"
