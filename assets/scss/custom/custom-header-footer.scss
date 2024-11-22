@@ -1,4 +1,69 @@
 
+#legacy-popup {
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: translate(-50%, -50%) scale(0);
+
+    .content {
+        margin: auto;
+        padding: 2em;
+        width: 34vw;
+        height: 88vh;
+        background-image: url(https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/dean-legacy-background.jpg?t=1732276808);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        border-radius: 10px;
+
+        h2 {
+            font-weight: 400;
+            text-transform: uppercase;
+            color: #ffffff;
+            font-size: 2.85rem;
+            margin: 0 0 0.4em;
+        }
+        
+        p {
+            color: #ffffff;
+            width: 90%;
+        }
+
+        .button-outline {
+            color: #ffffff;
+            border-bottom: 1px solid #ffffff;
+            padding-bottom: 0.2em;
+            font-weight: 500;
+            margin-top: 1em;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+        
+        .button-outline:hover {
+            color: var(--opt-color-primary);
+            border-bottom-color: var(--opt-color-primary);
+        }
+
+        .close-btn {
+            color: #ffffff;
+            font-size: 2.5rem;
+            position: absolute;
+            top: 5px;
+            right: 20px;
+            cursor: pointer;
+        }
+    }
+}
+
 .header {
     position: absolute;
     top: 0;
@@ -670,6 +735,12 @@ hr.footer-line {
     }
 }
 
+@media screen and (max-width: 1500px) {
+    #legacy-popup .content {
+        width: 45.5vw;
+    }
+}
+
 @media screen and (max-width: 1024px) {
     .header .right .button-text,
     .header .right .flag {
@@ -702,6 +773,11 @@ hr.footer-line {
     
     .header hr {
         margin-bottom: -2px;
+    }
+
+    #legacy-popup .content {
+        width: 90vw;
+        height: 84vh;
     }
 }
 
@@ -761,5 +837,22 @@ hr.footer-line {
 
     .footer .about-menu, .footer .support-menu {
         width: 50% !important;
+    }
+
+    #legacy-popup .content h2 {
+        font-size: 2rem;
+    }
+    
+    #legacy-popup .content {
+        padding: 1em;
+        height: 92vh;
+    }
+    
+    #legacy-popup .content p {
+        width: 100%;
+    }
+    
+    #legacy-popup .content .button-outline {
+        margin-top: 0.3em;
     }
 }

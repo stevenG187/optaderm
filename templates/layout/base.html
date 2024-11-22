@@ -51,17 +51,41 @@
         {{#if customer}}
             {{#if customer.customer_group_name '==' 'Legacy'}}
                 <script>
-                    if (!document.cookie.includes('redirected=true')) {
-                        setTimeout(function() {
-                            document.cookie = "redirected=true; path=/; max-age=" + 60 * 60 * 24; // Cookie expires in 1 day
-                            window.location.href = '/legacy';
-                        }, 10000);
-                    }
+                    document.addEventListener('DOMContentLoaded', function() {
+                        if (!document.cookie.includes('legacy_popup_shown=true')) {
+                            setTimeout(function() {
+                                const popup = document.getElementById('legacy-popup');
+                                if (popup) {
+                                    popup.style.display = 'block';
+                                    popup.style.transform = 'scale(1)';
+                                    popup.style.transition = 'transform 0.3s ease-in-out';
+                                    const closeButton = popup.querySelector('.content .close-btn');
+                                    if (closeButton) {
+                                        closeButton.addEventListener('click', function() {
+                                            popup.style.display = 'none'; 
+                                            document.cookie = "legacy_popup_shown=true; path=/; max-age=" + 60 * 60 * 24; // Cookie expires in 1 day
+                                        });
+                                    }
+                                }
+                            }, 10000);
+                        }
+                    });
                 </script>
             {{/if}}
         {{/if}}
-
     </head>
+
+    <div id="legacy-popup" style="display: none; transform: scale(0);">
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="close-btn">x</div>
+            <h2>While Supplies Last</h2>
+            <p>I am proud of all the formulations that I have developed over the last 38 years in the Optaderm Laboratory.</p>
+            <p>I create new products when science and ingredient innovations create breakthroughs in skin vitality. But, when I can no longer produce a product it will be available here in our clinic sale while supplies last.</p>
+            <a href="/legacy/" class="button-outline">Shop Our Legacy Products</a>
+        </div>
+    </div>
+
     {{#if template '===' 'pages\custom\page\homepage'}} 
         <body class="with-header-bg">
     {{else if template '===' 'pages\custom\page\clinic'}} 

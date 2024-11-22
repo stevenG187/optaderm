@@ -76,33 +76,25 @@ jQuery(function ($) {
             }
         );
 
-        $('.legacy-popup .container .close-btn').click(function() {
-            $('.legacy-popup').css('display', 'none');
-        });
-
     });
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    // Add click event listener to elements with class 'titleWrapper'
     document.querySelectorAll('.titleWrapper').forEach(function(titleWrapper) {
         titleWrapper.addEventListener('click', function() {
-            // Select the next sibling div with the class 'desWrapper'
             var toggle = this.nextElementSibling;
 
-            // Toggle visibility of the corresponding description wrapper
             if (toggle) {
                 toggle.style.transition = 'max-height 0.6s ease';
                 if (toggle.style.maxHeight) {
-                    toggle.style.maxHeight = null; // Hide the element
+                    toggle.style.maxHeight = null;
                 } else {
-                    toggle.style.maxHeight = toggle.scrollHeight + "px"; // Show the element
+                    toggle.style.maxHeight = toggle.scrollHeight + "px";
                 }
             }
         });
     });
 
-    // Add click event listener to elements with class 'inactive'
     document.querySelectorAll('.inactive').forEach(function(inactive) {
         inactive.addEventListener('click', function() {
             this.classList.toggle('inactive');
@@ -116,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const seeMoreSection = document.querySelector(".see-more-our-team");
     const seeAllButton = document.querySelector(".see-all");
 
-    if (seeMoreSection && seeAllButton) { // Check if elements exist
+    if (seeMoreSection && seeAllButton) {
         seeAllButton.addEventListener("click", function() {
             const sectionHeight = seeMoreSection.scrollHeight;
             seeMoreSection.style.maxHeight = sectionHeight + 'px';
