@@ -232,7 +232,7 @@
         <ul class="main-header-menu">
             <li><a href="/shop">Shop</a></li>
             <li><a href="/face">Face</a></li>
-            <li><a href="/body">Body</a></li>
+            <li><a href="/shop-all/body/">Body</a></li>
             <li><a href="/skin-concern">Skin Concern</a></li>
             <li><a href="/clinic">Clinic</a></li>
         </ul>
@@ -262,7 +262,7 @@
             <ul>
                 <li><a href="/shop/">Shop</a></li>
                 <li><a href="/face/">Face</a></li>
-                <li><a href="/body/">Body</a></li>
+                <li><a href="/shop-all/body/">Body</a></li>
                 <li><a href="/skin-concern">Skin Concern</a></li>
                 <li><a href="/clinic">Clinic</a></li>
             </ul>
@@ -270,10 +270,10 @@
         <div class="w-20">
             <ul>
                 <li><a href="/shop/">Shop All</a></li>
-                <li><a href="/best-sellers">Bestsellers</a></li>
+                <li><a href="/shop/bestsellers/">Bestsellers</a></li>
                 <li><a href="#">Just In</a></li>
                 <li><a href="#">Collections</a></li>
-                <li><a href="/new-formulations">New Formulations</a></li>
+                <li><a href="/shop/new-formulations/">New Formulations</a></li>
             </ul>
 
             <ul>
@@ -301,34 +301,34 @@
                 <li><a href="/shop/face/cleansers/">Cleansers</a></li>
                 <li><a href="/shop/face/combination-treatment-moisturizers/">Treatment-Moisturizers</a></li>
                 <li><a href="/shop/face/exfoliants/">Exfoliants</a></li>
-                <li><a href="/face/lip-treatments/">Lip Treatments</a></li>
+                <li><a href="/shop/face/lip-moisturizers/">Lip Treatments</a></li>
                 <li><a href="/shop/face/masks/">Masks</a></li>
                 <li><a href="/shop/face/moisturizers/">Moisturizers</a></li>
-                <li><a href="/face/moisturizers/eye-moisturizers/">Eye Moisturizers</a></li>
-                <li><a href="/shop/face/peptide-treatments/">Treatments</a></li>
+                <li><a href="/shop/face/eye-moisturizers/">Eye Moisturizers</a></li>
+                <li><a href="/shop/face/treatments/">Treatments</a></li>
                 <li><a href="/shop/face/toners/">Toners</a></li>
             </ul>
 
             <ul>
-                <li><a href="/shop/hair-care/">Hair Care</a></li>
-                <li><a href="/shop/body-care/">Body care</a></li>
+                <li><a href="/shop/hair/">Hair Care</a></li>
+                <li><a href="/shop/body/">Body care</a></li>
             </ul>
         </div>
         <div class="w-20">
             <ul>
-                <li><a href="/face/glycolic-acid/">Glycolic Acid</a></li>
-                <li><a href="/face/hyaluronic-acid/">Hyaluronic Acid</a></li>
-                <li><a href="/face/niacinamide/">Niacinamide</a></li>
-                <li><a href="/face/peptides/">Peptides</a></li>
-                <li><a href="/face/retinol/">Retinol</a></li>
-                <li><a href="/face/salicylic-acid/">Salicylic Acid</a></li>
+                <li><a href="/shop/glycolic-acid/">Glycolic Acid</a></li>
+                <li><a href="/shop/hyaluronic-acid/">Hyaluronic Acid</a></li>
+                <li><a href="/shop/niacinamide/">Niacinamide</a></li>
+                <li><a href="/shop/peptides/">Peptides</a></li>
+                <li><a href="/shop/retinol/">Retinol</a></li>
+                <li><a href="/shop/salicylic-acid/">Salicylic Acid</a></li>
             </ul>
 
             <ul>
-                <li><a href="/face/anti-aging/">Anti-aging</a></li>
-                <li><a href="/face/dehydration/">Dehydration</a></li>
-                <li><a href="/hyperpigmentation">Hyperpigmentation</a></li>
-                <li><a href="/face/uneven-pores/">Uneven & Pores</a></li>
+                <li><a href="/shop/anti-aging/">Anti-aging</a></li>
+                <li><a href="/shop/dehydration/">Dehydration</a></li>
+                <li><a href="/shop/hyperpigmentation/">Hyperpigmentation</a></li>
+                <li><a href="/shop/uneven-pores/">Uneven & Pores</a></li>
             </ul>
         </div>
     </div>
@@ -367,7 +367,7 @@
         document.querySelector('.hamburger-content').classList.toggle('active');    
     });
 
-    document.querySelector('.close-btn').addEventListener('click', function(event) {
+    document.querySelector('.hamburger-content .close-btn').addEventListener('click', function(event) {
         event.preventDefault();
         document.querySelector('.hamburger-content').classList.remove('active');
         document.querySelector('body').classList.remove('has-activeNavPages');
