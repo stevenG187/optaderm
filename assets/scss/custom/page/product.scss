@@ -426,6 +426,29 @@
     }
 }
 
+.cart-page {
+    .page-content {
+        float: none;
+    }
+    
+    .cart-totals button:hover {
+        background-color: rgba(0,0,0,0);
+        color: var(--opt-color-primary);
+    }
+    
+    .cart-remove {
+        border-color: #000000;
+        
+        &:hover {
+            border-color: var(--opt-color-primary);
+
+            svg {
+                fill: #ffffff;
+            }
+        }
+    }
+} 
+
 @media screen and (max-width: 1024px){
     .productView {
         padding-top: 9rem;
