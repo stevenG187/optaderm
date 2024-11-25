@@ -373,11 +373,16 @@
         document.querySelector('body').classList.remove('has-activeNavPages');
     });
 
-    document.querySelector('.search-icon').addEventListener('click', function(event) {
+    document.querySelector('.header-top .search-icon').addEventListener('click', function(event) {
         event.preventDefault();
-        document.querySelector('.search-bar').classList.toggle('active');
+        const searchBar = document.querySelector('.search-bar');
+        searchBar.classList.toggle('active');
+        const inputField = searchBar.querySelector('input');
+        if (inputField) {
+            inputField.focus();
+        }
     });
-    
+ 
     document.querySelector('.close-search-btn').addEventListener('click', function(event) {
         event.preventDefault();
         document.querySelector('.search-bar').classList.remove('active');
