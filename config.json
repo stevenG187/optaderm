@@ -124,7 +124,7 @@
     "zoom_size": "1280x1280",
     "blog_size": "190x250",
     "default_image_brand": "img/BrandDefault.gif",
-    "default_image_product": "img/ProductDefault.gif",
+    "default_image_product": "img/NoImageAvailable.png",
     "default_image_gift_certificate": "img/GiftCertificate.png",
     "body-font": "Google_Montserrat_400,500,600,700",
     "headings-font": "Google_Montserrat_400",

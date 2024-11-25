@@ -181,6 +181,7 @@
             .card-text {
                 text-transform: uppercase;
                 color: var(--opt-color-text-dark);
+                font-size: var(--text-m);
             }
 
             .card-title {
@@ -212,6 +213,10 @@
 
     .card-body {
         display: none;
+    }
+
+    .form {
+        text-align: center;
     }
 
     .card-top-headline {
@@ -431,6 +436,50 @@
     .toggle-title {
         font-size: var(--h-2);
         text-transform: uppercase;
+    }
+}
+
+.cart-page {
+    .page-content {
+        float: none;
+    }
+    
+    .cart-totals button {
+        color: #757575;
+        background-color: rgba(0,0,0,0);
+        &:hover {
+            background-color: rgba(0,0,0,0);
+            color: var(--opt-color-primary);
+        }
+    }
+    
+    .cart-remove {
+        border-color: #000000;
+        
+        &:hover {
+            border-color: var(--opt-color-primary);
+            svg {
+                fill: #ffffff;
+            }
+        }
+    }
+} 
+
+.form-wishlist {
+    .dropdown-menu {
+        .button {
+            color: #666666;
+            font-size: var(--text-s);
+            
+            &:hover {
+                color: var(--opt-color-primary);
+            }
+        }
+    }
+}
+@media (min-width: 801px) {
+    .form-wishlist .button {
+        width: 16em;
     }
 }
 
