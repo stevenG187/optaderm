@@ -32,11 +32,23 @@
         text-transform: uppercase;
         font-size: 1.6rem;
         letter-spacing: 0.15em;
-        padding: 6em 2em;
         display: block;
+        height: 13em;
+        position: relative;
 
         &:hover {
             color: var(--opt-color-primary);
+        }
+
+        span {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            height: fit-content;
+            width: 70%;
         }
     }
 
@@ -219,7 +231,8 @@
     }
 
     .category-slider .item {
-        padding: 4em 2em;
+        height: 14em;
+        font-size: 1.1rem;
     }
     
     .category-slider .slick-arrow {
