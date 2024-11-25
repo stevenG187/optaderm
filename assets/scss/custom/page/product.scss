@@ -134,6 +134,10 @@
             width: 100% !important;
         }
 
+        .form {
+            text-align: center;
+        }
+
         .card-top-headline {
             text-align: center;
             padding: 1em 0;
@@ -453,6 +457,25 @@
         }
     }
 } 
+
+.form-wishlist {
+    .dropdown-menu {
+        .button {
+            color: #666666;
+            font-size: var(--text-s);
+            
+            &:hover {
+                color: var(--opt-color-primary);
+            }
+        }
+    }
+}
+
+@media (min-width: 801px) {
+    .form-wishlist .button {
+        width: 16em;
+    }
+}
 
 @media screen and (max-width: 1024px){
     .productView {
