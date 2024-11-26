@@ -63,7 +63,10 @@ cart: true
             {{/or}}
 
         {{else}}
-            <h3 tabindex="0">{{lang 'cart.checkout.empty_cart'}}</h3>
+            <div class="empty-cart-message-wrapper">
+            <h3>{{lang 'cart.checkout.empty_cart'}}</h3>
+            <a href="/shop" class="button-outline">Continue Shopping</a>
+            </div>
         {{/if}}
 
     </div>
