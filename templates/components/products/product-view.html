@@ -91,7 +91,7 @@
                 </li>
             {{/each}}
         </ul> -->
-        <div class="pairs-with">
+        <div class="pairs-with desktop-view">
             {{#if product.related_products}}
                 <p>PAIRS WELL WITH</p>
                 <div class="product-grid">
@@ -289,6 +289,15 @@
             </form>
             {{#if settings.show_wishlist}}
                 {{> components/common/wishlist-dropdown}}
+            {{/if}}
+        </div>
+
+        <div class="pairs-with mobile-view">
+            {{#if product.related_products}}
+                <p>PAIRS WELL WITH</p>
+                <div class="product-grid">
+                    {{> components/products/product-pairs products=product.related_products columns=2 list="Related Products"}}
+                </div>
             {{/if}}
         </div>
 
