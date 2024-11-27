@@ -1,6 +1,6 @@
 .sc-tertiary-sec1 {
+    height: 58vw;
     position: relative;
-    padding: 46em 0 0;
 
     h1 {
         position: absolute;
@@ -106,11 +106,7 @@
     }
 }
 
-@media screen and (max-width: 1024px){
-    .sc-tertiary-sec1 {
-        padding: 33em 0 0;
-    }
-    
+@media screen and (max-width: 1024px){    
     .sc-tertiary-sec1 img {
         width: 15em;
     }
@@ -120,12 +116,8 @@
     }
     
     .sc-tertiary-sec1 img {
-        width: 7em;
-        right: 3%;
-    }
-    
-    .sc-tertiary-sec1 {
-        padding: 22em 0 0;
+        width: 9em;
+        right: 9%;
     }
     
     .sc-tertiary-sec1 h1 {
@@ -140,5 +132,14 @@
 @media screen and (max-width: 767px){
     .sc-tertiary-sec4 .col-2 .w-67 {
         padding: 1em;
+    }
+
+    .sc-tertiary-sec1 {
+        height: 80vw;
+    }
+    
+    .sc-tertiary-sec1 img {
+        width: 6em;
+        right: 5%;
     }
 }
