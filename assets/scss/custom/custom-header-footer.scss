@@ -1,3 +1,9 @@
+.modal-close {
+    background-color: rgba(0,0,0,0) !important;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+}
 
 #legacy-popup {
     z-index: 10;
@@ -30,7 +36,7 @@
             text-transform: uppercase;
             color: #ffffff;
             font-size: 2.85rem;
-            margin: 2em 0 0.4em;
+            margin: 0.5em 0 0.4em;
             font-family: 'Bai Jamjuree';
         }
         @media screen and ( max-width: 767px ) {
@@ -62,12 +68,15 @@
         }
 
         .close-btn {
-            color: #ffffff;
-            font-size: 2.5rem;
             position: absolute;
-            top: 5px;
+            top: 20px;
             right: 20px;
             cursor: pointer;
+
+            svg {
+                width: 2em;
+                height: 2em;
+            }
         }
     }
 }
@@ -865,16 +874,19 @@ hr.footer-line {
     }
 
     #legacy-popup .content h2 {
-        font-size: 3rem;
+        font-size: 2rem;
+        margin: 0;
     }
     
     #legacy-popup .content {
-        padding: 2em;
+        padding: 2em 1em;
         height: 92vh;
     }
     
     #legacy-popup .content p {
         width: 100%;
+        max-width: 100%;
+        margin: 1em 0;
     }
     
     #legacy-popup .content .button-outline {
