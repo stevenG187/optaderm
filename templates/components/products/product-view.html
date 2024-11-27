@@ -302,10 +302,12 @@
         </div>
 
         <div class="recommended-for">
-            <p class="headline">Recommended for:</p>
             {{#each product.custom_fields}}
                 {{#if this.name '===' 'Recommended for'}}
-                    <p class="rf">{{this.value}}</p>
+                    <div class="rf-item">
+                        <p class="headline">Recommended for:</p>
+                        <p class="rf">{{this.value}}</p>
+                    </div> 
                 {{/if}}
                 {{#if this.name '===' 'Recommended for description'}}
                     <p class="rfd">{{this.value}}</p>
