@@ -91,7 +91,7 @@
                 </li>
             {{/each}}
         </ul> -->
-        <div class="pairs-with">
+        <div class="pairs-with desktop-view">
             {{#if product.related_products}}
                 <p>PAIRS WELL WITH</p>
                 <div class="product-grid">
@@ -291,11 +291,22 @@
             {{/if}}
         </div>
 
+        <div class="pairs-with mobile-view">
+            {{#if product.related_products}}
+                <p>PAIRS WELL WITH</p>
+                <div class="product-grid">
+                    {{> components/products/product-pairs products=product.related_products columns=2 list="Related Products"}}
+                </div>
+            {{/if}}
+        </div>
+        
         <div class="recommended-for">
-            <p class="headline">Recommended to help reduce:</p>
             {{#each product.custom_fields}}
                 {{#if this.name '===' 'Recommended for'}}
-                    <p class="rf">{{this.value}}</p>
+                    <div class="rf-item">
+                        <p class="headline">Recommended for:</p>
+                        <p class="rf">{{this.value}}</p>
+                    </div> 
                 {{/if}}
                 {{#if this.name '===' 'Recommended for description'}}
                     <p class="rfd">{{this.value}}</p>
