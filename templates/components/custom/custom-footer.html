@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <hr class="footer-line">
 
 <div class="footer-cta page">  
@@ -51,3 +52,58 @@
         </div>
     </div>
 </footer>
+=======
+<hr class="footer-line">
+
+<div class="footer-cta page">  
+    <div class="flex-row align-center">
+        <div class="w-30 text-center">
+            <h2>FROM US TO YOU</h2>
+        </div>
+        <div class="w-70">
+            {{> components/common/subscription-form}}
+        </div>
+    </div>
+</div>
+
+<footer class="footer page" role="contentinfo">
+    <div class="container flex-row">
+        <div class="footer-item about-menu w-20">
+            <h3 class="footer-info-heading">About</h3>
+            <ul class="footer-info-list">
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/shop">Shop</a></li>
+                <li><a href="/shop/face/">Face</a></li>
+                <li><a href="/shop/body/">Body</a></li>
+                <li><a href="/skin-concerns">Skin Concerns</a></li>
+                <li><a href="/clinic">Clinic</a></li>
+                <!-- <li><a href="#">Affiliates</a></li> -->
+            </ul>
+        </div>
+        <div class="footer-item support-menu w-20">
+            <h3 class="footer-info-heading">Support</h3>
+            <ul class="footer-info-list">
+                <li><a href="/faq">FAQs</a></li>
+                <li><a href="/terms-and-conditions/">Legal</a></li>
+                <li><a href="/contact-us">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-item social-media w-20">
+            {{> components/common/social-links}}
+        </div>
+        <div class="footer-item info w-40">
+            <div class="logo">
+                <img src="{{cdn 'img/OPTADERM_Logo_White.webp'}}" width="300" height="46" alt="{{settings.store_name}} Logo"/>
+                <p>Science for the skin you’ll love for life.</p>
+            </div>
+            <div class="powered-links">
+                <ul class="links flex-row">
+                    <li><a href="/privacy-policy/">Privacy Policy</a></li>
+                    <li><a href="/terms-and-conditions/">Terms and Conditions</a></li>
+                </ul>
+                <p class="powered-by">&copy; {{moment format="YYYY"}} {{settings.store_name}}. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+>>>>>>> origin/main

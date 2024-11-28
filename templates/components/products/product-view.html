@@ -91,6 +91,7 @@
                 </li>
             {{/each}}
         </ul> -->
+<<<<<<< HEAD
 
 
         {{#unless product.category 'While Supplies Last' }}
@@ -105,6 +106,16 @@
         {{/unless}}
 
 
+=======
+        <div class="pairs-with desktop-view">
+            {{#if product.related_products}}
+                <p>PAIRS WELL WITH</p>
+                <div class="product-grid">
+                    {{> components/products/product-pairs products=product.related_products columns=2 list="Related Products"}}
+                </div>
+            {{/if}}
+        </div>
+>>>>>>> origin/main
     </section>
 
     <section class="productView-details product-data">
@@ -298,6 +309,7 @@
             {{/if}}
         </div>
 
+<<<<<<< HEAD
         {{#unless product.category 'While Supplies Last' }}
             <div class="pairs-with mobile-view">
                 {{#if product.related_products}}
@@ -322,6 +334,30 @@
                 {{/each}}
             </div>
         {{/unless}}
+=======
+        <div class="pairs-with mobile-view">
+            {{#if product.related_products}}
+                <p>PAIRS WELL WITH</p>
+                <div class="product-grid">
+                    {{> components/products/product-pairs products=product.related_products columns=2 list="Related Products"}}
+                </div>
+            {{/if}}
+        </div>
+        
+        <div class="recommended-for">
+            {{#each product.custom_fields}}
+                {{#if this.name '===' 'Recommended for'}}
+                    <div class="rf-item">
+                        <p class="headline">Recommended for:</p>
+                        <p class="rf">{{this.value}}</p>
+                    </div> 
+                {{/if}}
+                {{#if this.name '===' 'Recommended for description'}}
+                    <p class="rfd">{{this.value}}</p>
+                {{/if}}
+            {{/each}}
+        </div>
+>>>>>>> origin/main
 
         <!-- {{> components/common/share url=product.url}} -->
     </section>
