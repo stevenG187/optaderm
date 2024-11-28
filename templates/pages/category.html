@@ -56,7 +56,11 @@ products:
         <div class="container">
             <div class="content">
                 {{#unless theme_settings.hide_category_page_heading }}
+                {{#if category.name '===' "Anti-aging"}}
+                    <h1 class="page-heading">Aging Skincare</h1>
+                {{else}}
                     <h1 class="page-heading">{{category.name}}</h1>
+                {{/if}}
                     {{{region name="category_below_header"}}}
                 {{/unless}}
                 {{{category.description}}}
@@ -84,7 +88,13 @@ products:
                                   {{#unless category.name '===' "Dehydration"}}
                                     {{#unless category.name '===' "Legacy"}}
         <div class="top-content-header light text-center">
-            <p>Featured {{category.name}} Products</p>
+            {{#if category.name '===' "Shop All"}}
+                <p>Shop Featured Products</p>
+            {{else if category.name '===' "While Supplies Last"}}
+                <p>Featured Original Products</p>
+            {{else}}
+                <p>Featured {{category.name}} Products</p>
+            {{/if}}
         </div>
         {{> components/category/featured-product-listing }}
         {{/unless}}
@@ -111,8 +121,10 @@ products:
         <div class="top-content-header light text-center">
             <div id="product-list"></div>
             {{#if category.name '===' "Shop All"}}
-            <p>{{category.name}} PRODUCTS</p>
-               {{else}}
+                <p>{{category.name}} PRODUCTS</p>
+            {{else if category.name '===' "While Supplies Last"}}
+            <p>Original Products While Supplies Last</p>
+            {{else}}
                    <p>ALL {{category.name}} PRODUCTS</p>
                   {{/if}}
         </div>
