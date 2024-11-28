@@ -118,6 +118,7 @@ document.addEventListener("DOMContentLoaded", function() {
 }
 });
 
+//PRODUCT TITLE
 document.addEventListener("DOMContentLoaded", () => {
     function removeBrandFromTitle(containerSelector, brandSelector, titleSelector) {
         const containers = document.querySelectorAll(containerSelector);
@@ -126,14 +127,18 @@ document.addEventListener("DOMContentLoaded", () => {
             const titleElement = container.querySelector(titleSelector);
             if (brandElement && titleElement) {
                 const brandText = brandElement.textContent.trim().toLowerCase();
-                const fullTitle = titleElement.textContent.trim();
+                let fullTitle = titleElement.textContent.trim();
+
                 if (fullTitle.toLowerCase().startsWith(brandText)) {
-                    titleElement.textContent = fullTitle.slice(brandText.length).trim();
+                    fullTitle = fullTitle.slice(brandText.length).trim();
                 }
+
+                fullTitle = fullTitle.replace(/^[^a-zA-Z0-9\s]+/, '');
+                titleElement.textContent = fullTitle;
             }
         });
     }
+
     removeBrandFromTitle('.card-body', '.card-text', '.card-title');
     removeBrandFromTitle('.productView-product', '.productView-brand span', '.productView-title');
 });
-
