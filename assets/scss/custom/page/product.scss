@@ -359,6 +359,18 @@
             font-weight: 500;
         }
 
+        .rf-item {
+            .headline {
+                display: none;
+            }
+
+            &:first-child {
+                .headline {
+                    display: block;
+                }
+            }
+        }
+
         p {
             margin-bottom: 1rem;
 
