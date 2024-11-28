@@ -1,3 +1,7 @@
+input:focus, button:focus, textarea:focus, select:focus, details:focus, [href]:focus, [tabindex]:not([tabindex="-1"]):focus, [contenteditable="true"]:focus {
+    outline: none !important;
+}
+
 .modal-close {
     background-color: rgba(0,0,0,0) !important;
     border: none;

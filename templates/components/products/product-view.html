@@ -91,6 +91,7 @@
                 </li>
             {{/each}}
         </ul> -->
+        {{#unless product.category 'While Supplies Last' }}
         <div class="pairs-with desktop-view">
             {{#if product.related_products}}
                 <p>PAIRS WELL WITH</p>
@@ -99,6 +100,7 @@
                 </div>
             {{/if}}
         </div>
+    {{/unless}}
     </section>
 
     <section class="productView-details product-data">
@@ -291,6 +293,7 @@
             {{/if}}
         </div>
 
+        {{#unless product.category 'While Supplies Last' }}
         <div class="pairs-with mobile-view">
             {{#if product.related_products}}
                 <p>PAIRS WELL WITH</p>
@@ -299,6 +302,7 @@
                 </div>
             {{/if}}
         </div>
+    {{/unless}}
         
         <div class="recommended-for">
             {{#each product.custom_fields}}
