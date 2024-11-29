@@ -4,6 +4,8 @@
     <div>
         <ul class="socialLinks">
             {{#each settings.add_this.buttons}}
+            {{#unless service '===' 'twitter'}}
+            {{#unless service '===' 'google'}}
                 <li class="socialLinks-item socialLinks-item--{{service}}">
                     {{#if service '===' 'facebook'}}
                     <a class="socialLinks__link icon icon--{{service}}"
@@ -42,19 +44,6 @@
                             <use href="#icon-print"/>
                         </svg>
                     </a>
-                    {{else if service '===' 'twitter'}}
-                    <a class="socialLinks__link icon icon--x"
-                       href="https://x.com/intent/tweet/?text={{getVar 'encodedTitle'}}&amp;url={{getVar 'encodedUrl'}}"
-                       target="_blank"
-                       rel="noopener"
-                       title="X"
-                       {{{annotation}}}
-                    >
-                        <span class="aria-description--hidden">X</span>
-                        <svg>
-                            <use href="#icon-x"/>
-                        </svg>
-                    </a>
                     {{else if service '===' 'linkedin'}}
                     <a class="socialLinks__link icon icon--{{service}}"
                        title="{{{capitalize service}}}"
@@ -83,6 +72,8 @@
                     </a>
                     {{/if}}
                 </li>
+                {{/unless}}
+                {{/unless}}
             {{/each}}
         </ul>
     </div>

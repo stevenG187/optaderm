@@ -87,6 +87,7 @@ products:
                                   {{#unless category.name '===' "Exfoliants"}}
                                   {{#unless category.name '===' "Dehydration"}}
                                     {{#unless category.name '===' "Legacy"}}
+                                    {{#unless category.name '===' "Body"}}
         <div class="top-content-header light text-center">
             {{#if category.name '===' "Shop All"}}
                 <p>Shop Featured Products</p>
@@ -97,6 +98,7 @@ products:
             {{/if}}
         </div>
         {{> components/category/featured-product-listing }}
+        {{/unless}}
         {{/unless}}
         {{/unless}}
         {{/unless}}
