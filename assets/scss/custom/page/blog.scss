@@ -21,6 +21,14 @@
 
 .blog-sec2 {
     padding: 3.5em 0 3em;
+    position: relative;
+
+    #list {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -170px;
+    }
 
     .blog-view-all {
         display: inline-block;
@@ -47,6 +55,10 @@
 .blog-sec3 {
     padding: 0 1em;
 
+    .flex-row {
+        justify-content: unset;
+    }
+
     .w-33 {
         margin-bottom: 1em;
         border: 1px solid #a5a0a5;
@@ -60,7 +72,7 @@
     .blog-content {
         padding: 1.4em 1.3em 3.5em;
 
-        h3 {
+        h2 {
             margin: 0;
             font-size: var(--h-4);
         }
@@ -237,6 +249,40 @@
                 background-color: #dbd9db;
             }
         }
+    }
+}
+
+.single-post {
+    h1 {
+        font-size: var(--h-1);
+
+        a {
+            color: var(--opt-color-text-dark);
+
+            &:hover {
+                color: var(--opt-color-primary);
+            }
+        }
+    }
+
+    h2 {
+        font-size: var(--h-2);
+    }
+
+    h3 {
+        font-size: var(--h-3);
+    }
+
+    h4 {
+        font-size: var(--h-4);
+    }
+
+    h5 {
+        font-size: var(--h-5);
+    }
+
+    a {
+        color: var(--opt-color-primary);
     }
 }
 
