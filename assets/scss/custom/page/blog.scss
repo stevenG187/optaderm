@@ -21,6 +21,14 @@
 
 .blog-sec2 {
     padding: 3.5em 0 3em;
+    position: relative;
+
+    #list-page {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -170px;
+    }
 
     .blog-view-all {
         display: inline-block;
