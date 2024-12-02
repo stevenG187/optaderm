@@ -19,7 +19,7 @@
         {{#each links}}
             <li class="pagination-item {{#if this.number '==' ../current}}pagination-item--current{{/if}}">
                 <a class="pagination-link"
-                   href="{{this.url}}/#product-list"
+                   href="{{this.url}}#list-page"
                    {{#if this.number '==' ../current}}
                    aria-current="page"
                    data-pagination-current-page-link
