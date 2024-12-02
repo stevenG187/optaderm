@@ -41,6 +41,27 @@
             padding: 1em;
             display: inline-block;
         }
+
+        .submenu {
+            display: none; 
+            position: absolute;
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            width: auto;
+            max-width: 100%;
+            overflow: hidden;
+            z-index: 10;
+        }
+        
+        .submenu-visible {
+            display: block;
+        }
+        
+        .more-link {
+            cursor: pointer;
+        }
     }
 }
 

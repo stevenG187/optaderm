@@ -142,3 +142,58 @@ document.addEventListener("DOMContentLoaded", () => {
     removeBrandFromTitle('.card-body', '.card-text', '.card-title');
     removeBrandFromTitle('.productView-product', '.productView-brand span', '.productView-title');
 });
+
+// Function to fetch blog tags dynamically from the page
+function fetchBlogTags() {
+    const allTags = [];
+    const tagElements = document.querySelectorAll('.blog-sec3 .blog-tag a');
+    tagElements.forEach(tagElement => {
+        const tagName = tagElement.textContent.trim();
+        const tagUrl = tagElement.href;
+        if (!allTags.some(t => t.name === tagName)) {
+            allTags.push({ name: tagName, url: tagUrl });
+        }
+    });
+    return allTags;
+}
+
+function displayTags(tags) {
+    const tagList = document.querySelector(".blog-tag-list");
+    
+    // Display first 3 tags
+    tags.slice(0, 3).forEach(tag => {
+        const li = document.createElement("li");
+        li.innerHTML = `<a href="${tag.url}">${tag.name}</a>`;
+        tagList.appendChild(li);
+    });
+
+    // Handle "More..." submenu if there are more than 3 tags
+    if (tags.length > 3) {
+        const moreLi = document.createElement("li");
+        moreLi.innerHTML = `<a href="#" class="more-link">More...</a>`;
+        
+        // Create the submenu with the remaining tags
+        const submenu = document.createElement("ul");
+        submenu.classList.add("submenu");
+        
+        // Add remaining tags to the submenu
+        tags.slice(3).forEach(tag => {
+            const subLi = document.createElement("li");
+            subLi.innerHTML = `<a href="${tag.url}">${tag.name}</a>`;
+            submenu.appendChild(subLi);
+        });
+        
+        moreLi.appendChild(submenu);
+        tagList.appendChild(moreLi);
+        
+        // Add event listener to toggle the submenu visibility on click
+        moreLi.querySelector(".more-link").addEventListener("click", function(event) {
+            event.preventDefault();  // Prevent default link behavior
+            submenu.classList.toggle("submenu-visible");  // Toggle visibility of the submenu
+        });
+    }
+}
+
+// Fetch tags and display them
+const tags = fetchBlogTags();
+displayTags(tags);
