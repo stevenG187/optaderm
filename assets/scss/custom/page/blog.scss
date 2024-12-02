@@ -191,9 +191,15 @@
         max-width: 100%;
     }
 
-    h3 {
-        margin: 0;
+    h2 {
+        margin: 0 0 20px 0;
         font-size: var(--h-2);
+        color: var(--opt-color-text-dark);
+    }
+
+    h3 {
+        margin: 0 0 20px 0;
+        font-size: var(--h-3);
         color: var(--opt-color-text-dark);
 
         a {
