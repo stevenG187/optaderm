@@ -521,7 +521,7 @@ body {
                             font-size: var(--text-xs);
                             padding: 0.5em 0 0.3em;
                             text-align: center;
-                            width: 27%;
+                            min-width: 27%;
     
                             &:nth-child(1) {
                                 background-color: #d1c0de;
@@ -541,7 +541,7 @@ body {
                             }
 
                             @media screen and (max-width: 1024px){
-                                width: 46%;
+                                min-width: 46%;
                                 margin: 0.3em;
                             }
                         }
@@ -641,6 +641,19 @@ body {
                     margin: 0;
                     font-weight: 400 !important;
                 }
+                @media (min-width: 768px) and (max-width:1000px){
+                    .prod-title {
+                        font-size: var(--text-s);
+                    }
+                    .prod-subtitle {
+                        font-size: var(--text-xs);
+                    }
+                }
+                @media (max-width: 768px) {
+                    .prod-title {
+                        font-size: var(--text-s);
+                    }
+                }
             }
         }
     }    
@@ -696,7 +709,7 @@ body {
     }
     
     .featured-content-grid .prod-category, .featured-content-grid .content .wrap .prod-title, .featured-content-grid .prod-subtitle {
-        font-size: 0.5rem;
+        font-size: 0.75rem;
     }
     
     .featured-content-grid .prod-subtitle {
