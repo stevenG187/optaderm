@@ -156,31 +156,13 @@ function fetchBlogTags() {
     });
     return allTags;
 }
-
 function displayTags(tags) {
     const tagList = document.querySelector(".blog-tag-list");
-    tags.slice(0, 3).forEach(tag => {
+    tags.forEach(tag => {
         const li = document.createElement("li");
         li.innerHTML = `<a href="${tag.url}">${tag.name}</a>`;
         tagList.appendChild(li);
     });
-    if (tags.length > 3) {
-        const moreLi = document.createElement("li");
-        moreLi.innerHTML = `<a href="#" class="more-link">More...</a>`;
-        const submenu = document.createElement("ul");
-        submenu.classList.add("submenu");
-        tags.slice(3).forEach(tag => {
-            const subLi = document.createElement("li");
-            subLi.innerHTML = `<a href="${tag.url}">${tag.name}</a>`;
-            submenu.appendChild(subLi);
-        });
-        moreLi.appendChild(submenu);
-        tagList.appendChild(moreLi);
-        moreLi.querySelector(".more-link").addEventListener("click", function(event) {
-            event.preventDefault();
-            submenu.classList.toggle("submenu-visible"); 
-        });
-    }
 }
 const tags = fetchBlogTags();
 displayTags(tags);

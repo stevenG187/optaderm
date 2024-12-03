@@ -35,10 +35,11 @@
             -ms-flex-pack: center;
                 justify-content: center;
         list-style-type: none;
-        margin: 0;
+        margin: 0 auto;
+        width: 50%;    
 
         a {
-            padding: 1em;
+            padding: 0.7em 1.5em;
             display: inline-block;
         }
 
@@ -265,6 +266,10 @@
     .blog-sec1, .blog-single {
         padding-top: 10em;
     }
+
+    .blog-sec2 .blog-tag-list {
+        width: 80%;
+    }
 }
 
 @media screen and (max-width: 767px){
@@ -293,5 +298,9 @@
 
     .blog-sec3 .w-33:nth-child(3n + 2) {
         border: 1px solid #a5a0a5;
+    }
+
+    .blog-sec2 .blog-tag-list {
+        width: 100%;
     }
 }
