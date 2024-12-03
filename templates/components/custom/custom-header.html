@@ -272,6 +272,11 @@
                 <li><a href="/shop/">Shop All</a></li>
                 <li><a href="/shop/bestsellers">Bestsellers</a></li>
                 <li><a href="/shop/new-formulations">New Formulations</a></li>
+                {{#if customer}}
+                {{#if customer.customer_group_name '==' 'Legacy'}}
+                    <li><a href="/while-supplies-last">While Supplies Last</a></li>
+                {{/if}}
+            {{/if}}
             </ul>
 
             <ul>

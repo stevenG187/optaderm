@@ -22,6 +22,11 @@
                 <li><a href="/shop/body/">Body</a></li>
                 <li><a href="/skin-concerns">Skin Concerns</a></li>
                 <li><a href="/clinic">Clinic</a></li>
+                {{#if customer}}
+                {{#if customer.customer_group_name '==' 'Legacy'}}
+                    <li><a href="/while-supplies-last">While Supplies Last</a></li>
+                {{/if}}
+            {{/if}}
                 <!-- <li><a href="#">Affiliates</a></li> -->
             </ul>
         </div>

@@ -52,6 +52,9 @@
             {{#if customer.customer_group_name '==' 'Legacy'}}
                 <script>
                     document.addEventListener('DOMContentLoaded', function() {
+                        if (!document.cookie.includes('legacy_customer=true')) {
+                    document.cookie = "legacy_customer=true; path=/; max-age=" + 60 * 60 * 24 * 30; // Cookie expires in 30 days
+                }
                         if (!document.cookie.includes('legacy_popup_shown=true')) {
                             setTimeout(function() {
                                 const popup = document.getElementById('legacy-popup');
