@@ -178,7 +178,6 @@ function displayTags(tags) {
                 gridItem.innerHTML = `<a href="${tag.url}">${tag.name}</a>`;
                 tagList.appendChild(gridItem);
             });
-            tagList.classList.add("grid-layout");
         });
     }
 }
