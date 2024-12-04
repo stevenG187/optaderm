@@ -143,43 +143,63 @@ document.addEventListener("DOMContentLoaded", () => {
     removeBrandFromTitle('.productView-product', '.productView-brand span', '.productView-title');
 });
 
-// Function to fetch blog tags dynamically from the page
-function fetchBlogTags() {
-    const allTags = [];
+// Function to fetch, sort, and return blog tags dynamically
+function fetchAndSortBlogTags() {
     const tagElements = document.querySelectorAll('.blog-sec3 .blog-tag a');
-    tagElements.forEach(tagElement => {
-        const tagName = tagElement.textContent.trim();
-        const tagUrl = tagElement.href;
-        if (!allTags.some(t => t.name === tagName)) {
-            allTags.push({ name: tagName, url: tagUrl });
-        }
-    });
-    return allTags;
+    const tags = Array.from(tagElements).map(tagElement => ({
+        name: tagElement.textContent.trim(),
+        url: tagElement.href,
+    }));
+    // Remove duplicates and sort alphabetically
+    return [...new Map(tags.map(tag => [tag.name, tag])).values()]
+        .sort((a, b) => a.name.localeCompare(b.name));
 }
+
+// Function to create a list item for a tag
+function createTagListItem(tag) {
+    const li = document.createElement("li");
+    li.innerHTML = `<a href="${tag.url}">${tag.name}</a>`;
+    return li;
+}
+
+// Function to display tags
 function displayTags(tags) {
     const tagList = document.querySelector(".blog-tag-list");
-    const initialTags = tags.slice(0, 3);
-    const remainingTags = tags.slice(3);
-    initialTags.forEach(tag => {
-        const li = document.createElement("li");
-        li.innerHTML = `<a href="${tag.url}">${tag.name}</a>`;
-        tagList.appendChild(li);
+
+    // Early exit if no .blog-tag-list element exists
+    if (!tagList) {
+        return;
+    }
+
+    tagList.innerHTML = ""; // Clear existing tags
+    const fragment = document.createDocumentFragment();
+
+    // Display the first 3 tags
+    tags.slice(0, 3).forEach(tag => {
+        fragment.appendChild(createTagListItem(tag));
     });
-    if (remainingTags.length > 0) {
+
+    // Add "More..." link if there are remaining tags
+    if (tags.length > 3) {
         const moreLi = document.createElement("li");
         moreLi.innerHTML = `<a href="#" class="more-link">More...</a>`;
-        tagList.appendChild(moreLi);
-        moreLi.querySelector(".more-link").addEventListener("click", function (event) {
+        fragment.appendChild(moreLi);
+
+        // Add click event listener to reveal all tags
+        moreLi.addEventListener("click", event => {
             event.preventDefault();
-            tagList.innerHTML = ""; 
+            tagList.innerHTML = ""; // Clear current list
+            const allTagsFragment = document.createDocumentFragment();
             tags.forEach(tag => {
-                const gridItem = document.createElement("li");
-                gridItem.classList.add("grid-item"); 
-                gridItem.innerHTML = `<a href="${tag.url}">${tag.name}</a>`;
-                tagList.appendChild(gridItem);
+                allTagsFragment.appendChild(createTagListItem(tag));
             });
+            tagList.appendChild(allTagsFragment);
         });
     }
+
+    tagList.appendChild(fragment);
 }
-const tags = fetchBlogTags();
+
+// Fetch, sort, and display tags
+const tags = fetchAndSortBlogTags();
 displayTags(tags);
