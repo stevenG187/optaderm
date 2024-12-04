@@ -33,7 +33,7 @@ products:
                 <p>Dehydrated skin requires both internal and external approaches:</p>
                 <ul>
                     <li>Internal Hydration: Drink plenty of water to replenish moisture from within. Hydration starts from inside the body.</li>
-                    <li>External Hydration: Use products that focus on water retention in the skin. Optaderm’s moisturizers, featuring <a href="/face/hyaluronic-acid/">Hyaluronic Acid</a>, are key to instant hydration. Hyaluronic Acid holds water molecules in the skin, giving it a plump and hydrated look.</li>
+                    <li>External Hydration: Use products that focus on water retention in the skin. Optaderm’s moisturizers, featuring <a href="/shop/hyaluronic-acid/">Hyaluronic Acid</a>, are key to instant hydration. Hyaluronic Acid holds water molecules in the skin, giving it a plump and hydrated look.</li>
                     <li><a href="/shop/face/cleansers/">Proper Cleansing</a>: A proper skincare routine starts with cleansing. Optaderm’s cleansers contain Cationic Hyaluronic Acid, which bonds to the skin’s surface for immediate hydration.</li>
                     <li><a href="/shop/face/toners/">Toning</a>: After cleansing, toners with Hyaluronic Acid can deliver additional moisture to the skin.</li>
                     <li><a href="/shop/face/moisturizers/">Moisturization</a>: Sealing hydration with a suitable moisturizer is critical. Optaderm’s range includes lightweight gels for oily skin and richer creams for those who need extra moisture.</li>
@@ -70,6 +70,7 @@ products:
         <ul class="productGrid">
             {{#each products.featured}}
                 {{#each this.custom_fields}}
+                {{#if this.name '===' 'Tag'}}
                     {{#if this.value '===' 'Dehydrated Dry Skin'}}
                         <li class="product">
                             <article class="card"> 
@@ -127,6 +128,7 @@ products:
                                 </a>
                             </article>
                         </li>
+                        {{/if}}
                         {{/if}}
                 {{/each}}
             {{/each}}

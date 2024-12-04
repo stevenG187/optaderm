@@ -29,8 +29,8 @@ products:
                 <ul>
                     <li>Salicylic Acid: A key ingredient that helps dissolve sebum plugs and clear pores, reducing the occurrence of blemishes.</li>
                     <li>Nordihydroguaiaretic Acid and Oleanolic Acid: These ingredients help control oil production and prevent clogged pores.</li>
-                    <li><a href="/face/niacinamide/">Niacinamide</a>: Reduces inflammation, calms irritated skin, and minimizes the appearance of acne scars.</li>
-                    <li><a href="/face/peptides/">Peptides</a> and Alpha Arbutin: These ingredients help reduce the chances of scarring and post-inflammatory pigmentation.</li>
+                    <li><a href="/shop/niacinamide/">Niacinamide</a>: Reduces inflammation, calms irritated skin, and minimizes the appearance of acne scars.</li>
+                    <li><a href="/shop/peptides/">Peptides</a> and Alpha Arbutin: These ingredients help reduce the chances of scarring and post-inflammatory pigmentation.</li>
                 </ul>
                 <p>Maintaining a consistent skincare routine that includes cleansing, toning, exfoliating, and moisturizing is crucial for managing acne-prone skin. Using warm (not hot) water for rinsing is also important to avoid irritating the skin further.</p>
             </div>
@@ -53,6 +53,7 @@ products:
         <ul class="productGrid">
             {{#each products.featured}}
                 {{#each this.custom_fields}}
+                {{#if this.name '===' 'Tag'}}
                     {{#if this.value '===' 'Blemishes & Acne'}}
                         <li class="product">
                             <article class="card"> 
@@ -110,6 +111,7 @@ products:
                                 </a>
                             </article>
                         </li>
+                        {{/if}}
                         {{/if}}
                 {{/each}}
             {{/each}}

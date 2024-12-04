@@ -52,6 +52,7 @@ products:
         <ul class="productGrid">
             {{#each products.featured}}
                 {{#each this.custom_fields}}
+                  {{#if this.name '===' 'Tag'}}
                     {{#if this.value '===' 'Eczema'}}
                         <li class="product">
                             <article class="card"> 
@@ -110,6 +111,7 @@ products:
                             </article>
                         </li>
                         {{/if}}
+                    {{/if}}
                 {{/each}}
             {{/each}}
         </ul>
