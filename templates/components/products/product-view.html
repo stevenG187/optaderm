@@ -113,11 +113,17 @@
                     {{/if}}
                 {{/each}}
 
-            {{#if product.brand}}
+            <!-- {{#if product.brand}}
                 <h2 class="productView-brand">
                     <a href="{{product.brand.url}}"><span>{{product.brand.name}}</span></a>
                 </h2>
-            {{/if}}
+            {{/if}} -->
+
+            {{#each product.custom_fields}}
+                {{#if this.name '===' 'Brand'}}
+                <h2 class="productView-brand">{{this.value}}</h2>
+                {{/if}}
+            {{/each}}
 
             <h1 class="productView-title">{{product.title}}</h1>
             
