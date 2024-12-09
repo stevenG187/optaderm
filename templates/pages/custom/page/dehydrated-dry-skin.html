@@ -115,7 +115,12 @@ products:
                                         </div>
                                     </figure>
                                     <div class="card-body">
-                                        <p class="card-text">{{../brand.name}}</p>
+                                        {{#each ../custom_fields}}
+                                            {{#if this.name '===' 'Brand'}}
+                                                <p class="card-text">{{this.value}}</p>
+                                            {{/if}}
+                                        {{/each}}  
+                                        <!-- <p class="card-text">{{../brand.name}}</p> -->
                                         <h3 class="card-title">
                                             {{../name}}
                                         </h3>
