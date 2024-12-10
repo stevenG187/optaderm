@@ -1,31 +1,31 @@
 {{#if template '===' 'pages/custom/page/homepage'}} 
-    <header class="header page transparent" role="banner">
+    <header class="main-header page transparent" role="banner">
 {{else if template '===' 'pages/custom/page/clinic'}} 
-    <header class="header page transparent" role="banner">
+    <header class="main-header page transparent" role="banner">
 {{else if template '===' 'pages/custom/page/about'}} 
-    <header class="header page transparent" role="banner"> 
+    <header class="main-header page transparent" role="banner"> 
 {{else if page_type '===' 'category'}} 
-    <header class="header page transparent" role="banner">  
+    <header class="main-header page transparent" role="banner">  
 {{else if template '===' 'pages/custom/page/skin-concerns'}} 
-    <header class="header page transparent" role="banner">     
+    <header class="main-header page transparent" role="banner">     
 {{else if template '===' 'pages/custom/page/hyperpigmentation'}} 
-    <header class="header page transparent" role="banner">        
+    <header class="main-header page transparent" role="banner">        
 {{else if template '===' 'pages/custom/page/rosacea'}} 
-    <header class="header page transparent" role="banner"> 
+    <header class="main-header page transparent" role="banner"> 
 {{else if template '===' 'pages/custom/page/blemishes-acne'}} 
-    <header class="header page transparent" role="banner">  
+    <header class="main-header page transparent" role="banner">  
 {{else if template '===' 'pages/custom/page/redness'}} 
-    <header class="header page transparent" role="banner">    
+    <header class="main-header page transparent" role="banner">    
 {{else if template '===' 'pages/custom/page/dehydrated-dry-skin'}} 
-    <header class="header page transparent" role="banner">  
+    <header class="main-header page transparent" role="banner">  
 {{else if template '===' 'pages/custom/page/dull-skin-lack-of-luster'}} 
-    <header class="header page transparent" role="banner">        
+    <header class="main-header page transparent" role="banner">        
 {{else if template '===' 'pages/custom/page/eczema'}} 
-    <header class="header page transparent" role="banner">  
+    <header class="main-header page transparent" role="banner">  
 {{else if template '===' 'pages/custom/page/psoriasis'}} 
-    <header class="header page transparent" role="banner">                                             
+    <header class="main-header page transparent" role="banner">                                             
 {{else}}
-    <header class="header page dark-header" role="banner">
+    <header class="main-header page dark-header" role="banner">
 {{/if}}
     <div class="header-top">
         <div class="flex-row align-center">
@@ -354,7 +354,7 @@
 </div>
 
 <script>
-    const header = document.querySelector('.header.page');
+    const header = document.querySelector('.main-header.page');
     const stickyOffset = header.offsetTop;
 
     function handleStickyHeader() {

@@ -85,7 +85,7 @@ input:focus, button:focus, textarea:focus, select:focus, details:focus, [href]:f
     }
 }
 
-.header {
+.main-header {
     position: absolute;
     top: 0;
     width: 100%;
@@ -342,6 +342,7 @@ input:focus, button:focus, textarea:focus, select:focus, details:focus, [href]:f
 
     .logo {
         margin-top: -1em;
+        text-align: center;
     }
 
     .w-30 {
@@ -781,8 +782,8 @@ hr.footer-line {
 }
 
 @media screen and (max-width: 1024px) {
-    .header .right .button-text,
-    .header .right .flag {
+    .main-header .right .button-text,
+    .main-header .right .flag {
         display: none;
     }
 
@@ -794,7 +795,7 @@ hr.footer-line {
         padding: 3.5em 1.5em;
     }
 
-    .header hr {
+    .main-header hr {
         margin-bottom: -0.1em;
     }
 
@@ -809,7 +810,7 @@ hr.footer-line {
         display: none;
     }
     
-    .header hr {
+    .main-header hr {
         margin-bottom: -2px;
     }
 
@@ -820,11 +821,11 @@ hr.footer-line {
 }
 
 @media screen and (max-width: 767px) {
-    .header .header-top .w-30.left, .header .header-top .w-30.right {
+    .main-header .header-top .w-30.left, .main-header .header-top .w-30.right {
         width: 25% !important;
     }
     
-    .header .w-30 ul svg {
+    .main-header .w-30 ul svg {
         width: 1.9em;
         height: 1.9em;
     }
@@ -833,34 +834,34 @@ hr.footer-line {
         width: 100%;
     }
     
-    .header .left li.search {
+    .main-header .left li.search {
         margin: 0;
     }
     
-    .header .right li {
+    .main-header .right li {
         margin-left: 0.5em;
     }
     
-    .header .header-top .w-30.logo {
+    .main-header .header-top .w-30.logo {
         width: 48% !important;
         margin-top: -0.5em;
         z-index: 1;
     }
 
-    .header .search .search-bar {
+    .main-header .search .search-bar {
         background-color: #9b9c9f;
     }
 
-    .header.sticky-active .search .search-bar,
-    .header.dark-header .search .search-bar {
+    .main-header.sticky-active .search .search-bar,
+    .main-header.dark-header .search .search-bar {
         background-color: #ffffff;
     }
     
-    .header .left li.search {
+    .main-header .left li.search {
         z-index: 2;
     }
     
-    .header .left .search-icon {
+    .main-header .left .search-icon {
         z-index: 2;
         position: relative;
     }
