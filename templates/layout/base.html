@@ -1,186 +1,277 @@
-<!DOCTYPE html>
-<html class="no-js" lang="{{ locale_name }}">
-    <head>
-        <title>{{ head.title }}</title>
-        {{{ resourceHints }}}
-        {{{ head.meta_tags }}}
-        {{{ head.config }}}
-        {{#block "head"}} {{/block}}
+{{#if customer}}
+    <!DOCTYPE html>
+    <html class="no-js" lang="{{ locale_name }}">
+        <head>
+            <title>{{ head.title }}</title>
+            {{{ resourceHints }}}
+            {{{ head.meta_tags }}}
+            {{{ head.config }}}
+            {{#block "head"}} {{/block}}
 
-        <link href="{{ head.favicon }}" rel="shortcut icon">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link href="{{ head.favicon }}" rel="shortcut icon">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <script>
-            {{!-- Change document class from no-js to js so we can detect this in css --}}
-            document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
-        </script>
+            <script>
+                {{!-- Change document class from no-js to js so we can detect this in css --}}
+                document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+            </script>
 
-        {{> components/common/polyfill-script }}
-        <script>window.consentManagerTranslations = `{{{langJson 'consent_manager'}}}`;</script>
+            {{> components/common/polyfill-script }}
+            <script>window.consentManagerTranslations = `{{{langJson 'consent_manager'}}}`;</script>
 
-        {{!-- Load Lazysizes script ASAP so images will appear --}}
-        <script>
-            {{!-- Only load visible elements until the onload event fires, after which preload nearby elements. --}}
-            window.lazySizesConfig = window.lazySizesConfig || {};
-            window.lazySizesConfig.loadMode = 1;
-        </script>
-        <script async src="{{cdn 'assets/dist/theme-bundle.head_async.js' resourceHint='preload' as='script'}}"></script>
-        
-        {{getFontsCollection font-display='block'}}
-        
-        <script async src="{{cdn 'assets/dist/theme-bundle.font.js' resourceHint='preload' as='script'}}"></script>
+            {{!-- Load Lazysizes script ASAP so images will appear --}}
+            <script>
+                {{!-- Only load visible elements until the onload event fires, after which preload nearby elements. --}}
+                window.lazySizesConfig = window.lazySizesConfig || {};
+                window.lazySizesConfig.loadMode = 1;
+            </script>
+            <script async src="{{cdn 'assets/dist/theme-bundle.head_async.js' resourceHint='preload' as='script'}}"></script>
+            
+            {{getFontsCollection font-display='block'}}
+            
+            <script async src="{{cdn 'assets/dist/theme-bundle.font.js' resourceHint='preload' as='script'}}"></script>
 
-        {{{stylesheet '/assets/css/theme.css'}}}
+            {{{stylesheet '/assets/css/theme.css'}}}
 
-        {{{head.scripts}}}
+            {{{head.scripts}}}
 
-        {{~inject 'zoomSize' theme_settings.zoom_size}}
-        {{~inject 'productSize' theme_settings.product_size}}
-        {{~inject 'genericError' (lang 'common.generic_error')}}
-        {{~inject 'urls' urls}}
-        {{~inject 'secureBaseUrl' settings.secure_base_url}}
-        {{~inject 'cartId' cart_id}}
-        {{~inject 'template' template}}
-        {{~inject 'validationDictionaryJSON' (langJson 'validation_messages')}}
-        {{~inject 'validationFallbackDictionaryJSON' (langJson 'validation_fallback_messages')}}
-        {{~inject 'validationDefaultDictionaryJSON' (langJson 'validation_default_messages')}}
-        {{~inject 'carouselArrowAndDotAriaLabel' (lang 'carousel.arrow_and_dot_aria_label')}}
-        {{~inject 'carouselActiveDotAriaLabel' (lang 'carousel.active_dot_aria_label')}}
-        {{~inject 'carouselContentAnnounceMessage' (lang 'carousel.content_announce_message')}}
+            {{~inject 'zoomSize' theme_settings.zoom_size}}
+            {{~inject 'productSize' theme_settings.product_size}}
+            {{~inject 'genericError' (lang 'common.generic_error')}}
+            {{~inject 'urls' urls}}
+            {{~inject 'secureBaseUrl' settings.secure_base_url}}
+            {{~inject 'cartId' cart_id}}
+            {{~inject 'template' template}}
+            {{~inject 'validationDictionaryJSON' (langJson 'validation_messages')}}
+            {{~inject 'validationFallbackDictionaryJSON' (langJson 'validation_fallback_messages')}}
+            {{~inject 'validationDefaultDictionaryJSON' (langJson 'validation_default_messages')}}
+            {{~inject 'carouselArrowAndDotAriaLabel' (lang 'carousel.arrow_and_dot_aria_label')}}
+            {{~inject 'carouselActiveDotAriaLabel' (lang 'carousel.active_dot_aria_label')}}
+            {{~inject 'carouselContentAnnounceMessage' (lang 'carousel.content_announce_message')}}
 
-        {{#if customer}}
-            {{#if customer.customer_group_name '==' 'Legacy'}}
-                <script>
-                    document.addEventListener('DOMContentLoaded', function() {
-                        if (!document.cookie.includes('legacy_customer=true')) {
-                    document.cookie = "legacy_customer=true; path=/; max-age=" + 60 * 60 * 24 * 30; // Cookie expires in 30 days
-                }
-                        if (!document.cookie.includes('legacy_popup_shown=true')) {
-                            setTimeout(function() {
-                                const popup = document.getElementById('legacy-popup');
-                                if (popup) {
-                                    popup.style.display = 'block';
-                                    popup.style.transform = 'scale(1)';
-                                    popup.style.transition = 'transform 0.3s ease-in-out';
+            {{#if customer}}
+                {{#if customer.customer_group_name '==' 'Legacy'}}
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            if (!document.cookie.includes('legacy_customer=true')) {
+                        document.cookie = "legacy_customer=true; path=/; max-age=" + 60 * 60 * 24 * 30; // Cookie expires in 30 days
+                    }
+                            if (!document.cookie.includes('legacy_popup_shown=true')) {
+                                setTimeout(function() {
+                                    const popup = document.getElementById('legacy-popup');
+                                    if (popup) {
+                                        popup.style.display = 'block';
+                                        popup.style.transform = 'scale(1)';
+                                        popup.style.transition = 'transform 0.3s ease-in-out';
 
-                                    const closeButton = popup.querySelector('.content .close-btn');
-                                    if (closeButton) {
-                                        closeButton.addEventListener('click', function() {
-                                            popup.style.display = 'none';
-                                            document.cookie = "legacy_popup_shown=true; path=/; max-age=" + 60 * 60 * 24; // Cookie expires in 1 day
-                                        });
+                                        const closeButton = popup.querySelector('.content .close-btn');
+                                        if (closeButton) {
+                                            closeButton.addEventListener('click', function() {
+                                                popup.style.display = 'none';
+                                                document.cookie = "legacy_popup_shown=true; path=/; max-age=" + 60 * 60 * 24; // Cookie expires in 1 day
+                                            });
+                                        }
+
+                                        const actionButton = popup.querySelector('.content .button-outline');
+                                        if (actionButton) {
+                                            actionButton.addEventListener('click', function() {
+                                                document.cookie = "legacy_popup_shown=true; path=/; max-age=" + 60 * 60 * 24; // Cookie expires in 1 day
+                                            });
+                                        }
                                     }
-
-                                    const actionButton = popup.querySelector('.content .button-outline');
-                                    if (actionButton) {
-                                        actionButton.addEventListener('click', function() {
-                                            document.cookie = "legacy_popup_shown=true; path=/; max-age=" + 60 * 60 * 24; // Cookie expires in 1 day
-                                        });
-                                    }
-                                }
-                            }, 10000);
-                        }
-                    });
-                </script>
+                                }, 10000);
+                            }
+                        });
+                    </script>
+                {{/if}}
             {{/if}}
-        {{/if}}
-    </head>
+        </head>
 
-    <div id="legacy-popup" style="display: none; transform: scale(0);">
-        <div class="overlay"></div>
-        <div class="content">
-            <div class="close-btn">
-                <svg width="50px" height="50px" viewBox="0 0 185 185" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-miterlimit:10;">
-            <g transform="matrix(1,0,0,1,-20280,-3883.98)">
-                <g transform="matrix(8.33333,0,0,8.33333,0,0)">
-                    <g transform="matrix(0.707107,-0.707107,-0.707107,-0.707107,2444.7,489.316)">
-                        <path d="M-3.556,8.585L20.726,8.585" style="fill:none;fill-rule:nonzero;stroke:rgb(136,130,136);stroke-width:0.5px;"/>
-                    </g>
-                    <g transform="matrix(-0.707107,-0.707107,-0.707107,0.707107,2444.7,465.033)">
-                        <path d="M-20.726,8.585L3.556,8.585" style="fill:none;fill-rule:nonzero;stroke:rgb(136,130,136);stroke-width:0.5px;"/>
+        <div id="legacy-popup" style="display: none; transform: scale(0);">
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="close-btn">
+                    <svg width="50px" height="50px" viewBox="0 0 185 185" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-miterlimit:10;">
+                <g transform="matrix(1,0,0,1,-20280,-3883.98)">
+                    <g transform="matrix(8.33333,0,0,8.33333,0,0)">
+                        <g transform="matrix(0.707107,-0.707107,-0.707107,-0.707107,2444.7,489.316)">
+                            <path d="M-3.556,8.585L20.726,8.585" style="fill:none;fill-rule:nonzero;stroke:rgb(136,130,136);stroke-width:0.5px;"/>
+                        </g>
+                        <g transform="matrix(-0.707107,-0.707107,-0.707107,0.707107,2444.7,465.033)">
+                            <path d="M-20.726,8.585L3.556,8.585" style="fill:none;fill-rule:nonzero;stroke:rgb(136,130,136);stroke-width:0.5px;"/>
+                        </g>
                     </g>
                 </g>
-            </g>
-        </svg>
+            </svg>
+            </div>
+                <h2>While Supplies Last</h2>
+                <p>I am proud of all the formulations that I have developed over the last 38 years in the Optaderm Laboratory.</p>
+                <p>I create new products when science and ingredient innovations create breakthroughs in skin vitality. But, when I can no longer produce a product it will be available here in our clinic sale while supplies last.</p>
+                <a href="/legacy/" class="button-outline">Shop Our Original Products</a>
+            </div>
         </div>
-            <h2>While Supplies Last</h2>
-            <p>I am proud of all the formulations that I have developed over the last 38 years in the Optaderm Laboratory.</p>
-            <p>I create new products when science and ingredient innovations create breakthroughs in skin vitality. But, when I can no longer produce a product it will be available here in our clinic sale while supplies last.</p>
-            <a href="/legacy/" class="button-outline">Shop Our Original Products</a>
-        </div>
-    </div>
 
-    {{#if template '===' 'pages/custom/page/homepage'}} 
-        <body class="with-header-bg">
-    {{else if template '===' 'pages/custom/page/clinic'}} 
-        <body class="with-header-bg">
-    {{else if template '===' 'pages/custom/page/about'}} 
-        <body class="with-header-bg">
-    {{else if template '===' 'pages/custom/page/skin-concerns'}} 
-        <body class="with-header-bg">
-    {{else if template '===' 'pages/custom/page/hyperpigmentation'}} 
-        <body class="with-header-bg">
-    {{else if template '===' 'pages/custom/page/rosacea'}} 
-        <body class="with-header-bg">
-    {{else if template '===' 'pages/custom/page/blemishes-acne'}} 
-        <body class="with-header-bg">
-    {{else if template '===' 'pages/custom/page/redness'}} 
-        <body class="with-header-bg">
-    {{else if template '===' 'pages/custom/page/dehydrated-dry-skin'}} 
-        <body class="with-header-bg">
-    {{else if template '===' 'pages/custom/page/dull-skin-lack-of-luster'}} 
-        <body class="with-header-bg">
-    {{else if template '===' 'pages/custom/page/eczema'}} 
-        <body class="with-header-bg">
-    {{else if template '===' 'pages/custom/page/psoriasis'}} 
-        <body class="with-header-bg">
-    {{else if page_type '===' 'category'}} 
-        <body class="with-header-bg">
-    {{else if page_type '===' 'blog'}} 
-        <body class="with-header-bg">
-    {{else if page_type '===' 'blog_post'}} 
-        <body class="with-header-bg">
-    {{else if page_type '===' 'product'}} 
-        <body class="with-header-bg">
-    {{else}}
-        <body class="no-header-bg">
-    {{/if}}
-        <svg data-src="{{cdn 'img/icon-sprite.svg'}}" class="icons-svg-sprite"></svg>
+        {{#if template '===' 'pages/custom/page/homepage'}} 
+            <body class="with-header-bg">
+        {{else if template '===' 'pages/custom/page/clinic'}} 
+            <body class="with-header-bg">
+        {{else if template '===' 'pages/custom/page/about'}} 
+            <body class="with-header-bg">
+        {{else if template '===' 'pages/custom/page/skin-concerns'}} 
+            <body class="with-header-bg">
+        {{else if template '===' 'pages/custom/page/hyperpigmentation'}} 
+            <body class="with-header-bg">
+        {{else if template '===' 'pages/custom/page/rosacea'}} 
+            <body class="with-header-bg">
+        {{else if template '===' 'pages/custom/page/blemishes-acne'}} 
+            <body class="with-header-bg">
+        {{else if template '===' 'pages/custom/page/redness'}} 
+            <body class="with-header-bg">
+        {{else if template '===' 'pages/custom/page/dehydrated-dry-skin'}} 
+            <body class="with-header-bg">
+        {{else if template '===' 'pages/custom/page/dull-skin-lack-of-luster'}} 
+            <body class="with-header-bg">
+        {{else if template '===' 'pages/custom/page/eczema'}} 
+            <body class="with-header-bg">
+        {{else if template '===' 'pages/custom/page/psoriasis'}} 
+            <body class="with-header-bg">
+        {{else if page_type '===' 'category'}} 
+            <body class="with-header-bg">
+        {{else if page_type '===' 'blog'}} 
+            <body class="with-header-bg">
+        {{else if page_type '===' 'blog_post'}} 
+            <body class="with-header-bg">
+        {{else if page_type '===' 'product'}} 
+            <body class="with-header-bg">
+        {{else}}
+            <body class="no-header-bg">
+        {{/if}}
+            <svg data-src="{{cdn 'img/icon-sprite.svg'}}" class="icons-svg-sprite"></svg>
 
-        {{> components/custom/custom-header }}
-        {{> components/common/body }}
-        {{> components/custom/custom-footer }}
+            {{> components/custom/custom-header }}
+            {{> components/common/body }}
+            {{> components/custom/custom-footer }}
 
-        <script>window.__webpack_public_path__ = "{{cdn 'assets/dist/'}}";</script>
-        <script>
-            {{!-- Exported in app.js --}}
-            function onThemeBundleMain() {
-                window.stencilBootstrap("{{page_type}}", {{jsContext}}).load();
+            <script>window.__webpack_public_path__ = "{{cdn 'assets/dist/'}}";</script>
+            <script>
+                {{!-- Exported in app.js --}}
+                function onThemeBundleMain() {
+                    window.stencilBootstrap("{{page_type}}", {{jsContext}}).load();
 
-                function browserSupportsFormData() {
-                    return typeof FormData !== 'undefined' 
-                        && !!FormData.prototype.keys;
+                    function browserSupportsFormData() {
+                        return typeof FormData !== 'undefined' 
+                            && !!FormData.prototype.keys;
+                    }
+                    function loadFormDataPolyfillScript(src) {
+                        var formDataPolyfillScript = document.createElement('script');
+                        formDataPolyfillScript.src = src;
+                        formDataPolyfillScript.onerror = function () {
+                            console.error('Failed to load formData polyfill script ' + src);
+                        };
+                        document.body.appendChild(formDataPolyfillScript);
+                    }
+
+                    if (!browserSupportsFormData()) {
+                        loadFormDataPolyfillScript('{{cdn 'assets/dist/theme-bundle.polyfill_form_data.js'}}');
+                    }
                 }
-                function loadFormDataPolyfillScript(src) {
-                    var formDataPolyfillScript = document.createElement('script');
-                    formDataPolyfillScript.src = src;
-                    formDataPolyfillScript.onerror = function () {
-                        console.error('Failed to load formData polyfill script ' + src);
-                    };
-                    document.body.appendChild(formDataPolyfillScript);
+            </script>
+            <script async defer src="{{cdn 'assets/dist/theme-bundle.main.js' resourceHint='preload' as='script'}}" onload="onThemeBundleMain()"></script>
+
+            {{{footer.scripts}}}
+
+            <script src="{{cdn 'assets/js/custom/page/jquery.min.js'}}"></script>
+            <script src="{{cdn 'assets/js/custom/page/slick.min.js'}}"></script>
+            <script src="{{cdn 'assets/js/custom/page/custom.js'}}"></script>
+        </body>
+    </html>
+{{else}}
+    <!DOCTYPE html>
+    <html class="no-js" lang="{{ locale_name }}">
+        <head>
+            <title>{{ head.title }}</title>
+            {{{ resourceHints }}}
+            {{{ head.meta_tags }}}
+            {{{ head.config }}}
+            {{#block "head"}} {{/block}}
+
+            <link href="{{ head.favicon }}" rel="shortcut icon">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+
+            <script>
+                {{!-- Change document class from no-js to js so we can detect this in css --}}
+                document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+            </script>
+
+            {{> components/common/polyfill-script }}
+            <script>window.consentManagerTranslations = `{{{langJson 'consent_manager'}}}`;</script>
+
+            {{!-- Load Lazysizes script ASAP so images will appear --}}
+            <script>
+                {{!-- Only load visible elements until the onload event fires, after which preload nearby elements. --}}
+                window.lazySizesConfig = window.lazySizesConfig || {};
+                window.lazySizesConfig.loadMode = 1;
+            </script>
+            <script async src="{{cdn 'assets/dist/theme-bundle.head_async.js' resourceHint='preload' as='script'}}"></script>
+            
+            {{getFontsCollection font-display='block'}}
+            
+            <script async src="{{cdn 'assets/dist/theme-bundle.font.js' resourceHint='preload' as='script'}}"></script>
+
+            {{{stylesheet '/assets/css/theme.css'}}}
+
+            {{{head.scripts}}}
+
+            {{~inject 'zoomSize' theme_settings.zoom_size}}
+            {{~inject 'productSize' theme_settings.product_size}}
+            {{~inject 'genericError' (lang 'common.generic_error')}}
+            {{~inject 'urls' urls}}
+            {{~inject 'secureBaseUrl' settings.secure_base_url}}
+            {{~inject 'cartId' cart_id}}
+            {{~inject 'template' template}}
+            {{~inject 'validationDictionaryJSON' (langJson 'validation_messages')}}
+            {{~inject 'validationFallbackDictionaryJSON' (langJson 'validation_fallback_messages')}}
+            {{~inject 'validationDefaultDictionaryJSON' (langJson 'validation_default_messages')}}
+            {{~inject 'carouselArrowAndDotAriaLabel' (lang 'carousel.arrow_and_dot_aria_label')}}
+            {{~inject 'carouselActiveDotAriaLabel' (lang 'carousel.active_dot_aria_label')}}
+            {{~inject 'carouselContentAnnounceMessage' (lang 'carousel.content_announce_message')}}
+        </head>
+        <body>
+            <svg data-src="{{cdn 'img/icon-sprite.svg'}}" class="icons-svg-sprite"></svg>
+
+            {{> components/custom/page/header-interim }}
+            {{> components/custom/page/body-interim }}
+            {{> components/custom/page/footer-interim }}
+
+            <script>window.__webpack_public_path__ = "{{cdn 'assets/dist/'}}";</script>
+            <script>
+                {{!-- Exported in app.js --}}
+                function onThemeBundleMain() {
+                    window.stencilBootstrap("{{page_type}}", {{jsContext}}).load();
+
+                    function browserSupportsFormData() {
+                        return typeof FormData !== 'undefined' 
+                            && !!FormData.prototype.keys;
+                    }
+                    function loadFormDataPolyfillScript(src) {
+                        var formDataPolyfillScript = document.createElement('script');
+                        formDataPolyfillScript.src = src;
+                        formDataPolyfillScript.onerror = function () {
+                            console.error('Failed to load formData polyfill script ' + src);
+                        };
+                        document.body.appendChild(formDataPolyfillScript);
+                    }
+
+                    if (!browserSupportsFormData()) {
+                        loadFormDataPolyfillScript('{{cdn 'assets/dist/theme-bundle.polyfill_form_data.js'}}');
+                    }
                 }
+            </script>
+            <script async defer src="{{cdn 'assets/dist/theme-bundle.main.js' resourceHint='preload' as='script'}}" onload="onThemeBundleMain()"></script>
 
-                if (!browserSupportsFormData()) {
-                    loadFormDataPolyfillScript('{{cdn 'assets/dist/theme-bundle.polyfill_form_data.js'}}');
-                }
-            }
-        </script>
-        <script async defer src="{{cdn 'assets/dist/theme-bundle.main.js' resourceHint='preload' as='script'}}" onload="onThemeBundleMain()"></script>
+            {{{footer.scripts}}}
 
-        {{{footer.scripts}}}
-
-        <script src="{{cdn 'assets/js/custom/page/jquery.min.js'}}"></script>
-        <script src="{{cdn 'assets/js/custom/page/slick.min.js'}}"></script>
-        <script src="{{cdn 'assets/js/custom/page/custom.js'}}"></script>
-    </body>
-</html>
+            <script src="{{cdn 'assets/js/custom/page/interim.js'}}"></script>
+        </body>
+    </html>
+{{/if}}

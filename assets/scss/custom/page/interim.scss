@@ -362,13 +362,30 @@ button:disabled,
 #book_appointment {
 	text-decoration: none;
 	display: inline-block;
-	margin-top: 1.5rem;
+	margin-top: 0.5rem;
 	margin-bottom: 1rem;
 }
 
 .header {
 	height: auto;
 	text-align: center;
+}
+
+.interim-login * {
+    stroke: var(--opt-color-secondary) !important;
+}
+
+.interim-login {
+	a:hover {
+		-webkit-transform: scale(1.15);
+		transform: scale(1.15);
+	}
+
+	svg {
+		width: 45px;
+		height: 35px;
+		transition: all ease .3s;
+	}
 }
 
 @media (min-width: 801px) {
@@ -378,6 +395,15 @@ button:disabled,
 		right: 1rem;
 		-webkit-transform: translateY(-50%);
 		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
+		margin: 0;
+	}
+
+	.interim-login {
+		position: absolute;
+		top: 55%;
+		left: 1rem;
+		-webkit-transform: translateY(-50%);
 		transform: translateY(-50%);
 		margin: 0;
 	}
@@ -466,7 +492,7 @@ button:disabled,
 /* HERO */
 
 #hero {
-	background-image: url('https://optaderm.mybigcommerce.com/content/OD_Interim_Hero.webp');
+	background-image: url('https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/interim-bg1.jpg?t=1733836695');
 	min-height: calc(100vh - 111px);
 	min-height: calc(100dvh - 111px);
 
@@ -567,7 +593,7 @@ button:disabled,
 
 #schedule_treatment {
 	background-position: bottom center;
-	background-image: url('https://optaderm.mybigcommerce.com/content/OD_Interim_Clinic.webp');
+	background-image: url('https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/interim-bg2.jpg?t=1733836698');
 	min-height: 100vh;
 	min-height: 100dvh;
 
@@ -600,7 +626,7 @@ button:disabled,
 	background-size: cover;
 	background-position: right bottom;
 	background-repeat: no-repeat;
-	background-image: url('https://optaderm.mybigcommerce.com/content/OD_Interim_Dean.webp');
+	background-image: url('https://cdn11.bigcommerce.com/s-itukv01ojg/images/stencil/original/image-manager/interim-bg3.jpg?t=1733836700');
 	padding-top: 4rem;
 	padding-bottom: 4rem;
 	position: relative;
