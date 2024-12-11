@@ -87,3 +87,7 @@ form[class^="form-"] [type="submit"] {
     background-color: #f8d7da;
     border-color: #f5c6cb;
 }
+
+#main-content > div.account > ul > li > form {
+	text-align: center;
+}
