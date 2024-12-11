@@ -56,7 +56,7 @@ products:
         <div class="container">
             <div class="content">
                 {{#unless theme_settings.hide_category_page_heading }}
-                {{#if category.name '===' "Anti-aging"}}
+                {{#if category.name '===' "Aging"}}
                     <h1 class="page-heading">Aging Skincare</h1>
                 {{else}}
                     <h1 class="page-heading">{{category.name}}</h1>
@@ -80,7 +80,7 @@ products:
                       {{#unless category.name '===' "Peptides"}}
                         {{#unless category.name '===' "Retinol"}}
                           {{#unless category.name '===' "Salicylic Acid"}}
-                            {{#unless category.name '===' "Anti-Aging"}}
+                            {{#unless category.name '===' "Aging"}}
                                 {{#unless category.name '===' "Toners"}}
                                   {{#unless category.name '===' "Blemishes + Acne"}}
                                   {{#unless category.name '===' "Moisturizers"}}
@@ -88,17 +88,23 @@ products:
                                   {{#unless category.name '===' "Dehydration"}}
                                     {{#unless category.name '===' "Legacy"}}
                                     {{#unless category.name '===' "Body"}}
-                                    {{#unless category.name '===' "treatment-Moisturizers"}}
+                                    {{#unless category.name '===' "Phenomena Treatment Moisturizers"}}
+                                    {{#unless category.name '===' "Shop All"}}
         <div class="top-content-header light text-center">
             {{#if category.name '===' "Shop All"}}
                 <p>Shop Featured Products</p>
             {{else if category.name '===' "While Supplies Last"}}
                 <p>Featured Original Products</p>
+            {{else if category.name '===' "Bestsellers"}}
+                <p>Featured Bestsellers</p>
+            {{else if category.name '===' "Bestsellers"}}
+                <p>Featured New Formulations</p>
             {{else}}
                 <p>Featured {{category.name}} Products</p>
             {{/if}}
         </div>
         {{> components/category/featured-product-listing }}
+        {{/unless}}
         {{/unless}}
         {{/unless}}
         {{/unless}}
