@@ -372,7 +372,7 @@ button:disabled,
 }
 
 .interim-login * {
-    stroke: var(--opt-color-secondary) !important;
+    stroke: #F2F2F2 !important;
 }
 
 .interim-login {
@@ -400,12 +400,9 @@ button:disabled,
 	}
 
 	.interim-login {
-		position: absolute;
-		top: 55%;
-		left: 1rem;
 		-webkit-transform: translateY(-50%);
 		transform: translateY(-50%);
-		margin: 0;
+		margin-top: 25px;
 	}
 
 	.header-logo-image-container {
@@ -450,6 +447,7 @@ button:disabled,
 	>.powered-by {
 		color: var(--opt-color-text-medium);
 		font-size: 14px;
+		margin-bottom: 25px;
 	}
 }
 
