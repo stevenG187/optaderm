@@ -90,6 +90,7 @@ products:
                                     {{#unless category.name '===' "Body"}}
                                     {{#unless category.name '===' "Phenomena Treatment Moisturizers"}}
                                     {{#unless category.name '===' "Shop All"}}
+                                    {{#unless category.name '===' "While Supplies Last"}}
         <div class="top-content-header light text-center">
             {{#if category.name '===' "Shop All"}}
                 <p>Shop Featured Products</p>
@@ -97,13 +98,14 @@ products:
                 <p>Featured Original Products</p>
             {{else if category.name '===' "Bestsellers"}}
                 <p>Featured Bestsellers</p>
-            {{else if category.name '===' "Bestsellers"}}
+            {{else if category.name '===' "New Formulations"}}
                 <p>Featured New Formulations</p>
             {{else}}
                 <p>Featured {{category.name}} Products</p>
             {{/if}}
         </div>
         {{> components/category/featured-product-listing }}
+        {{/unless}}
         {{/unless}}
         {{/unless}}
         {{/unless}}
@@ -134,8 +136,16 @@ products:
                 <p>{{category.name}} PRODUCTS</p>
             {{else if category.name '===' "While Supplies Last"}}
             <p>Original Products While Supplies Last</p>
+            {{else if category.name '===' "Aging"}}
+            <p>All Aging Products</p>
+            {{else if category.name '===' "Dehydration"}}
+            <p>All Dehydration Products</p>
+            {{else if category.name '===' "Blemishes + Acne"}}
+            <p>All Blemishes + Acne Products</p>
+            {{else if category.name '===' "Hyperpigmentation"}}
+            <p>All Hyperpigmentation Products</p>
             {{else}}
-                   <p>ALL {{category.name}} PRODUCTS</p>
+                   <p>ALL {{category.name}}</p>
                   {{/if}}
         </div>
     </div>
