@@ -24,3 +24,7 @@
         fill: stencilColor("button--icon-svg-color");
     }
 }
+
+.button--icon[data-action="inc"] {
+    border-radius: 0;
+}
