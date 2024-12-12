@@ -379,3 +379,17 @@ $optimizedCheckout-input--error-boxShadow: 0 0 3px transparentize(stencilColor("
     background-color: stencilColor("optimizedCheckout-loadingToaster-backgroundColor");
     color: stencilColor("optimizedCheckout-loadingToaster-textColor");
 }
+
+.checkoutHeader-heading {
+    text-align: center;
+
+    img {
+        width: 8em;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .checkoutHeader-heading img {
+        width: 6em;
+    }
+}

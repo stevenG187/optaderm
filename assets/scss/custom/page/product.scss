@@ -484,6 +484,16 @@
     }
 }
 
+/*CART PAGE*/
+.cart-page, .account-page {
+    padding-top: 3em;
+}
+
+.account-page {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
 @media screen and (min-width: 801px) {
     .form-wishlist .button {
         width: 16em;
@@ -496,6 +506,10 @@
 @media screen and (max-width: 1024px){
     .productView {
         padding-top: 9rem;
+    }
+
+    .cart-page, .account-page {
+        padding-top: 5em;
     }
 }
 
