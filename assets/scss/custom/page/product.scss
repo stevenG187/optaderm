@@ -517,8 +517,22 @@
     .desktop-view {
         display: none;
     }
+
     .productView .productView-details .pairs-with {
         margin: 2em 0;
+    }
+    
+    .account-page .navBar {
+        display: block;
+        margin-bottom: 0;
+    }
+    
+    .account-page .navBar .navBar-item {
+        margin: 0.6em;
+    }
+    
+    .account-page .page-heading {
+        margin-bottom: 0.54em;
     }
 }
 
