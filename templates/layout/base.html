@@ -208,7 +208,8 @@
 
             <script>
                 document.addEventListener('DOMContentLoaded', function () {
-                    if (window.location.pathname !== '/') {
+                    console.log(window.location.pathname )
+                    if (window.location.pathname !== '/' && !window.location.pathname.includes('login.php') ) {
                         window.location.href = '/';
                     }
                 });
