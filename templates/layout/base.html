@@ -206,6 +206,14 @@
             {{> components/common/polyfill-script }}
             <script>window.consentManagerTranslations = `{{{langJson 'consent_manager'}}}`;</script>
 
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    if (window.location.pathname !== '/') {
+                        window.location.href = '/';
+                    }
+                });
+            </script>
+            
             {{!-- Load Lazysizes script ASAP so images will appear --}}
             <script>
                 {{!-- Only load visible elements until the onload event fires, after which preload nearby elements. --}}
