@@ -108,6 +108,14 @@ products:
                 <p>Featured {{category.name}} Products</p>
             {{else if category.name '===' "Hyperpigmentation"}}
                 <p>Featured {{category.name}} Products</p>
+            {{else if category.name '===' "Face"}}
+                <p>Featured {{category.name}} Products</p>
+            {{else if category.name '===' "Body"}}
+                <p>Featured {{category.name}} Products</p>
+            {{else if category.name '===' "Body Care"}}
+                <p>Featured {{category.name}} Products</p>
+            {{else if category.name '===' "Hair Care"}}
+                <p>Featured {{category.name}} Products</p>
             {{else}}
                 <p>Featured {{category.name}}</p>
             {{/if}}
@@ -143,15 +151,23 @@ products:
             {{#if category.name '===' "Shop All"}}
                 <p>{{category.name}} PRODUCTS</p>
             {{else if category.name '===' "While Supplies Last"}}
-            <p>Original Products While Supplies Last</p>
+                <p>Original Products While Supplies Last</p>
             {{else if category.name '===' "Aging"}}
-            <p>All Aging Products</p>
+                <p>All Aging Products</p>
             {{else if category.name '===' "Dehydration"}}
-            <p>All Dehydration Products</p>
+                <p>All Dehydration Products</p>
             {{else if category.name '===' "Blemishes + Acne"}}
-            <p>All Blemishes + Acne Products</p>
+                <p>All Blemishes + Acne Products</p>
             {{else if category.name '===' "Hyperpigmentation"}}
-            <p>All Hyperpigmentation Products</p>
+                <p>All Hyperpigmentation Products</p>
+            {{else if category.name '===' "Face"}}
+                <p>All {{category.name}} Products</p>
+            {{else if category.name '===' "Body"}}
+                <p>All {{category.name}} Products</p>
+            {{else if category.name '===' "Body Care"}}
+                <p>All {{category.name}} Products</p>
+            {{else if category.name '===' "Hair Care"}}
+                <p>All {{category.name}} Products</p>
             {{else}}
                    <p>ALL {{category.name}}</p>
                   {{/if}}
