@@ -29,5 +29,40 @@
             {{/if}}
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+    
+            function sanitize(input) {
+                const div = document.createElement('div');
+                div.textContent = input;
+                return div.textContent;
+            }
+    
+            const fieldMappings = {
+                'email': 'FormField[1][1]',
+                'first_name': 'FormField[2][4]',
+                'last_name': 'FormField[2][5]',
+                'company_name': 'FormField[2][6]',
+                'phone': 'FormField[2][7]',
+                'address1': 'FormField[2][8]',
+                'address2': 'FormField[2][9]',
+                'city': 'FormField[2][10]',
+                'state': 'FormField[2][12]',
+                'zip': 'FormField[2][13]'
+            };
+    
+            for (const [param, fieldName] of Object.entries(fieldMappings)) {
+                const value = urlParams.get(param);
+                if (value) {
+                    const field = document.querySelector(`input[name="${fieldName}"]`);
+                    if (field) {
+                        field.value = sanitize(value);
+                    }
+                }
+            }
+    
+        });
+    </script>    
 {{/partial}}
 {{> layout/base}}
