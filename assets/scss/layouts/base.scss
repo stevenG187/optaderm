@@ -557,6 +557,11 @@ body {
     } 
     
     .featured-content-grid {
+
+        .prod-figure {
+            margin: 0;
+        }
+
         .w-33 {
             background: rgb(232, 230, 229);
             background: -webkit-linear-gradient(260deg, rgba(232, 230, 229, 1) 0%, rgba(255, 255, 255, 1) 100%);
@@ -587,6 +592,17 @@ body {
                 -o-transition: all ease .3s;
                 -moz-transition: all ease .3s;
                 transition: all ease .3s;
+
+                .prod-img-container {
+                    height: 100%;
+                    width: 100%;
+
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
             }
 
             &:hover {
@@ -618,8 +634,8 @@ body {
                 height: 25em;
                 -o-object-fit: contain;
                    object-fit: contain;
-                -o-object-position: bottom center;
-                   object-position: bottom center;
+                -o-object-position: center;
+                   object-position: center;
                 width: 100%;
             }
 
