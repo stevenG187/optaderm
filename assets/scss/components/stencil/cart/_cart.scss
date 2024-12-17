@@ -259,6 +259,7 @@ $card-preview-zoom-bottom-offset:       6rem;
 .cart-item-brand {
     color: stencilColor("color-textSecondary");
     margin-bottom: spacing("eighth");
+    text-transform: uppercase;
 }
 
 .cart-item-name {
