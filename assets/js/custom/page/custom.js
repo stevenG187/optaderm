@@ -141,6 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     removeBrandFromTitle('.card-body', '.card-text', '.card-title');
     removeBrandFromTitle('.productView-product', '.productView-brand', '.productView-title');
+    removeBrandFromTitle('.cart-item-block', '.cart-item-brand', '.cart-item-name__label');
 });
 
 // Function to fetch, sort, and return blog tags dynamically

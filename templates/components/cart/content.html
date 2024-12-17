@@ -29,9 +29,9 @@
                     {{/if}}
                 </td>
                 <td class="cart-item-block cart-item-title">
-                    {{#if brand.name}}
-                        <p class="cart-item-brand">{{brand.name}}</p>
-                    {{/if}}
+                    {{#filter custom_fields 'Brand' property='name' }}
+                        <p class="cart-item-brand">{{value}}</p>
+                    {{/filter}}
                     <h2 class="cart-item-name">
                         <a class="cart-item-name__label" href="{{url}}">{{name}}</a>
                     </h2>
