@@ -204,3 +204,26 @@ function displayTags(tags) {
 // Fetch, sort, and display tags
 const tags = fetchAndSortBlogTags();
 displayTags(tags);
+
+//ACCOUNT DROPDOWN
+document.addEventListener('DOMContentLoaded', () => {
+    const account = document.querySelector('.account');
+    let timeout;
+
+    account.addEventListener('mouseover', () => {
+        clearTimeout(timeout);
+        const dropdown = account.querySelector('.account-dropdown');
+        dropdown.style.opacity = '1';
+        dropdown.style.transform = 'translateY(0)';
+        dropdown.style.pointerEvents = 'auto';
+    });
+
+    account.addEventListener('mouseout', () => {
+        const dropdown = account.querySelector('.account-dropdown');
+        timeout = setTimeout(() => {
+            dropdown.style.opacity = '0';
+            dropdown.style.transform = 'translateY(-10px)';
+            dropdown.style.pointerEvents = 'none';
+        }, 300);
+    });
+});
